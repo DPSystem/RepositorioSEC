@@ -74,8 +74,8 @@ namespace entrega_cupones.Formularios
         txt_RazonSocial.Text = acta.RazonSocial;
         txt_CUIT.Text = acta.Cuit;
         txt_Domicilio.Text = acta.Domicilio;
-        msk_Desde.Text = acta.Desde.ToString("MM/yyyy");
-        msk_Hasta.Text = acta.Hasta.ToString("MM/yyyy");
+        msk_Desde.Text = acta.Desde.ToString();   //.ToString("MM/yyyy");
+        msk_Hasta.Text = acta.Hasta.ToString(); //.ToString("MM/yyyy");
         lbl_ActaSinRegistro.Visible = false;
         MostrarPlanDePago(_NroDePlan);
 

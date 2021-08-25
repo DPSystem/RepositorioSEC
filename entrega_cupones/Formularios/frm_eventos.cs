@@ -684,5 +684,10 @@ namespace entrega_cupones.Formularios
         //}
       }
     }
+
+    private void cbx_eventos_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
   }
 }

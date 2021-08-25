@@ -328,6 +328,7 @@
       this.lbl_Mochila.Size = new System.Drawing.Size(63, 17);
       this.lbl_Mochila.TabIndex = 451;
       this.lbl_Mochila.Text = "Mochila:";
+      this.lbl_Mochila.Visible = false;
       // 
       // cbx_Mochilas
       // 
@@ -336,10 +337,11 @@
       this.cbx_Mochilas.Font = new System.Drawing.Font("Century Gothic", 9.5F);
       this.cbx_Mochilas.ForeColor = System.Drawing.Color.Black;
       this.cbx_Mochilas.FormattingEnabled = true;
-      this.cbx_Mochilas.Location = new System.Drawing.Point(85, 242);
+      this.cbx_Mochilas.Location = new System.Drawing.Point(87, 244);
       this.cbx_Mochilas.Name = "cbx_Mochilas";
       this.cbx_Mochilas.Size = new System.Drawing.Size(264, 25);
       this.cbx_Mochilas.TabIndex = 452;
+      this.cbx_Mochilas.Visible = false;
       // 
       // bunifuCustomLabel11
       // 
@@ -353,6 +355,7 @@
       this.bunifuCustomLabel11.Size = new System.Drawing.Size(91, 17);
       this.bunifuCustomLabel11.TabIndex = 453;
       this.bunifuCustomLabel11.Text = "Quien Retira:";
+      this.bunifuCustomLabel11.Visible = false;
       // 
       // txt_QuienRetira
       // 
@@ -362,6 +365,7 @@
       this.txt_QuienRetira.Size = new System.Drawing.Size(237, 22);
       this.txt_QuienRetira.TabIndex = 454;
       this.txt_QuienRetira.Text = "TITULAR";
+      this.txt_QuienRetira.Visible = false;
       // 
       // chk_FondoDeDesempleo
       // 
@@ -635,12 +639,11 @@
       this.lbl_Turno.Size = new System.Drawing.Size(239, 23);
       this.lbl_Turno.TabIndex = 459;
       this.lbl_Turno.Text = "Turno:";
+      this.lbl_Turno.Visible = false;
       // 
       // chk_Termas
       // 
       this.chk_Termas.AutoSize = true;
-      this.chk_Termas.Checked = true;
-      this.chk_Termas.CheckState = System.Windows.Forms.CheckState.Checked;
       this.chk_Termas.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.chk_Termas.Location = new System.Drawing.Point(365, 242);
       this.chk_Termas.Name = "chk_Termas";
@@ -672,7 +675,7 @@
       this.Controls.Add(this.dgv_titu_benef);
       this.Name = "frm_Mochilas2";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-      this.Text = "Entrega de Mochilas  2021";
+      this.Text = "Entrega de Juguetes Dia del Niño 2021";
       this.Load += new System.EventHandler(this.frm_Mochilas2_Load);
       ((System.ComponentModel.ISupportInitialize)(this.picbox_socio)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.dgv_titu_benef)).EndInit();

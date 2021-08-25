@@ -10,6 +10,8 @@ using System.Windows.Forms;
 //using entrega_cupones.Reportes;
 using entrega_cupones.Clases;
 using System.Collections;
+using entrega_cupones.Modelos;
+using entrega_cupones.Metodos;
 
 namespace entrega_cupones
 {
@@ -17,6 +19,7 @@ namespace entrega_cupones
   public partial class frm_edades : Form
   {
     lts_sindicatoDataContext db_socios = new lts_sindicatoDataContext();
+    List<mdlMaeFlia> Edades = new List<mdlMaeFlia>();
 
 
     public frm_edades()
@@ -38,6 +41,7 @@ namespace entrega_cupones
                       sexo = flia.MAEFLIA_SEXO.ToString(),
                       edad = func_utiles.calcular_edad(flia.MAEFLIA_FECNAC)// calcular_edad(flia.MAEFLIA_FECNAC)
                     }).ToList();
+
 
       while (dgv_edades.Rows.Count > 0)
       {
@@ -61,7 +65,7 @@ namespace entrega_cupones
       dgv_edades.Rows[3].Cells["cantidad"].Value = edades.Where(x => x.edad >= 13 && x.edad <= 17 && x.sexo != " ").Count();
 
       dgv_edades.Rows[2].Cells["edad"].Value = "8 a 12";
-      dgv_edades.Rows[2].Cells["F"].Value = edades.Where(x => x.edad >= 8 && x.edad <= 12  && x.sexo == "F").Count();
+      dgv_edades.Rows[2].Cells["F"].Value = edades.Where(x => x.edad >= 8 && x.edad <= 12 && x.sexo == "F").Count();
       dgv_edades.Rows[2].Cells["M"].Value = edades.Where(x => x.edad >= 8 && x.edad <= 12 && x.sexo == "M").Count();
       dgv_edades.Rows[2].Cells["cantidad"].Value = edades.Where(x => x.edad >= 8 && x.edad <= 12 && x.sexo != " ").Count();
 
@@ -109,6 +113,7 @@ namespace entrega_cupones
     private void frm_edades_Load(object sender, EventArgs e)
     {
       cargar_localidad();
+      Edades.AddRange( mtdEdades.GenerarEdades());
     }
 
     private void cargar_localidad()
@@ -118,6 +123,12 @@ namespace entrega_cupones
       cbx_localidad.ValueMember = "codigopostal";
 
       cbx_localidad.DataSource = loc.ToList();
+
+    }
+
+    private void btn_CalcularEdades_Click(object sender, EventArgs e)
+    {
+      dgv_Edades2.DataSource = mtdEdades.GetEdades();//Edades,Convert.ToInt32 (cbx_Desde.Text), Convert.ToInt32(cbx_Hasta.Text));
     }
   }
 }

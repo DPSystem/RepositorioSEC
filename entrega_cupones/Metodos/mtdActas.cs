@@ -10,8 +10,8 @@ namespace entrega_cupones.Metodos
 {
   class mtdActas
   {
-    public static  mdlActa ActaReturn = new mdlActa();
-    
+    public static mdlActa ActaReturn = new mdlActa();
+
     public static int ObtenerNroDeActa()
     {
       using (var context = new lts_sindicatoDataContext())
@@ -19,14 +19,14 @@ namespace entrega_cupones.Metodos
         return context.Acta.Count() > 0 ? context.Acta.Max(x => x.Numero) + 1 : 1;
       }
     }
-    
-    public static void GuardarActaCabecera(List<EstadoDDJJ> ddjjt, DateTime FechaDeConfeccion, DateTime desde, DateTime hasta, DateTime vencimiento, int empresaId, string cuit, int cantidadEmpleados, decimal InteresMensual, decimal InteresDiario,List<mdlCuadroAmortizacion> _PlanDePago)
+
+    public static void GuardarActaCabecera(List<EstadoDDJJ> ddjjt, DateTime FechaDeConfeccion, DateTime desde, DateTime hasta, DateTime vencimiento, int empresaId, string cuit, int cantidadEmpleados, decimal InteresMensual, decimal InteresDiario, List<mdlCuadroAmortizacion> _PlanDePago)
     {
       using (var context = new lts_sindicatoDataContext())
       {
         int NroDeActa = ObtenerNroDeActa();
-        
-        int NroDePlan =  mtdCobranzas.AsentarPlan(cuit,NroDeActa,_PlanDePago);
+
+        int NroDePlan = mtdCobranzas.AsentarPlan(cuit, NroDeActa, _PlanDePago);
 
         MessageBox.Show("Se grabo el Plan de Pago con exito");
 
@@ -58,7 +58,7 @@ namespace entrega_cupones.Metodos
         MessageBox.Show("Se grabo el detalle del Acta con exito");
       }
     }
-    
+
     public static void GuardarActaDetalle(List<EstadoDDJJ> ddjjt, int actaNumero, string actaCuit, int actaId)
     {
       using (var context = new lts_sindicatoDataContext())
@@ -75,7 +75,7 @@ namespace entrega_cupones.Metodos
             TotalSueldoEmpleados = periodo.TotalSueldoEmpleados,
             TotalSueldoSocios = periodo.TotalSueldoSocios,
             TotalAporteEmpleados = periodo.AporteLey,
-            TotalAporteSocios =periodo.AporteSocio,
+            TotalAporteSocios = periodo.AporteSocio,
             FechaDePago = Convert.ToDateTime(periodo.FechaDePago),
             ImporteDepositado = periodo.ImporteDepositado,
             DiasDeMora = periodo.DiasDeMora,
@@ -90,8 +90,8 @@ namespace entrega_cupones.Metodos
         }
       }
     }
-    
-    public static  mdlActa GetActa (int NroDeActa)
+
+    public static mdlActa GetActa(int NroDeActa)
     {
       using (var context = new lts_sindicatoDataContext())
       {
@@ -109,7 +109,7 @@ namespace entrega_cupones.Metodos
                      NroDePlan = a.PlanDePago
                    };
         ActaReturn = acta.FirstOrDefault();
-        return  ActaReturn;
+        return ActaReturn;
       }
     }
 
@@ -126,14 +126,14 @@ namespace entrega_cupones.Metodos
           dpr.Cuit = empresa.MEEMP_CUIT_STR;
           dpr.Empresa = empresa.MAEEMP_RAZSOC.Trim();
           dpr.Deuda = CalcularDeudaRanking(empresa.MEEMP_CUIT_STR);
-          if (dpr.Deuda > 0 )
+          if (dpr.Deuda > 0)
           {
             deudaParaRanking.Add(dpr);
           }
         }
       }
-      
-      return deudaParaRanking.OrderByDescending(x=>x.Deuda).ToList();
+
+      return deudaParaRanking.OrderByDescending(x => x.Deuda).ToList();
 
     }
 
@@ -150,6 +150,35 @@ namespace entrega_cupones.Metodos
 
 
         return Convert.ToDecimal(deuda);
+      }
+    }
+
+    public static List<mdlActa> Get_ListadoDeActas()
+    {
+      using (var datacontext = new lts_sindicatoDataContext())
+      {
+        var actas = (from a in datacontext.Acta
+                     where a.Estado == 0 || a.Estado == 2
+                     select new mdlActa
+                     {
+                       NroActa = a.Numero,
+                       Fecha = Convert.ToDateTime(a.Fecha),
+                       Cuit = a.EmpresaCuit,
+                       RazonSocial = mtdEmpresas.GetEmpresaNombre(a.EmpresaCuit),
+                       Desde = Convert.ToDateTime(a.Desde),
+                       Hasta = Convert.ToDateTime(a.Hasta),
+                       Importe = a.Total,
+                       NroDePlan = a.PlanDePago
+
+                     }).OrderByDescending(x => x.NroActa);
+        if (actas.Count() > 0)
+        {
+          return actas.ToList();
+        }
+        else
+        {
+          return null;
+        }
       }
     }
   }

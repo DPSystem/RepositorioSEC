@@ -55,7 +55,7 @@ namespace entrega_cupones.Formularios
       cargar_combo_eventos();
       //Cargar_TituBenef();
       Cargar_cbx_parentesco();
-      //BloquearFilaPorEdad();
+      BloquearFilaPorEdad();
       ObtenerTotalesEntregados();
       CargarCbxMochilas();
     }
@@ -117,7 +117,8 @@ namespace entrega_cupones.Formularios
         if (TipoDeEvento == 4) // el evento es Entrega de Mochilas
         {
           int edad = Convert.ToInt32(fila.Cells["Edad"].Value);
-          if (edad < 1 || edad > 22)
+          // if (edad <= 0 || edad > 12)
+          if (edad > 12)
           {
             fila.Cells["Estado"].Value = "No Corresponde";
             fila.ReadOnly = true;
@@ -160,7 +161,8 @@ namespace entrega_cupones.Formularios
 
       if (TipoDeEvento == 4)
       {
-        if (edad < 1 || edad > 22)
+        // if (edad < 1 || edad > 22)
+        if (edad > 12)
         {
           btn_emitir_cupon.Enabled = false;
         }
@@ -369,28 +371,56 @@ namespace entrega_cupones.Formularios
       reportes frm_reportes = new reportes();
       EventosCupones EvntCpn = new EventosCupones();
 
+      // -->> Entrega de mochilas. 
+      //if (Convert.ToInt32(cbx_eventos.SelectedValue) == 4) // Es entrega de mochila
+      //{
+      //  using (var context = new lts_sindicatoDataContext())
+      //  {
+      //    int MochilaID = Convert.ToInt32(context.eventos_cupones.Where(x => x.event_cupon_nro == nroDeCupon).SingleOrDefault().ArticuloID);
+      //    var mochi = from a in context.articulos
+      //                where a.ID == MochilaID
+      //                select new
+      //                {
+      //                  tipoMochila = a.Descripcion + " - " + (a.Sexo == 'F' ? "MUJER" : "VARON")
+      //                };
+
+      //    TipoDeMochila = mochi.SingleOrDefault().tipoMochila;
+
+      //  }
+
+      //  //frm_reportes.nombreReporte = "rpt_EntregaDeMochila";
+      //  frm_reportes.NombreDelReporte = "entrega_cupones.Reportes.rpt_EntregaDeMochila.rdlc";
+      //  //frm_reportes.DtEntregaDeMochilas = dt;
+      //  frm_reportes.dt = dt;
+      //  frm_reportes.dt2 = Metodos.mtdFilial.Get_DatosFilial();
+      //  frm_reportes.Parametro1 = "MOCHILAS 2021 - CUPON DE ENTREGA Nº " + nroDeCupon.ToString(); // Encabezado del cupon
+      //  frm_reportes.Parametro2 = nroDeCupon.ToString(); // Nro de cupon
+      //  frm_reportes.Parametro3 = nroDeSocio.Trim(); // Nro de Socio
+      //  frm_reportes.Parametro4 = edad.Trim();//edad del Beneficiario
+      //  frm_reportes.Parametro5 = dniBeneficiario; //dni del Beneficiario
+      //  frm_reportes.Parametro6 = apenomBeneficiario; // mombre del beneficiario
+      //  frm_reportes.Parametro7 = empresa.Trim(); // Empresa del titular
+      //  frm_reportes.Parametro8 = TipoDeMochila; // que tipo de mochila lleva primaria/secundaria/Jardin
+      //  frm_reportes.Parametro9 = apenomTitular; // Nombre del Titular
+      //  frm_reportes.Parametro10 = dniTitular; //Dni del titular
+      //  frm_reportes.Parametro11 = usr.ObtenerNombreDeUsuario(UsuarioID); //Usuario nombre 
+      //  frm_reportes.Parametro12 = DateTime.Now.ToString(); //Fecha
+      //  frm_reportes.Parametro13 = txt_QuienRetira.Text; //quien retira el Cupon
+      //  frm_reportes.Parametro14 = chk_FondoDeDesempleo.Checked == true ? "Fdo. Desempleo: SI" : "Fdo. Desempleo: NO";
+      //  frm_reportes.Parametro15 = "Turno: " + EvntCpn.GetDiaHoraDelTurno(EvntCpn.ConsultarTurno(Convert.ToString(_cuil)));
+      //}
+      //<<-- Entrega de mochilas. 
+
       if (Convert.ToInt32(cbx_eventos.SelectedValue) == 4) // Es entrega de mochila
       {
-        using (var context = new lts_sindicatoDataContext())
-        {
-          int MochilaID = Convert.ToInt32(context.eventos_cupones.Where(x => x.event_cupon_nro == nroDeCupon).SingleOrDefault().ArticuloID);
-          var mochi = from a in context.articulos
-                      where a.ID == MochilaID
-                      select new
-                      {
-                        tipoMochila = a.Descripcion + " - " + (a.Sexo == 'F' ? "MUJER" : "VARON")
-                      };
-
-          TipoDeMochila = mochi.SingleOrDefault().tipoMochila;
-
-        }
-
+        
+        TipoDeMochila = "JUGUETE + GOLOSINAS";
         //frm_reportes.nombreReporte = "rpt_EntregaDeMochila";
-        frm_reportes.NombreDelReporte = "entrega_cupones.Reportes.rpt_EntregaDeMochila.rdlc";
+        frm_reportes.NombreDelReporte = "entrega_cupones.Reportes.rpt_DiaDelNiño_Cupon.rdlc";
         //frm_reportes.DtEntregaDeMochilas = dt;
         frm_reportes.dt = dt;
         frm_reportes.dt2 = Metodos.mtdFilial.Get_DatosFilial();
-        frm_reportes.Parametro1 = "MOCHILAS 2021 - CUPON DE ENTREGA Nº " + nroDeCupon.ToString(); // Encabezado del cupon
+        frm_reportes.Parametro1 = "DIA DEL NIÑO 2021 - CUPON DE ENTREGA Nº " + nroDeCupon.ToString(); // Encabezado del cupon
         frm_reportes.Parametro2 = nroDeCupon.ToString(); // Nro de cupon
         frm_reportes.Parametro3 = nroDeSocio.Trim(); // Nro de Socio
         frm_reportes.Parametro4 = edad.Trim();//edad del Beneficiario
@@ -404,9 +434,10 @@ namespace entrega_cupones.Formularios
         frm_reportes.Parametro12 = DateTime.Now.ToString(); //Fecha
         frm_reportes.Parametro13 = txt_QuienRetira.Text; //quien retira el Cupon
         frm_reportes.Parametro14 = chk_FondoDeDesempleo.Checked == true ? "Fdo. Desempleo: SI" : "Fdo. Desempleo: NO";
-        frm_reportes.Parametro15 = "Turno: " + EvntCpn.GetDiaHoraDelTurno(EvntCpn.ConsultarTurno(Convert.ToString(_cuil)));
+        frm_reportes.Parametro15 = ""; //"Turno: " + EvntCpn.GetDiaHoraDelTurno(EvntCpn.ConsultarTurno(Convert.ToString(_cuil)));
       }
-      if (Convert.ToInt32(cbx_eventos.SelectedValue) == 3) // Es Dia de la Mujer
+
+        if (Convert.ToInt32(cbx_eventos.SelectedValue) == 3) // Es Dia de la Mujer
       {
         frm_reportes.nombreReporte = "rpt_EntradaDiaDeLaMujer";
         frm_reportes.DtDiaDeLaMujer = dt;
@@ -610,14 +641,21 @@ namespace entrega_cupones.Formularios
     {
       if (Convert.ToInt32(cbx_eventos.SelectedValue) == 4)
       {
-        if (MessageBox.Show("\nEsta seguro de Emitir el Cupon de retiro de Mochila para el Beneficiario \n- Nombre: "
+        // Mochiilas
+        //if (MessageBox.Show("\nEsta seguro de Emitir el Cupon de retiro de Mochila para el Beneficiario \n- Nombre: "
+        //  + dgv_titu_benef.CurrentRow.Cells["nombre"].Value.ToString() +
+        //  "\n" +
+        //  "\n- Mochila: " + cbx_Mochilas.Text +
+        //  "\n" +
+        //  "\n- Retira: " + txt_QuienRetira.Text +
+        //  "\n" +
+        //  "\n- Fondo de Desempleo: " + (chk_FondoDeDesempleo.Checked == true ? "SI" : "NO")
+        //  , "¡¡¡ ATENCION !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning
+        //  ) == DialogResult.Yes)
+        if (MessageBox.Show("\nEsta seguro de Emitir el Cupon de Entrega de Juguetes para el Beneficiario \n- Nombre: "
           + dgv_titu_benef.CurrentRow.Cells["nombre"].Value.ToString() +
-          "\n" +
-          "\n- Mochila: " + cbx_Mochilas.Text +
-          "\n" +
-          "\n- Retira: " + txt_QuienRetira.Text +
-          "\n" +
-          "\n- Fondo de Desempleo: " + (chk_FondoDeDesempleo.Checked == true ? "SI" : "NO")
+           "\n" +
+           "\n Fondo de Desempleo: " + (chk_FondoDeDesempleo.Checked == true ? "SI" : "NO")
           , "¡¡¡ ATENCION !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning
           ) == DialogResult.Yes)
         {
@@ -644,7 +682,8 @@ namespace entrega_cupones.Formularios
           Func_Utiles fnc = new Func_Utiles();
           int edad = fnc.calcular_edad(Convert.ToDateTime(msk_fecha_nac.Text));
           txt_edad.Text = edad.ToString();
-          if (edad >= 2 && edad < 22)
+          //if (edad >= 2 && edad < 22) // Enrega de Mochilas
+          if (edad < 12)
           {
             txt_apellido.Enabled = true;
             txt_dni.Enabled = true;
@@ -716,8 +755,11 @@ namespace entrega_cupones.Formularios
       int TipoEvento = Convert.ToInt32(cbx_eventos.SelectedValue);
       if (TipoEvento == 4) // Entrega de Mochilas
       {
-        cbx_Mochilas.Visible = true;
-        lbl_Mochila.Visible = true;
+
+        //cbx_Mochilas.Visible = true; Mochilas
+        //lbl_Mochila.Visible = true; Mochilas
+        cbx_Mochilas.Visible = false;
+        lbl_Mochila.Visible = false;
         Cargar_TituBenef();
         BloquearFilaPorEdad();
         lbl_TotalCuponesEmitidos.Visible = false;

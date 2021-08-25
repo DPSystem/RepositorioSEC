@@ -1305,7 +1305,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:InstaladorSECx64"
         "ProductCode" = "8:{2F5847B3-BB61-4CFD-AD66-99C00D8EB32E}"
-        "PackageCode" = "8:{B4EB9DA9-6BF8-45B3-9E18-2328704FA75A}"
+        "PackageCode" = "8:{BCE797DD-D4F6-403F-B07D-6C761402AA3C}"
         "UpgradeCode" = "8:{94A6EA30-345C-450B-AED4-09850D41CBF8}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

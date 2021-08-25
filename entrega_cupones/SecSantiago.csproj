@@ -399,6 +399,7 @@
     </Compile>
     <Compile Include="Metodos\mtdCategorias.cs" />
     <Compile Include="Metodos\mtdConvertirImagen.cs" />
+    <Compile Include="Metodos\mtdEdades.cs" />
     <Compile Include="Metodos\mtdFilial.cs" />
     <Compile Include="Metodos\mtdInspectores.cs" />
     <Compile Include="Metodos\mtdVDInspector.cs" />
@@ -410,6 +411,7 @@
     <Compile Include="Modelos\mdlDeudaParaRanking.cs" />
     <Compile Include="Modelos\mdlAportes.cs" />
     <Compile Include="Modelos\mdlBancos.cs" />
+    <Compile Include="Modelos\mdlEdades.cs" />
     <Compile Include="Modelos\mdlError.cs" />
     <Compile Include="Metodos\mtdActas.cs" />
     <Compile Include="Metodos\mtdCobranzas.cs" />
@@ -430,6 +432,7 @@
     <Compile Include="Modelos\mdlCuadroAmortizacion.cs" />
     <Compile Include="Modelos\mdlEstadoPlanDePago.cs" />
     <Compile Include="Modelos\mdlInspector.cs" />
+    <Compile Include="Modelos\mdlMaeFlia.cs" />
     <Compile Include="Modelos\mdlVDInspector.cs" />
     <Compile Include="Modelos\mdlMochilasEntregadas.cs" />
     <Compile Include="Modelos\mdlRecibosReporte.cs" />
@@ -557,6 +560,7 @@
     <EmbeddedResource Include="Reportes\rpt_consulta_ddjj.rdlc" />
     <EmbeddedResource Include="Reportes\rpt_ddjj_por_empleado_Banda.rdlc" />
     <EmbeddedResource Include="Reportes\rpt_EntradaDiaDeLaMujer.rdlc" />
+    <EmbeddedResource Include="Reportes\rpt_DiaDelNiño_Cupon.rdlc" />
     <EmbeddedResource Include="Reportes\rpt_EntregaDeMochila - Copia.rdlc" />
     <EmbeddedResource Include="Reportes\rpt_EntregaDeMochila.rdlc" />
     <EmbeddedResource Include="Reportes\rpt_PlanDePagoActa_SGO.rdlc" />
@@ -772,6 +776,7 @@
     <None Include="Resources\Mochila1.png" />
     <None Include="Resources\Mochila1_48.png" />
     <None Include="Resources\Mochila1_32.png" />
+    <None Include="Resources\amigos %281%29.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

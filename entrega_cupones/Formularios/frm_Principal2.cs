@@ -672,5 +672,40 @@ namespace entrega_cupones.Formularios
       frm_VDBuscar f_VDBuscar = new frm_VDBuscar();
       f_VDBuscar.ShowDialog();
     }
+
+    private void picbox_beneficiario_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void menu_ListadoActas_Click(object sender, EventArgs e)
+    {
+      frm_ActaBuscar f_ActasBuscar = new frm_ActaBuscar();
+      f_ActasBuscar.Show();
+    }
+
+    private void btn_ActivarSocio_Click(object sender, EventArgs e)
+    {
+      if (MessageBox.Show("Esta seguro de pasar a ''SOCIO ACTIVO'' ", "¡¡¡ ATENCION !!!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+      {
+        //socios soc = new socios();
+        //soc.ActivarSocio(Convert.ToDouble( lbl_cuil.Text.Trim()));
+
+        //var activar_socio = from a in db_socios.soccen where a.SOCCEN_CUIL == Convert.ToDouble(lbl_cuil.Text) select a;
+
+        using (lts_sindicatoDataContext context = new lts_sindicatoDataContext())
+        {
+          context.ExecuteCommand("update fotos_.soccen set SOCCEN_ESTADO = 1 where SOCCEN_CUIL = " + Convert.ToDouble(txt_CUIL.Text));
+        }
+
+        //if (activar_socio.Count() > 0)
+        //{
+        //  activar_socio.SingleOrDefault().SOCCEN_ESTADO = 1;
+        //  db_socios.SubmitChanges();
+
+        MessageBox.Show("El Socio " + txt_Nombre.Text.Trim() + " Ya se encuentra activado. Por favor Actualice la Busqueda. ", "¡¡¡ ATENCION !!!");
+        //}
+      }
+    }
   }
 }

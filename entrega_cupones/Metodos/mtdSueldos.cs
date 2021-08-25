@@ -142,7 +142,6 @@ namespace entrega_cupones.Metodos
       decimal haberes = SueldoBasico; //GetTotalHaberes(SueldoBasico, Antiguedad);
       decimal Descuentos = GetTotalDescuentos(SueldoBasico, EsSocio, AporteAnterior, JornadaParcial, ANR1, ANR2);
       decimal Diferencia = haberes - SueldoDeclarado;//(haberes - Descuentos) - SueldoDeclarado;
-
       return Diferencia > 0 ? Diferencia : 0;
     }
 

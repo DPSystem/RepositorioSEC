@@ -157,6 +157,7 @@
       this.cbx_eventos.Name = "cbx_eventos";
       this.cbx_eventos.Size = new System.Drawing.Size(790, 25);
       this.cbx_eventos.TabIndex = 178;
+      this.cbx_eventos.SelectedIndexChanged += new System.EventHandler(this.cbx_eventos_SelectedIndexChanged);
       // 
       // dgv_titu_benef
       // 

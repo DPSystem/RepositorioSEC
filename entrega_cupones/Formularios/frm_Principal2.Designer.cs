@@ -215,6 +215,8 @@
       this.menu_Informes = new System.Windows.Forms.ToolStripMenuItem();
       this.menu_RendicionDeCobroDeActa = new System.Windows.Forms.ToolStripMenuItem();
       this.menu_BuscarVerificacionDeuda = new System.Windows.Forms.ToolStripMenuItem();
+      this.menu_ListadoActas = new System.Windows.Forms.ToolStripMenuItem();
+      this.btn_ActivarSocio = new System.Windows.Forms.Button();
       this.panel1.SuspendLayout();
       this.panel3.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dgv_MostrarSocios)).BeginInit();
@@ -1310,6 +1312,7 @@
       this.picbox_beneficiario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
       this.picbox_beneficiario.TabIndex = 76;
       this.picbox_beneficiario.TabStop = false;
+      this.picbox_beneficiario.Click += new System.EventHandler(this.picbox_beneficiario_Click);
       // 
       // panel9
       // 
@@ -1817,6 +1820,7 @@
       // pnl_Menu2
       // 
       this.pnl_Menu2.BackColor = System.Drawing.Color.White;
+      this.pnl_Menu2.Controls.Add(this.btn_ActivarSocio);
       this.pnl_Menu2.Controls.Add(this.btn_Anterior);
       this.pnl_Menu2.Controls.Add(this.menuStrip1);
       this.pnl_Menu2.Location = new System.Drawing.Point(1, 109);
@@ -1865,12 +1869,12 @@
             this.menuMochilasEntregar,
             this.menuMochilasEdades});
       this.menuMochilas.ForeColor = System.Drawing.Color.Black;
-      this.menuMochilas.Image = global::entrega_cupones.Properties.Resources.Mochila1_32;
+      this.menuMochilas.Image = global::entrega_cupones.Properties.Resources.amigos__1_;
       this.menuMochilas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.menuMochilas.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
       this.menuMochilas.Name = "menuMochilas";
       this.menuMochilas.Size = new System.Drawing.Size(126, 40);
-      this.menuMochilas.Text = "    Mochilas";
+      this.menuMochilas.Text = "  Dia del Niño";
       this.menuMochilas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       // 
       // menuMochilasEmitirCupon
@@ -2142,7 +2146,8 @@
             this.menu_EstadoDDJJ,
             this.menu_Informes,
             this.menu_RendicionDeCobroDeActa,
-            this.menu_BuscarVerificacionDeuda});
+            this.menu_BuscarVerificacionDeuda,
+            this.menu_ListadoActas});
       this.menu_Inspectores.ForeColor = System.Drawing.Color.Black;
       this.menu_Inspectores.Image = global::entrega_cupones.Properties.Resources.Modificar_24;
       this.menu_Inspectores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2178,6 +2183,23 @@
       this.menu_BuscarVerificacionDeuda.Size = new System.Drawing.Size(253, 22);
       this.menu_BuscarVerificacionDeuda.Text = "Buscar Verificacion de Deuda";
       this.menu_BuscarVerificacionDeuda.Click += new System.EventHandler(this.menu_BuscarVerificacionDeuda_Click);
+      // 
+      // menu_ListadoActas
+      // 
+      this.menu_ListadoActas.Name = "menu_ListadoActas";
+      this.menu_ListadoActas.Size = new System.Drawing.Size(253, 22);
+      this.menu_ListadoActas.Text = "Listado de Actas";
+      this.menu_ListadoActas.Click += new System.EventHandler(this.menu_ListadoActas_Click);
+      // 
+      // btn_ActivarSocio
+      // 
+      this.btn_ActivarSocio.Location = new System.Drawing.Point(14, 450);
+      this.btn_ActivarSocio.Name = "btn_ActivarSocio";
+      this.btn_ActivarSocio.Size = new System.Drawing.Size(95, 35);
+      this.btn_ActivarSocio.TabIndex = 617;
+      this.btn_ActivarSocio.Text = "Activar Socio";
+      this.btn_ActivarSocio.UseVisualStyleBackColor = true;
+      this.btn_ActivarSocio.Click += new System.EventHandler(this.btn_ActivarSocio_Click);
       // 
       // frm_Principal2
       // 
@@ -2407,5 +2429,7 @@
     private System.Windows.Forms.ToolStripMenuItem menuMochilasEntregar;
     private System.Windows.Forms.ToolStripMenuItem menuMochilasEdades;
     private System.Windows.Forms.ToolStripMenuItem menu_BuscarVerificacionDeuda;
+    private System.Windows.Forms.ToolStripMenuItem menu_ListadoActas;
+    private System.Windows.Forms.Button btn_ActivarSocio;
   }
 }

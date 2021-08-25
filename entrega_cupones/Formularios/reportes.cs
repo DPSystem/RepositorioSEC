@@ -460,6 +460,42 @@ namespace entrega_cupones
 
       }
 
+      if (NombreDelReporte == "entrega_cupones.Reportes.rpt_DiaDelNiño_Cupon.rdlc")
+      {
+
+        //Sólo tenemos que añadir la siguiente línea de código antes de que se muestre el informe:
+        //string ReportNameStore = "Cpn_" + Parametro2 + "_DNI " + Parametro10.Trim() + "_" + Parametro15 + "_NSOC " + Parametro3 + "_ST_" + Parametro9.Trim() + "_SB_" + Parametro6.Trim() + "_MOCHI_" + Parametro8;
+
+        //rv.LocalReport.DisplayName = ReportNameStore;
+
+        rv.LocalReport.ReportEmbeddedResource = NombreDelReporte;
+        //Array que contendrá los parámetros
+        ReportParameter[] parameters = new ReportParameter[15];
+        //Establecemos el valor de los parámetros
+        parameters[0] = new ReportParameter("Parametro1", Parametro1);
+        parameters[1] = new ReportParameter("Parametro2", Parametro2);
+        parameters[2] = new ReportParameter("Parametro3", Parametro3);
+        parameters[3] = new ReportParameter("Parametro4", Parametro4);
+        parameters[4] = new ReportParameter("Parametro5", Parametro5);
+        parameters[5] = new ReportParameter("Parametro6", Parametro6);
+        parameters[6] = new ReportParameter("Parametro7", Parametro7);
+        parameters[7] = new ReportParameter("Parametro8", Parametro8);
+        parameters[8] = new ReportParameter("Parametro9", Parametro9);
+        parameters[9] = new ReportParameter("Parametro10", Parametro10);
+        parameters[10] = new ReportParameter("Parametro11", Parametro11);
+        parameters[11] = new ReportParameter("Parametro12", Parametro12);
+        parameters[12] = new ReportParameter("Parametro13", Parametro13);
+        parameters[13] = new ReportParameter("Parametro14", Parametro14);
+        parameters[14] = new ReportParameter("Parametro15", Parametro15);
+
+        //Pasamos el array de los parámetros al ReportViewer
+
+        this.rv.LocalReport.SetParameters(parameters);
+
+        this.rv.RefreshReport();
+
+      }
+
       if (nombreReporte == "rpt_EntradaDiaDeLaMujer")
       {
         //Array que contendrá los parámetros

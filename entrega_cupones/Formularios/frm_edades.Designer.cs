@@ -33,6 +33,11 @@
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
       this.dgv_edades = new System.Windows.Forms.DataGridView();
       this.edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.F = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,7 +48,18 @@
       this.lbl_total_edades = new System.Windows.Forms.Label();
       this.cbx_localidad = new System.Windows.Forms.ComboBox();
       this.label2 = new System.Windows.Forms.Label();
+      this.cbx_Desde = new System.Windows.Forms.ComboBox();
+      this.label3 = new System.Windows.Forms.Label();
+      this.label4 = new System.Windows.Forms.Label();
+      this.dgv_Edades2 = new System.Windows.Forms.DataGridView();
+      this.cbx_Hasta = new System.Windows.Forms.ComboBox();
+      this.btn_CalcularEdades = new System.Windows.Forms.Button();
+      this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       ((System.ComponentModel.ISupportInitialize)(this.dgv_edades)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.dgv_Edades2)).BeginInit();
       this.SuspendLayout();
       // 
       // dgv_edades
@@ -110,7 +126,9 @@
       // label1
       // 
       this.label1.AutoSize = true;
+      this.label1.BackColor = System.Drawing.Color.Transparent;
       this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+      this.label1.ForeColor = System.Drawing.Color.Gainsboro;
       this.label1.Location = new System.Drawing.Point(294, 264);
       this.label1.Name = "label1";
       this.label1.Size = new System.Drawing.Size(55, 17);
@@ -120,7 +138,9 @@
       // lbl_total_edades
       // 
       this.lbl_total_edades.AutoSize = true;
+      this.lbl_total_edades.BackColor = System.Drawing.Color.Transparent;
       this.lbl_total_edades.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+      this.lbl_total_edades.ForeColor = System.Drawing.Color.Gainsboro;
       this.lbl_total_edades.Location = new System.Drawing.Point(361, 264);
       this.lbl_total_edades.Name = "lbl_total_edades";
       this.lbl_total_edades.Size = new System.Drawing.Size(17, 17);
@@ -130,25 +150,266 @@
       // cbx_localidad
       // 
       this.cbx_localidad.FormattingEnabled = true;
-      this.cbx_localidad.Location = new System.Drawing.Point(66, 16);
+      this.cbx_localidad.Location = new System.Drawing.Point(84, 15);
       this.cbx_localidad.Name = "cbx_localidad";
-      this.cbx_localidad.Size = new System.Drawing.Size(345, 21);
+      this.cbx_localidad.Size = new System.Drawing.Size(329, 21);
       this.cbx_localidad.TabIndex = 4;
       // 
       // label2
       // 
       this.label2.AutoSize = true;
+      this.label2.BackColor = System.Drawing.Color.Transparent;
+      this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label2.ForeColor = System.Drawing.Color.Gainsboro;
       this.label2.Location = new System.Drawing.Point(7, 20);
       this.label2.Name = "label2";
-      this.label2.Size = new System.Drawing.Size(56, 13);
+      this.label2.Size = new System.Drawing.Size(71, 16);
       this.label2.TabIndex = 5;
       this.label2.Text = "Localidad:";
+      // 
+      // cbx_Desde
+      // 
+      this.cbx_Desde.FormattingEnabled = true;
+      this.cbx_Desde.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "69",
+            "70"});
+      this.cbx_Desde.Location = new System.Drawing.Point(578, 21);
+      this.cbx_Desde.Name = "cbx_Desde";
+      this.cbx_Desde.Size = new System.Drawing.Size(54, 21);
+      this.cbx_Desde.TabIndex = 6;
+      // 
+      // label3
+      // 
+      this.label3.AutoSize = true;
+      this.label3.BackColor = System.Drawing.Color.Transparent;
+      this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label3.ForeColor = System.Drawing.Color.Gainsboro;
+      this.label3.Location = new System.Drawing.Point(520, 23);
+      this.label3.Name = "label3";
+      this.label3.Size = new System.Drawing.Size(52, 16);
+      this.label3.TabIndex = 7;
+      this.label3.Text = "Desde:";
+      // 
+      // label4
+      // 
+      this.label4.AutoSize = true;
+      this.label4.BackColor = System.Drawing.Color.Transparent;
+      this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label4.ForeColor = System.Drawing.Color.Gainsboro;
+      this.label4.Location = new System.Drawing.Point(640, 23);
+      this.label4.Name = "label4";
+      this.label4.Size = new System.Drawing.Size(47, 16);
+      this.label4.TabIndex = 9;
+      this.label4.Text = "Hasta:";
+      // 
+      // dgv_Edades2
+      // 
+      this.dgv_Edades2.AllowUserToAddRows = false;
+      this.dgv_Edades2.AllowUserToDeleteRows = false;
+      this.dgv_Edades2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.dgv_Edades2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+      this.dgv_Edades2.Location = new System.Drawing.Point(488, 98);
+      this.dgv_Edades2.Name = "dgv_Edades2";
+      this.dgv_Edades2.ReadOnly = true;
+      this.dgv_Edades2.RowHeadersVisible = false;
+      dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.dgv_Edades2.RowsDefaultCellStyle = dataGridViewCellStyle10;
+      this.dgv_Edades2.Size = new System.Drawing.Size(406, 163);
+      this.dgv_Edades2.TabIndex = 10;
+      // 
+      // cbx_Hasta
+      // 
+      this.cbx_Hasta.FormattingEnabled = true;
+      this.cbx_Hasta.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "69",
+            "70"});
+      this.cbx_Hasta.Location = new System.Drawing.Point(693, 21);
+      this.cbx_Hasta.Name = "cbx_Hasta";
+      this.cbx_Hasta.Size = new System.Drawing.Size(54, 21);
+      this.cbx_Hasta.TabIndex = 11;
+      // 
+      // btn_CalcularEdades
+      // 
+      this.btn_CalcularEdades.Location = new System.Drawing.Point(798, 15);
+      this.btn_CalcularEdades.Name = "btn_CalcularEdades";
+      this.btn_CalcularEdades.Size = new System.Drawing.Size(96, 34);
+      this.btn_CalcularEdades.TabIndex = 12;
+      this.btn_CalcularEdades.Text = "Calcular";
+      this.btn_CalcularEdades.UseVisualStyleBackColor = true;
+      this.btn_CalcularEdades.Click += new System.EventHandler(this.btn_CalcularEdades_Click);
+      // 
+      // dataGridViewTextBoxColumn1
+      // 
+      this.dataGridViewTextBoxColumn1.DataPropertyName = "Edad";
+      dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle6;
+      this.dataGridViewTextBoxColumn1.HeaderText = "Edad";
+      this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+      this.dataGridViewTextBoxColumn1.ReadOnly = true;
+      // 
+      // dataGridViewTextBoxColumn2
+      // 
+      this.dataGridViewTextBoxColumn2.DataPropertyName = "Mujer";
+      dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle7;
+      this.dataGridViewTextBoxColumn2.HeaderText = "Mujer";
+      this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+      this.dataGridViewTextBoxColumn2.ReadOnly = true;
+      // 
+      // dataGridViewTextBoxColumn3
+      // 
+      this.dataGridViewTextBoxColumn3.DataPropertyName = "Varon";
+      dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle8;
+      this.dataGridViewTextBoxColumn3.HeaderText = "Varon";
+      this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+      this.dataGridViewTextBoxColumn3.ReadOnly = true;
+      // 
+      // dataGridViewTextBoxColumn4
+      // 
+      this.dataGridViewTextBoxColumn4.DataPropertyName = "Cantidad";
+      dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle9;
+      this.dataGridViewTextBoxColumn4.HeaderText = "Cantidad";
+      this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+      this.dataGridViewTextBoxColumn4.ReadOnly = true;
       // 
       // frm_edades
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(420, 290);
+      this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+      this.ClientSize = new System.Drawing.Size(928, 387);
+      this.Controls.Add(this.btn_CalcularEdades);
+      this.Controls.Add(this.cbx_Hasta);
+      this.Controls.Add(this.dgv_Edades2);
+      this.Controls.Add(this.label4);
+      this.Controls.Add(this.label3);
+      this.Controls.Add(this.cbx_Desde);
       this.Controls.Add(this.label2);
       this.Controls.Add(this.cbx_localidad);
       this.Controls.Add(this.lbl_total_edades);
@@ -159,6 +420,7 @@
       this.Text = "frm_edades";
       this.Load += new System.EventHandler(this.frm_edades_Load);
       ((System.ComponentModel.ISupportInitialize)(this.dgv_edades)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.dgv_Edades2)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -176,5 +438,15 @@
         private System.Windows.Forms.Label lbl_total_edades;
         private System.Windows.Forms.ComboBox cbx_localidad;
         private System.Windows.Forms.Label label2;
+    private System.Windows.Forms.ComboBox cbx_Desde;
+    private System.Windows.Forms.Label label3;
+    private System.Windows.Forms.Label label4;
+    private System.Windows.Forms.DataGridView dgv_Edades2;
+    private System.Windows.Forms.ComboBox cbx_Hasta;
+    private System.Windows.Forms.Button btn_CalcularEdades;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
   }
 }

@@ -926,7 +926,7 @@
       this.pnl_Reimprimir.Controls.Add(this.btn_ReimprimirNoSocio);
       this.pnl_Reimprimir.Controls.Add(this.btn_ReimprimirSocio);
       this.pnl_Reimprimir.Controls.Add(this.bunifuCustomLabel4);
-      this.pnl_Reimprimir.Location = new System.Drawing.Point(242, 69);
+      this.pnl_Reimprimir.Location = new System.Drawing.Point(291, 58);
       this.pnl_Reimprimir.Name = "pnl_Reimprimir";
       this.pnl_Reimprimir.Size = new System.Drawing.Size(325, 267);
       this.pnl_Reimprimir.TabIndex = 517;
@@ -1089,7 +1089,7 @@
       this.bunifuCustomLabel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
       this.bunifuCustomLabel4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.Gainsboro;
-      this.bunifuCustomLabel4.Location = new System.Drawing.Point(1, 2);
+      this.bunifuCustomLabel4.Location = new System.Drawing.Point(2, 10);
       this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
       this.bunifuCustomLabel4.Size = new System.Drawing.Size(323, 36);
       this.bunifuCustomLabel4.TabIndex = 477;

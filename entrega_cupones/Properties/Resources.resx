@@ -142,6 +142,9 @@
   <data name="Football-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Football-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Mochila1_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Mochila1_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="dollar (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dollar (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -160,17 +163,17 @@
   <data name="magnifier13" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\magnifier13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="podium (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\podium (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="massage (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\massage (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="magnifier13-32PX" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\magnifier13-32PX.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="right-arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\right-arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CAT Helmet-48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CAT Helmet-48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="minus (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minus (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="calculator" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\calculator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -244,8 +247,8 @@
   <data name="id-card1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\id-card1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="football (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\football (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="podium (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\podium (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Mochila1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Mochila1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -262,9 +265,6 @@
   <data name="happy (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\happy (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="printer-with-paper (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\printer-with-paper (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="revenue (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\revenue (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -274,8 +274,8 @@
   <data name="rubbish-bin (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rubbish-bin (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minus (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minus (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="football (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\football (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="professor_PNG_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\professor_PNG_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -295,8 +295,8 @@
   <data name="cancel (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cancel (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="magnifier13-32PX" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\magnifier13-32PX.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CAT Helmet-48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CAT Helmet-48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="calculator (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\calculator (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -331,6 +331,9 @@
   <data name="real-madrid (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\real-madrid (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="printer-with-paper (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\printer-with-paper (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="imagen no disponible PNG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imagen no disponible PNG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -343,7 +346,7 @@
   <data name="punta-de-flecha-a-la-derecha_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\punta-de-flecha-a-la-derecha_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Mochila1_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Mochila1_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="amigos (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\amigos (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

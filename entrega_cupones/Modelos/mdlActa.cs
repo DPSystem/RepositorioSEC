@@ -12,9 +12,11 @@ namespace entrega_cupones.Modelos
     public string Cuit { get; set; }
     public string RazonSocial { get; set; }
     public string Domicilio { get; set; }
-    public DateTime Desde { get; set; }
-    public DateTime Hasta { get; set; }
+    public DateTime? Desde { get; set; }
+    public DateTime? Hasta { get; set; }
     public decimal Importe { get; set; }
     public int NroDePlan { get; set; }
+    public int  Estado { get; set; }
+    public DateTime? Fecha { get; set; }
   }
 }

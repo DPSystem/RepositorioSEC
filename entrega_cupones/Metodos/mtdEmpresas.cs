@@ -16,7 +16,7 @@ namespace entrega_cupones.Metodos
 {
   class mtdEmpresas
   {
-    
+
     public static Empresa empresa = new Empresa();
 
     public static List<EstadoDDJJ> _ddjj = new List<EstadoDDJJ>();
@@ -163,13 +163,13 @@ namespace entrega_cupones.Metodos
 
         decimal sss = item.Sum(x => x.ImporteDepositado);
         string MayorRectif = "0";
-        if (sss == 0 )
+        if (sss == 0)
         {
           MayorRectif = item.Max(x => x.Rectificacion).ToString();
         }
         foreach (var registro in item)
         {
-          if (registro.ImporteDepositado == 0 && Convert.ToString( registro.Rectificacion ) !=  MayorRectif)
+          if (registro.ImporteDepositado == 0 && Convert.ToString(registro.Rectificacion) != MayorRectif)
           {
             _ddjj.RemoveAll(x => x.Periodo == registro.Periodo && x.Rectificacion == registro.Rectificacion);
           }
@@ -309,7 +309,7 @@ namespace entrega_cupones.Metodos
       _ddjj.Clear();
       using (var context = new lts_sindicatoDataContext())
       {
-        var  _EstadoDDJJ = context.VD_Detalle.Where(x => x.VDInspectorId == VDId)
+        var _EstadoDDJJ = context.VD_Detalle.Where(x => x.VDInspectorId == VDId)
          .Select(row => new EstadoDDJJ
          {
            Periodo = row.Periodo.Date, // Convert.ToDateTime(row.Periodo),
@@ -364,12 +364,38 @@ namespace entrega_cupones.Metodos
       {
         var emp = (from a in context.maeemp where a.MEEMP_CUIT_STR == cuit select a).SingleOrDefault(); // context.maeemp.Where(x => x.MEEMP_CUIT_STR == cuit)
 
-        string calle = string.IsNullOrEmpty(emp.MAEEMP_CALLE) ? "":emp.MAEEMP_CALLE.Trim() ;
-        string numero = string.IsNullOrEmpty(emp.MAEEMP_NRO)? "S/N" : emp.MAEEMP_NRO.Trim();
+        string calle = string.IsNullOrEmpty(emp.MAEEMP_CALLE) ? "" : emp.MAEEMP_CALLE.Trim();
+        string numero = string.IsNullOrEmpty(emp.MAEEMP_NRO) ? "S/N" : emp.MAEEMP_NRO.Trim();
         string codigoPostal = string.IsNullOrEmpty(emp.MAEEMP_CODPOS) ? "0" : emp.MAEEMP_CODPOS.Trim();
         string domicilio = calle + " Nº " + numero + " " + codigoPostal;
-        return domicilio ;
+        return domicilio;
       }
+    }
+
+    public static string GetEmpresaNombre(string cuit)
+    {
+      string nombre = string.Empty;
+      using (var context = new lts_sindicatoDataContext())
+      {
+        if (!string.IsNullOrWhiteSpace(cuit))
+        {
+          var n = from a in context.maeemp where a.MEEMP_CUIT_STR == cuit select new { Nombre = a.MAEEMP_RAZSOC.Trim() + " - " + a.MAEEMP_NOMFAN.Trim() };
+          //int x = n.Count();
+          //if (x > 0 )
+          //{
+          //if (!string.IsNullOrWhiteSpace(n.SingleOrDefault().MAEEMP_RAZSOC))
+          //{
+          nombre = n.Count() > 0 ? n.SingleOrDefault().Nombre : "";
+          //}
+
+          //if (!string.IsNullOrEmpty(n.SingleOrDefault().MAEEMP_NOMFAN))
+          //{
+          //  nombre = nombre + " " +  n.SingleOrDefault().MAEEMP_NOMFAN.Trim();
+          //}
+          //}
+        }
+      }
+      return nombre;
     }
   }
 }
