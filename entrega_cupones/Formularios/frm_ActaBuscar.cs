@@ -25,5 +25,11 @@ namespace entrega_cupones.Formularios
       dgv_Actas.AutoGenerateColumns = false;
       dgv_Actas.DataSource = mtdActas.Get_ListadoDeActas();
     }
+
+    private void btn_VerVD_Click(object sender, EventArgs e)
+    {
+      var NroActa = dgv_Actas.CurrentRow.Cells["NroActa"].Value;
+      mtdActas.ReimprimirActa(Convert.ToInt32(NroActa));
+    }
   }
 }

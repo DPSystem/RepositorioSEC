@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using entrega_cupones.Clases;
+using entrega_cupones.Formularios.Informes;
 using entrega_cupones.Metodos;
 using entrega_cupones.Modelos;
 
@@ -706,6 +707,12 @@ namespace entrega_cupones.Formularios
         MessageBox.Show("El Socio " + txt_Nombre.Text.Trim() + " Ya se encuentra activado. Por favor Actualice la Busqueda. ", "¡¡¡ ATENCION !!!");
         //}
       }
+    }
+
+    private void menu_Informes_Click(object sender, EventArgs e)
+    {
+      PorInspector frm_informes = new PorInspector();
+      frm_informes.Show();
     }
   }
 }

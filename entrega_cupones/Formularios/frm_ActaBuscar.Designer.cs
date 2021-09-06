@@ -62,10 +62,12 @@ namespace entrega_cupones.Formularios
       this.btn_VerVD.TabIndex = 609;
       this.btn_VerVD.Text = "Ver Acta";
       this.btn_VerVD.UseVisualStyleBackColor = true;
+      this.btn_VerVD.Click += new System.EventHandler(this.btn_VerVD_Click);
       // 
       // dgv_Actas
       // 
       this.dgv_Actas.AllowUserToAddRows = false;
+      this.dgv_Actas.AllowUserToDeleteRows = false;
       this.dgv_Actas.AllowUserToResizeRows = false;
       dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
       dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
@@ -116,6 +118,7 @@ namespace entrega_cupones.Formularios
       this.NroActa.DefaultCellStyle = dataGridViewCellStyle3;
       this.NroActa.HeaderText = "Numero";
       this.NroActa.Name = "NroActa";
+      this.NroActa.ReadOnly = true;
       this.NroActa.Width = 70;
       // 
       // Fecha
@@ -125,6 +128,7 @@ namespace entrega_cupones.Formularios
       this.Fecha.DefaultCellStyle = dataGridViewCellStyle4;
       this.Fecha.HeaderText = "Fecha";
       this.Fecha.Name = "Fecha";
+      this.Fecha.ReadOnly = true;
       this.Fecha.Width = 80;
       // 
       // Cuit
@@ -136,6 +140,7 @@ namespace entrega_cupones.Formularios
       this.Cuit.DefaultCellStyle = dataGridViewCellStyle5;
       this.Cuit.HeaderText = "CUIT";
       this.Cuit.Name = "Cuit";
+      this.Cuit.ReadOnly = true;
       // 
       // RazonSocial
       // 
@@ -144,6 +149,7 @@ namespace entrega_cupones.Formularios
       this.RazonSocial.DefaultCellStyle = dataGridViewCellStyle6;
       this.RazonSocial.HeaderText = "Empresa";
       this.RazonSocial.Name = "RazonSocial";
+      this.RazonSocial.ReadOnly = true;
       this.RazonSocial.Width = 300;
       // 
       // Desde
@@ -153,6 +159,7 @@ namespace entrega_cupones.Formularios
       this.Desde.DefaultCellStyle = dataGridViewCellStyle7;
       this.Desde.HeaderText = "Desde";
       this.Desde.Name = "Desde";
+      this.Desde.ReadOnly = true;
       this.Desde.Width = 70;
       // 
       // Hasta
@@ -162,6 +169,7 @@ namespace entrega_cupones.Formularios
       this.Hasta.DefaultCellStyle = dataGridViewCellStyle8;
       this.Hasta.HeaderText = "Hasta";
       this.Hasta.Name = "Hasta";
+      this.Hasta.ReadOnly = true;
       this.Hasta.Width = 70;
       // 
       // Importe
@@ -173,6 +181,7 @@ namespace entrega_cupones.Formularios
       this.Importe.DefaultCellStyle = dataGridViewCellStyle9;
       this.Importe.HeaderText = "Importe";
       this.Importe.Name = "Importe";
+      this.Importe.ReadOnly = true;
       this.Importe.Width = 80;
       // 
       // VD_Estado
@@ -184,6 +193,7 @@ namespace entrega_cupones.Formularios
       this.VD_Estado.DefaultCellStyle = dataGridViewCellStyle10;
       this.VD_Estado.HeaderText = "Estado";
       this.VD_Estado.Name = "VD_Estado";
+      this.VD_Estado.ReadOnly = true;
       this.VD_Estado.Visible = false;
       // 
       // frm_ActaBuscar

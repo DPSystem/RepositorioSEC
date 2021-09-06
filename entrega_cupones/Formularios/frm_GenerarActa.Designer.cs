@@ -113,6 +113,7 @@
       this.txt_Cuotas = new System.Windows.Forms.TextBox();
       this.label40 = new System.Windows.Forms.Label();
       this.txt_ImporteDeCuota = new System.Windows.Forms.TextBox();
+      this.btn_ImprimirVerificacion = new System.Windows.Forms.Button();
       this.panel12.SuspendLayout();
       this.panel11.SuspendLayout();
       this.panel10.SuspendLayout();
@@ -836,7 +837,7 @@
       this.btn_Imprimir.Name = "btn_Imprimir";
       this.btn_Imprimir.Size = new System.Drawing.Size(82, 57);
       this.btn_Imprimir.TabIndex = 598;
-      this.btn_Imprimir.Text = "Imprimir";
+      this.btn_Imprimir.Text = "   Imprimir     Acta";
       this.btn_Imprimir.UseVisualStyleBackColor = true;
       this.btn_Imprimir.Click += new System.EventHandler(this.btn_Imprimir_Click);
       // 
@@ -1061,12 +1062,25 @@
       this.txt_ImporteDeCuota.TabIndex = 563;
       this.txt_ImporteDeCuota.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
       // 
+      // btn_ImprimirVerificacion
+      // 
+      this.btn_ImprimirVerificacion.Enabled = false;
+      this.btn_ImprimirVerificacion.ForeColor = System.Drawing.Color.Black;
+      this.btn_ImprimirVerificacion.Location = new System.Drawing.Point(739, 315);
+      this.btn_ImprimirVerificacion.Name = "btn_ImprimirVerificacion";
+      this.btn_ImprimirVerificacion.Size = new System.Drawing.Size(82, 57);
+      this.btn_ImprimirVerificacion.TabIndex = 608;
+      this.btn_ImprimirVerificacion.Text = "Imprimir Verifiacion";
+      this.btn_ImprimirVerificacion.UseVisualStyleBackColor = true;
+      this.btn_ImprimirVerificacion.Click += new System.EventHandler(this.btn_ImprimirVerificacion_Click);
+      // 
       // frm_GenerarActa
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.Color.Gainsboro;
       this.ClientSize = new System.Drawing.Size(1091, 380);
+      this.Controls.Add(this.btn_ImprimirVerificacion);
       this.Controls.Add(this.panel13);
       this.Controls.Add(this.panel12);
       this.Controls.Add(this.panel11);
@@ -1085,7 +1099,7 @@
       this.Controls.Add(this.panel1);
       this.ForeColor = System.Drawing.Color.WhiteSmoke;
       this.Name = "frm_GenerarActa";
-      this.Text = "frm_Generar_Acta";
+      this.Text = "Generar Acta";
       this.Load += new System.EventHandler(this.frm_Generar_Acta_Load);
       this.panel12.ResumeLayout(false);
       this.panel12.PerformLayout();
@@ -1183,9 +1197,7 @@
     private System.Windows.Forms.Label label17;
     private System.Windows.Forms.Label label19;
     public System.Windows.Forms.TextBox txt_Total;
-    private System.Windows.Forms.Button btn_Imprimir;
     private System.Windows.Forms.Button btn_Cancelar;
-    private System.Windows.Forms.Button btn_GenerarActa;
     private System.Windows.Forms.Panel panel2;
     private System.Windows.Forms.Label label16;
     private System.Windows.Forms.Label label6;
@@ -1204,5 +1216,8 @@
     public System.Windows.Forms.TextBox txt_Cuotas;
     private System.Windows.Forms.Label label40;
     public System.Windows.Forms.TextBox txt_ImporteDeCuota;
+    public System.Windows.Forms.Button btn_Imprimir;
+    public System.Windows.Forms.Button btn_GenerarActa;
+    public System.Windows.Forms.Button btn_ImprimirVerificacion;
   }
 }

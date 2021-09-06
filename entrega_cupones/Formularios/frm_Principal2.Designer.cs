@@ -176,6 +176,7 @@
       this.lbl_Rol = new Bunifu.Framework.UI.BunifuCustomLabel();
       this.lbl_Usuario = new Bunifu.Framework.UI.BunifuCustomLabel();
       this.pnl_Menu2 = new System.Windows.Forms.Panel();
+      this.btn_ActivarSocio = new System.Windows.Forms.Button();
       this.btn_Anterior = new System.Windows.Forms.Button();
       this.menuStrip1 = new System.Windows.Forms.MenuStrip();
       this.menuMochilas = new System.Windows.Forms.ToolStripMenuItem();
@@ -216,7 +217,6 @@
       this.menu_RendicionDeCobroDeActa = new System.Windows.Forms.ToolStripMenuItem();
       this.menu_BuscarVerificacionDeuda = new System.Windows.Forms.ToolStripMenuItem();
       this.menu_ListadoActas = new System.Windows.Forms.ToolStripMenuItem();
-      this.btn_ActivarSocio = new System.Windows.Forms.Button();
       this.panel1.SuspendLayout();
       this.panel3.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dgv_MostrarSocios)).BeginInit();
@@ -1828,6 +1828,16 @@
       this.pnl_Menu2.Size = new System.Drawing.Size(145, 588);
       this.pnl_Menu2.TabIndex = 617;
       // 
+      // btn_ActivarSocio
+      // 
+      this.btn_ActivarSocio.Location = new System.Drawing.Point(14, 450);
+      this.btn_ActivarSocio.Name = "btn_ActivarSocio";
+      this.btn_ActivarSocio.Size = new System.Drawing.Size(95, 35);
+      this.btn_ActivarSocio.TabIndex = 617;
+      this.btn_ActivarSocio.Text = "Activar Socio";
+      this.btn_ActivarSocio.UseVisualStyleBackColor = true;
+      this.btn_ActivarSocio.Click += new System.EventHandler(this.btn_ActivarSocio_Click);
+      // 
       // btn_Anterior
       // 
       this.btn_Anterior.Location = new System.Drawing.Point(14, 409);
@@ -2169,6 +2179,7 @@
       this.menu_Informes.Name = "menu_Informes";
       this.menu_Informes.Size = new System.Drawing.Size(253, 22);
       this.menu_Informes.Text = "Informes";
+      this.menu_Informes.Click += new System.EventHandler(this.menu_Informes_Click);
       // 
       // menu_RendicionDeCobroDeActa
       // 
@@ -2190,16 +2201,6 @@
       this.menu_ListadoActas.Size = new System.Drawing.Size(253, 22);
       this.menu_ListadoActas.Text = "Listado de Actas";
       this.menu_ListadoActas.Click += new System.EventHandler(this.menu_ListadoActas_Click);
-      // 
-      // btn_ActivarSocio
-      // 
-      this.btn_ActivarSocio.Location = new System.Drawing.Point(14, 450);
-      this.btn_ActivarSocio.Name = "btn_ActivarSocio";
-      this.btn_ActivarSocio.Size = new System.Drawing.Size(95, 35);
-      this.btn_ActivarSocio.TabIndex = 617;
-      this.btn_ActivarSocio.Text = "Activar Socio";
-      this.btn_ActivarSocio.UseVisualStyleBackColor = true;
-      this.btn_ActivarSocio.Click += new System.EventHandler(this.btn_ActivarSocio_Click);
       // 
       // frm_Principal2
       // 

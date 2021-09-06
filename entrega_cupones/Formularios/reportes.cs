@@ -166,7 +166,7 @@ namespace entrega_cupones
       {
         this.rv.LocalReport.ReportEmbeddedResource = NombreDelReporte;
         //Array que contendrá los parámetros
-        ReportParameter[] parameters = new ReportParameter[9];
+        ReportParameter[] parameters = new ReportParameter[10];
         //Establecemos el valor de los parámetros
         parameters[0] = new ReportParameter("Empresa", Parametro1);
         parameters[1] = new ReportParameter("Cuit", Parametro2);
@@ -177,7 +177,7 @@ namespace entrega_cupones
         parameters[6] = new ReportParameter("Original", Parametro7);
         parameters[7] = new ReportParameter("InformeDeInspector", Parametro8);
         parameters[8] = new ReportParameter("Vencimiento", Parametro9);
-
+        parameters[9] = new ReportParameter("Domicilio", Parametro10);
         this.rv.LocalReport.SetParameters(parameters);
         this.rv.RefreshReport();
       }

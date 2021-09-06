@@ -1563,7 +1563,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value xml:space="preserve">       </Value>
+                    <Value xml:space="preserve">    </Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>Times New Roman</FontFamily>
@@ -1573,7 +1573,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>LA CANCELACION DE LA DEUDA  deberá ser acreditada, exclusivamente, mediante presentación del CUERPO N°3 DE LA BOLETA DE DEPOSITO, debidamente intervenida por la casa receptora de los bancos autorizados a tal fin.</Value>
+                    <Value>  La cancelación de la deuda deberá ser acreditada por los medios de pagos autorizados: boleta de depósito debidamente intervenida por la casa receptora de los bancos autorizados, transferencias bancarias a las cuentas del SEC, comprobante de pagos electrónicos autorizados  y recibos oficiales emitidos por el SEC</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>Calibri</FontFamily>
@@ -1588,8 +1588,8 @@
             </Paragraphs>
             <rd:DefaultName>Textbox45</rd:DefaultName>
             <Top>15.28295cm</Top>
-            <Left>0.61145cm</Left>
-            <Height>0.89633cm</Height>
+            <Left>0.5797cm</Left>
+            <Height>1.28815cm</Height>
             <Width>18.80682cm</Width>
             <ZIndex>35</ZIndex>
             <Style>
@@ -1645,7 +1645,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox45</rd:DefaultName>
-            <Top>16.2536cm</Top>
+            <Top>16.6981cm</Top>
             <Left>0.5797cm</Left>
             <Height>1.69008cm</Height>
             <Width>18.78766cm</Width>
@@ -1703,7 +1703,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox48</rd:DefaultName>
-            <Top>18.01799cm</Top>
+            <Top>18.45521cm</Top>
             <Left>0.5797cm</Left>
             <Height>1.37258cm</Height>
             <Width>18.78766cm</Width>
@@ -1815,7 +1815,7 @@
             </Style>
           </Line>
           <Line Name="Line6">
-            <Top>19.59518cm</Top>
+            <Top>20.00793cm</Top>
             <Left>0.5797cm</Left>
             <Height>0cm</Height>
             <Width>18.83857cm</Width>
@@ -1847,7 +1847,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox24</rd:DefaultName>
-            <Top>19.70807cm</Top>
+            <Top>20.12082cm</Top>
             <Left>0.5797cm</Left>
             <Height>0.56825cm</Height>
             <Width>18.78766cm</Width>
@@ -1878,9 +1878,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>20.38215cm</Top>
+            <Top>20.8584cm</Top>
             <Left>0.59123cm</Left>
-            <Height>2.53146cm</Height>
+            <Height>2.02346cm</Height>
             <Width>18.82704cm</Width>
             <ZIndex>45</ZIndex>
             <Style>

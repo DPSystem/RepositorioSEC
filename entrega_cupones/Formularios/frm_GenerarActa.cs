@@ -16,6 +16,7 @@ namespace entrega_cupones.Formularios
   {
     public List<EstadoDDJJ> _PreActa;
     public List<mdlCuadroAmortizacion> _PlanDePago;
+    public bool EsReimpresion;
 
     public frm_GenerarActa()
     {
@@ -48,23 +49,32 @@ namespace entrega_cupones.Formularios
 
     private void frm_Generar_Acta_Load(object sender, EventArgs e)
     {
-      using (var context = new lts_sindicatoDataContext())
+      if (!EsReimpresion)
       {
-        txt_NumeroDeActa.Text = mtdActas.ObtenerNroDeActa().ToString();
-        Empresa empresa = mtdEmpresas.GetEmpresa(txt_CUIT.Text);
+        using (var context = new lts_sindicatoDataContext())
+        {
+          txt_NumeroDeActa.Text = mtdActas.ObtenerNroDeActa().ToString();
+          Empresa empresa = mtdEmpresas.GetEmpresa(txt_CUIT.Text);
 
-        txt_Domicilio.Text = empresa.MAEEMP_CALLE != null ? empresa.MAEEMP_CALLE.Trim() + " " + empresa.MAEEMP_NRO : empresa.MAEEMP_CALLE;
-        txt_CodigoPostal.Text = empresa.MAEEMP_CODPOS.ToString();
-        txt_Localidad.Text = empresa.MAEEMP_CODLOC.ToString();
-        msk_FechaConfeccion.Text = DateTime.Today.Date.ToString();
-        txt_CantidadEmpleado.Text = _PreActa.Where(x => x.Periodo == _PreActa.Max(y => y.Periodo)).FirstOrDefault().Empleados.ToString();
+          txt_Domicilio.Text = empresa.MAEEMP_CALLE != null ? empresa.MAEEMP_CALLE.Trim() + " " + empresa.MAEEMP_NRO : empresa.MAEEMP_CALLE;
+          txt_CodigoPostal.Text = empresa.MAEEMP_CODPOS.ToString();
+          txt_Localidad.Text = mtdFuncUtiles.GetLocalidad(Convert.ToInt32(empresa.MAEEMP_CODLOC));// empresa.MAEEMP_CODLOC.ToString();
+          msk_FechaConfeccion.Text = DateTime.Today.Date.ToString();
+          txt_CantidadEmpleado.Text = _PreActa.Where(x => x.Periodo == _PreActa.Max(y => y.Periodo)).FirstOrDefault().Empleados.ToString();
+          txt_Telefono.Text = empresa.MAEEMP_TEL;
+        }
+      }
+      else
+      {
+        btn_GenerarActa.Enabled = false;
+        btn_Imprimir.Enabled = true;
       }
     }
 
     private void btn_Imprimir_Click(object sender, EventArgs e)
     {
       ImprimirActaCabecera();
-      ImprimirPlanDePago();
+      if (!EsReimpresion) ImprimirPlanDePago();
     }
 
     private void ImprimirActaCabecera()
@@ -83,14 +93,14 @@ namespace entrega_cupones.Formularios
 
       reportes formReporte = new reportes();
 
-      formReporte.Parametro1 = NumeroDeActa.ToString();
+      formReporte.Parametro1 = !EsReimpresion ? NumeroDeActa.ToString() : txt_NumeroDeActa.Text;
       formReporte.Parametro2 = txt_RazonSocial.Text.Trim();
-      formReporte.Parametro3 = txt_Domicilio.Text.Trim() + "" + txt_Localidad.Text;
+      formReporte.Parametro3 = txt_Domicilio.Text.Trim() + " - " + txt_Localidad.Text;
       formReporte.Parametro4 = desde.ToString("MM/yyyy");
       formReporte.Parametro5 = hasta.ToString("MM/yyyy");
       formReporte.Parametro6 = Vencimiento.ToString("dd/MM/yyyy");
       formReporte.Parametro7 = txt_CUIT.Text;
-      formReporte.Parametro8 = _PreActa.Sum(x => x.Total).ToString("N2");
+      formReporte.Parametro8 = !EsReimpresion ? _PreActa.Sum(x => x.Total).ToString("N2") : txt_Total.Text;
       formReporte.Parametro9 = txt_ActasAnteriores.Text;
       formReporte.Parametro10 = msk_InicioDeActividad.Text;
       formReporte.Parametro11 = txt_CantidadEmpleado.Text;
@@ -109,7 +119,9 @@ namespace entrega_cupones.Formularios
       formReporte.NombreDelReporte = "entrega_cupones.Reportes.rpt_ActaCabecera.rdlc";
       formReporte.Show();
 
-      ImprimirActaDetalle();
+      if (!EsReimpresion) ImprimirActaDetalle();
+
+
     }
 
     private void ImprimirActaDetalle()
@@ -166,13 +178,14 @@ namespace entrega_cupones.Formularios
       formReporte.Parametro7 = "Original";
       formReporte.Parametro8 = " ";
       formReporte.Parametro9 = msk_Vencimiento.Text;
+      formReporte.Parametro10 = txt_Domicilio.Text + " " + txt_Localidad.Text;
       formReporte.NombreDelReporte = "entrega_cupones.Reportes.rpt_ActaDetalle.rdlc";
       formReporte.Show();
     }
 
     private void ImprimirPlanDePago()
     {
-     
+
       string tf = _PlanDePago.Sum(x => x.ImporteDeCuota).ToString("N2"); //(decimal) Math.Round(dt.AsEnumerable().Sum(r => r.Field<double>("ImporteDeCuota")), 2);
       mtdCobranzas.ImprimirPlanDePago(_PlanDePago, txt_RazonSocial.Text, txt_CUIT.Text, txt_persona.Text, txt_Total.Text, tf.ToString(), txt_NumeroDeActa.Text);
 
@@ -181,6 +194,11 @@ namespace entrega_cupones.Formularios
     private void btn_Cancelar_Click(object sender, EventArgs e)
     {
       Close();
+    }
+
+    private void btn_ImprimirVerificacion_Click(object sender, EventArgs e)
+    {
+      mtdActas.GetDDJJPorNumeroActa(Convert.ToInt32( txt_NumeroDeActa.Text));
     }
   }
 }
