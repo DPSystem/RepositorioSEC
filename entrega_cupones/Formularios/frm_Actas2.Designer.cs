@@ -551,7 +551,7 @@
       this.btn_BuscarEmpresa.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_BuscarEmpresa.DisabledColor = System.Drawing.Color.Gray;
       this.btn_BuscarEmpresa.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_BuscarEmpresa.Iconimage = global::entrega_cupones.Properties.Resources.magnifier13_32PX;
+      this.btn_BuscarEmpresa.Iconimage = global::AutoGestion.Properties.Resources.magnifier13_32PX;
       this.btn_BuscarEmpresa.Iconimage_right = null;
       this.btn_BuscarEmpresa.Iconimage_right_Selected = null;
       this.btn_BuscarEmpresa.Iconimage_Selected = null;
@@ -588,7 +588,7 @@
       this.btn_CancelarActa.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_CancelarActa.DisabledColor = System.Drawing.Color.Gray;
       this.btn_CancelarActa.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_CancelarActa.Iconimage = global::entrega_cupones.Properties.Resources.rubbish_bin__1_;
+      this.btn_CancelarActa.Iconimage = global::AutoGestion.Properties.Resources.rubbish_bin__1_;
       this.btn_CancelarActa.Iconimage_right = null;
       this.btn_CancelarActa.Iconimage_right_Selected = null;
       this.btn_CancelarActa.Iconimage_Selected = null;
@@ -625,7 +625,7 @@
       this.btn_GuardarActa.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_GuardarActa.DisabledColor = System.Drawing.Color.Gray;
       this.btn_GuardarActa.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_GuardarActa.Iconimage = global::entrega_cupones.Properties.Resources.check30___32;
+      this.btn_GuardarActa.Iconimage = global::AutoGestion.Properties.Resources.check30___32;
       this.btn_GuardarActa.Iconimage_right = null;
       this.btn_GuardarActa.Iconimage_right_Selected = null;
       this.btn_GuardarActa.Iconimage_Selected = null;
@@ -953,7 +953,7 @@
       this.btn_CancelarCobros.FlatAppearance.BorderSize = 0;
       this.btn_CancelarCobros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btn_CancelarCobros.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btn_CancelarCobros.Image = global::entrega_cupones.Properties.Resources.cancel__1_;
+      this.btn_CancelarCobros.Image = global::AutoGestion.Properties.Resources.cancel__1_;
       this.btn_CancelarCobros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.btn_CancelarCobros.Location = new System.Drawing.Point(128, 194);
       this.btn_CancelarCobros.Name = "btn_CancelarCobros";
@@ -971,7 +971,7 @@
       this.btn_GuardarCobros.FlatAppearance.BorderSize = 0;
       this.btn_GuardarCobros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btn_GuardarCobros.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btn_GuardarCobros.Image = global::entrega_cupones.Properties.Resources.check30___32;
+      this.btn_GuardarCobros.Image = global::AutoGestion.Properties.Resources.check30___32;
       this.btn_GuardarCobros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.btn_GuardarCobros.Location = new System.Drawing.Point(6, 194);
       this.btn_GuardarCobros.Name = "btn_GuardarCobros";
@@ -1001,7 +1001,7 @@
       this.btn_EliminarCheque.FlatAppearance.BorderSize = 0;
       this.btn_EliminarCheque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btn_EliminarCheque.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btn_EliminarCheque.Image = global::entrega_cupones.Properties.Resources.rubbish_bin;
+      this.btn_EliminarCheque.Image = global::AutoGestion.Properties.Resources.rubbish_bin;
       this.btn_EliminarCheque.Location = new System.Drawing.Point(577, 210);
       this.btn_EliminarCheque.Name = "btn_EliminarCheque";
       this.btn_EliminarCheque.Size = new System.Drawing.Size(31, 25);
@@ -1156,7 +1156,7 @@
       this.btn_CargarCheque.FlatAppearance.BorderSize = 0;
       this.btn_CargarCheque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btn_CargarCheque.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btn_CargarCheque.Image = global::entrega_cupones.Properties.Resources.punta_de_flecha_a_la_derecha_24;
+      this.btn_CargarCheque.Image = global::AutoGestion.Properties.Resources.punta_de_flecha_a_la_derecha_24;
       this.btn_CargarCheque.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
       this.btn_CargarCheque.Location = new System.Drawing.Point(393, 142);
       this.btn_CargarCheque.Name = "btn_CargarCheque";
@@ -1337,7 +1337,7 @@
       this.btn_BuscarActa.FlatAppearance.BorderSize = 0;
       this.btn_BuscarActa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btn_BuscarActa.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btn_BuscarActa.Image = global::entrega_cupones.Properties.Resources.punta_de_flecha_a_la_derecha_24;
+      this.btn_BuscarActa.Image = global::AutoGestion.Properties.Resources.punta_de_flecha_a_la_derecha_24;
       this.btn_BuscarActa.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
       this.btn_BuscarActa.Location = new System.Drawing.Point(176, 21);
       this.btn_BuscarActa.Name = "btn_BuscarActa";

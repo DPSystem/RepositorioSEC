@@ -107,7 +107,7 @@
       // 
       this.btn_minimizar.BackColor = System.Drawing.Color.Transparent;
       this.btn_minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btn_minimizar.Image = global::entrega_cupones.Properties.Resources.minus__1_;
+      this.btn_minimizar.Image = global::AutoGestion.Properties.Resources.minus__1_;
       this.btn_minimizar.ImageActive = null;
       this.btn_minimizar.Location = new System.Drawing.Point(796, 10);
       this.btn_minimizar.Name = "btn_minimizar";
@@ -122,7 +122,7 @@
       // 
       this.btn_cerrar.BackColor = System.Drawing.Color.Transparent;
       this.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btn_cerrar.Image = global::entrega_cupones.Properties.Resources.cross_close_or_delete_circular_interface_button_symbol;
+      this.btn_cerrar.Image = global::AutoGestion.Properties.Resources.cross_close_or_delete_circular_interface_button_symbol;
       this.btn_cerrar.ImageActive = null;
       this.btn_cerrar.Location = new System.Drawing.Point(832, 10);
       this.btn_cerrar.Name = "btn_cerrar";
@@ -582,7 +582,7 @@
       this.btn_reimprimir.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_reimprimir.DisabledColor = System.Drawing.Color.Gray;
       this.btn_reimprimir.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_reimprimir.Iconimage = global::entrega_cupones.Properties.Resources.refresh_arrow;
+      this.btn_reimprimir.Iconimage = global::AutoGestion.Properties.Resources.refresh_arrow;
       this.btn_reimprimir.Iconimage_right = null;
       this.btn_reimprimir.Iconimage_right_Selected = null;
       this.btn_reimprimir.Iconimage_Selected = null;

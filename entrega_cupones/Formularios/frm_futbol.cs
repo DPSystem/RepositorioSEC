@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AutoGestion;
 using Bunifu.Framework.UI;
 using entrega_cupones.Clases;
 
@@ -411,7 +412,7 @@ namespace entrega_cupones
       else
       {
         txt_estado.Text = "NO EXISTE";
-        picbox_inscripcion_jugadores.Image = Properties.Resources.contorno_usuario;
+        picbox_inscripcion_jugadores.Image = AutoGestion.Properties.Resources.contorno_usuario;
         limpiar_controles();
         //btn_inscribirJugador.Enabled = true;
       }
@@ -428,8 +429,8 @@ namespace entrega_cupones
       }
       else
       {
-        if (inscripcion == 1) picbox_inscripcion_jugadores.Image = Properties.Resources.contorno_usuario;
-        if (inscripcion == 2) picbox_jugadores_inscriptos.Image = Properties.Resources.contorno_usuario;
+        if (inscripcion == 1) picbox_inscripcion_jugadores.Image = AutoGestion.Properties.Resources.contorno_usuario;
+        if (inscripcion == 2) picbox_jugadores_inscriptos.Image = AutoGestion.Properties.Resources.contorno_usuario;
 
       }
     }
@@ -776,6 +777,8 @@ namespace entrega_cupones
 
     private void btn_imprmir_equipos_Click(object sender, EventArgs e)
     {
+      
+      
       db_sindicato.ExecuteCommand("truncate table impresion_comprobante");
       using (var context = new lts_sindicatoDataContext())
       {
@@ -869,7 +872,7 @@ namespace entrega_cupones
           Row["hora"] = item.hora;
           Row["fase"] = item.fase;
           Row["categoria"] = item.categoria;
-          Row["cancha"] = item.cancha + " - CUARTOS DE FINAL - PARTIDO IDA";
+          Row["cancha"] = item.cancha;//+ " - CUARTOS DE FINAL - PARTIDO IDA";
           Row["partidoID"] = item.partidoID;
           Row["col1NroSocio"] = item.col1NroSocio;
           Row["col1Nombre"] = item.col1Nombre;
@@ -883,8 +886,9 @@ namespace entrega_cupones
           dt_imprPartido.Rows.Add(Row);
         }
         reportes frm_reportes = new reportes();
-        frm_reportes.partidos = dt_imprPartido;
+        //frm_reportes.partidos = dt_imprPartido;
         frm_reportes.nombreReporte = "rpt_partidos_5";
+        frm_reportes.dt = dt_imprPartido;
         frm_reportes.Show();
       }
     }

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using AutoGestion;
+
 
 namespace entrega_cupones.Metodos
 {
@@ -49,7 +51,7 @@ namespace entrega_cupones.Metodos
         }
         //FechaDeVencimiento = FechaDePago;
         //FechaDePago = Aux;
-      }  
+      }
 
       decimal interes = 0;
       int dias = 0;
@@ -116,7 +118,7 @@ namespace entrega_cupones.Metodos
 
       if (CoeficienteB)
       {
-        FechaDeVencimiento = Periodo.AddMonths(1).AddDays(14); 
+        FechaDeVencimiento = Periodo.AddMonths(1).AddDays(14);
         FechaDePago = FechaDeVencimiento;
       }
       else
@@ -238,19 +240,19 @@ namespace entrega_cupones.Metodos
       return interes;
     }
 
-    public static decimal CalcularInteresAFIP(DateTime? FechaDePago, DateTime Periodo, DateTime FechaDeVencimientoDeuda, decimal Importe,int TipoDeInteres, decimal TazaInteres)
+    public static decimal CalcularInteresAFIP(DateTime? FechaDePago, DateTime Periodo, DateTime FechaDeVencimientoDeuda, decimal Importe, int TipoDeInteres, decimal TazaInteres)
     {
       DateTime FechaDeVencimientoPeriodo = Periodo.AddMonths(1).AddDays(14);
       decimal Interes = 0;
       if (FechaDePago == Convert.ToDateTime("01/01/0001") || FechaDePago == null)
       {
-        Interes = GetCoeficienteB(FechaDeVencimientoPeriodo, FechaDeVencimientoPeriodo, Importe, TipoDeInteres, TazaInteres, FechaDeVencimientoDeuda, FechaDePago,Periodo);
+        Interes = GetCoeficienteB(FechaDeVencimientoPeriodo, FechaDeVencimientoPeriodo, Importe, TipoDeInteres, TazaInteres, FechaDeVencimientoDeuda, FechaDePago, Periodo);
       }
       else
       {
         if (FechaDePago > FechaDeVencimientoPeriodo)
         {
-          Interes = GetCoeficienteB(Convert.ToDateTime(FechaDePago), FechaDeVencimientoDeuda, Importe, TipoDeInteres, TazaInteres, FechaDeVencimientoDeuda, FechaDePago,Periodo);
+          Interes = GetCoeficienteB(Convert.ToDateTime(FechaDePago), FechaDeVencimientoDeuda, Importe, TipoDeInteres, TazaInteres, FechaDeVencimientoDeuda, FechaDePago, Periodo);
         }
       }
       return Interes;
@@ -261,13 +263,53 @@ namespace entrega_cupones.Metodos
       decimal Interes = 0;
       if (FechaDePago == Convert.ToDateTime("01/01/0001") || FechaDePago == null)
       {
-        Interes = GetCoeficienteB(FechaDeVencimientoPeriodo, FechaDeVencimientoPeriodo, Importe,0, TazaInteres, FechaDeVencimientoDeuda,FechaDePago,Periodo);
+        Interes = GetCoeficienteB(FechaDeVencimientoPeriodo, FechaDeVencimientoPeriodo, Importe, 0, TazaInteres, FechaDeVencimientoDeuda, FechaDePago, Periodo);
       }
       else
       {
         if (FechaDePago > FechaDeVencimientoPeriodo)
         {
-          Interes = GetCoeficienteB(Convert.ToDateTime(FechaDePago), FechaDeVencimientoDeuda, Importe,0, TazaInteres, FechaDeVencimientoDeuda, FechaDePago,Periodo);
+          Interes = GetCoeficienteB(Convert.ToDateTime(FechaDePago), FechaDeVencimientoDeuda, Importe, 0, TazaInteres, FechaDeVencimientoDeuda, FechaDePago, Periodo);
+        }
+      }
+      return Interes;
+    }
+
+    public static decimal GetInteresManual2(DateTime? FechaDePago, DateTime Periodo, DateTime FechaDeVencimientoDeActa, decimal Saldo, decimal TazaInteres)
+    {
+
+      DateTime FechaDeVencimientoPeriodo = Periodo.AddMonths(1).AddDays(14);
+      decimal Interes = 0;
+      int DiasDeMora = 0;
+      decimal CoefA = 0;
+
+      if (FechaDePago == Convert.ToDateTime("01/01/0001") || FechaDePago == null)
+      {
+        DiasDeMora = mtdEmpresas.CalcularDias(Periodo, FechaDeVencimientoDeActa);
+        if (Saldo <0 )
+        {
+          Saldo *= -1;
+
+        }
+
+        Interes = Saldo * (TazaInteres * DiasDeMora) / 100;
+        //Interes = GetCoeficienteB(FechaDeVencimientoPeriodo, FechaDeVencimientoPeriodo, Importe, 0, TazaInteres, FechaDeVencimientoDeActa, FechaDePago, Periodo);
+      }
+      else
+      {
+        if (FechaDePago > FechaDeVencimientoPeriodo)
+        {
+
+          if (Saldo < 0)
+          {
+            Saldo = Saldo * -1;
+            DiasDeMora = mtdEmpresas.CalcularDias(Periodo, FechaDeVencimientoDeActa);
+            CoefA = Saldo  * (TazaInteres * DiasDeMora) / 100;
+          }
+          DiasDeMora = mtdEmpresas.CalcularDias(Periodo, Convert.ToDateTime(FechaDePago));
+          Interes = Saldo * (TazaInteres * DiasDeMora) / 100;
+          Interes += CoefA;
+          //Interes = GetCoeficienteB(Convert.ToDateTime(FechaDePago), FechaDeVencimientoDeActa, Saldo, 0, TazaInteres, FechaDeVencimientoDeActa, FechaDePago, Periodo);
         }
       }
       return Interes;
@@ -287,18 +329,18 @@ namespace entrega_cupones.Metodos
     //  return interes;
     //}
 
-    public static decimal GetCoeficienteA(DateTime Desde, DateTime Hasta, decimal Importe, int TipoInteres, decimal TazaDeInteres,DateTime Periodo, DateTime FechaDeVencimientoDeActa)
+    public static decimal GetCoeficienteA(DateTime Desde, DateTime Hasta, decimal Importe, int TipoInteres, decimal TazaDeInteres, DateTime Periodo, DateTime FechaDeVencimientoDeActa)
     {
       //Coeficiente A
       int dias = mtdFuncUtiles.CalcularDias(Desde, Hasta);
       decimal interes = 0;
       if (TipoInteres == 0) // TIpoInteres == 0 
       {
-        interes = (dias * TazaDeInteres * Importe) / 100; 
+        interes = (dias * TazaDeInteres * Importe) / 100;
       }
       else
       {
-        interes = GetInteresAFIP(Periodo, Hasta, Importe, TipoInteres, FechaDeVencimientoDeActa,false);
+        interes = GetInteresAFIP(Periodo, Hasta, Importe, TipoInteres, FechaDeVencimientoDeActa, false);
       }
       //var interes = (dias * TazaDeInteres * Importe) / 100;
       return interes;
@@ -319,8 +361,8 @@ namespace entrega_cupones.Metodos
         else
         {
 
-          interes = GetInteresAFIP(Periodo,Convert.ToDateTime(FechaDePago),Importe,1,FechaDeVencimientoDeDeuda,true);
-            //GetInteresAFIP(Periodo, Hasta, Importe, TipoInteres, FechaDeVencimientoDeActa);
+          interes = GetInteresAFIP(Periodo, Convert.ToDateTime(FechaDePago), Importe, 1, FechaDeVencimientoDeDeuda, true);
+          //GetInteresAFIP(Periodo, Hasta, Importe, TipoInteres, FechaDeVencimientoDeActa);
         }
 
 
@@ -337,7 +379,7 @@ namespace entrega_cupones.Metodos
         else
         {
 
-          interes = GetInteresAFIP(Periodo, Convert.ToDateTime(FechaDePago), Importe, 1, FechaDeVencimientoDeDeuda,true);
+          interes = GetInteresAFIP(Periodo, Convert.ToDateTime(FechaDePago), Importe, 1, FechaDeVencimientoDeDeuda, true);
           //GetInteresAFIP(Periodo, Hasta, Importe, TipoInteres, FechaDeVencimientoDeActa);
         }
 
@@ -367,7 +409,7 @@ namespace entrega_cupones.Metodos
       }
       return interes;
     }
-  
+
     public static string CalcularInteresDiario(string InteresMensual)
     {
       string InteresDiario = "0";
@@ -381,6 +423,6 @@ namespace entrega_cupones.Metodos
       }
       return InteresDiario;
     }
-    
+
   }
 }

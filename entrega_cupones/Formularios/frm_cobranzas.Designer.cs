@@ -335,7 +335,7 @@
       // 
       this.btn_minimizar.BackColor = System.Drawing.Color.Transparent;
       this.btn_minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btn_minimizar.Image = global::entrega_cupones.Properties.Resources.minus__1_;
+      this.btn_minimizar.Image = global::AutoGestion.Properties.Resources.minus__1_;
       this.btn_minimizar.ImageActive = null;
       this.btn_minimizar.Location = new System.Drawing.Point(1177, 13);
       this.btn_minimizar.Name = "btn_minimizar";
@@ -361,7 +361,7 @@
       // 
       this.btn_cerrar.BackColor = System.Drawing.Color.Transparent;
       this.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btn_cerrar.Image = global::entrega_cupones.Properties.Resources.cross_close_or_delete_circular_interface_button_symbol;
+      this.btn_cerrar.Image = global::AutoGestion.Properties.Resources.cross_close_or_delete_circular_interface_button_symbol;
       this.btn_cerrar.ImageActive = null;
       this.btn_cerrar.Location = new System.Drawing.Point(1217, 9);
       this.btn_cerrar.Name = "btn_cerrar";
@@ -431,7 +431,7 @@
       this.btnImprimirCobros.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btnImprimirCobros.DisabledColor = System.Drawing.Color.Gray;
       this.btnImprimirCobros.Iconcolor = System.Drawing.Color.Transparent;
-      this.btnImprimirCobros.Iconimage = global::entrega_cupones.Properties.Resources.impresora_PNG_24;
+      this.btnImprimirCobros.Iconimage = global::AutoGestion.Properties.Resources.impresora_PNG_24;
       this.btnImprimirCobros.Iconimage_right = null;
       this.btnImprimirCobros.Iconimage_right_Selected = null;
       this.btnImprimirCobros.Iconimage_Selected = null;
@@ -490,7 +490,7 @@
       this.btn_ModificarAsignacion.Cursor = System.Windows.Forms.Cursors.Arrow;
       this.btn_ModificarAsignacion.DisabledColor = System.Drawing.Color.Gray;
       this.btn_ModificarAsignacion.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_ModificarAsignacion.Iconimage = global::entrega_cupones.Properties.Resources.Modificar_24;
+      this.btn_ModificarAsignacion.Iconimage = global::AutoGestion.Properties.Resources.Modificar_24;
       this.btn_ModificarAsignacion.Iconimage_right = null;
       this.btn_ModificarAsignacion.Iconimage_right_Selected = null;
       this.btn_ModificarAsignacion.Iconimage_Selected = null;
@@ -548,7 +548,7 @@
       this.btn_EliminarAsignacion.Cursor = System.Windows.Forms.Cursors.Arrow;
       this.btn_EliminarAsignacion.DisabledColor = System.Drawing.Color.Gray;
       this.btn_EliminarAsignacion.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_EliminarAsignacion.Iconimage = global::entrega_cupones.Properties.Resources.rubbish_bin__1_;
+      this.btn_EliminarAsignacion.Iconimage = global::AutoGestion.Properties.Resources.rubbish_bin__1_;
       this.btn_EliminarAsignacion.Iconimage_right = null;
       this.btn_EliminarAsignacion.Iconimage_right_Selected = null;
       this.btn_EliminarAsignacion.Iconimage_Selected = null;
@@ -584,7 +584,7 @@
       this.btn_VerAsignadas.Cursor = System.Windows.Forms.Cursors.Arrow;
       this.btn_VerAsignadas.DisabledColor = System.Drawing.Color.Gray;
       this.btn_VerAsignadas.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_VerAsignadas.Iconimage = global::entrega_cupones.Properties.Resources.magnifier13;
+      this.btn_VerAsignadas.Iconimage = global::AutoGestion.Properties.Resources.magnifier13;
       this.btn_VerAsignadas.Iconimage_right = null;
       this.btn_VerAsignadas.Iconimage_right_Selected = null;
       this.btn_VerAsignadas.Iconimage_Selected = null;
@@ -855,7 +855,7 @@
       this.btn_ImprimirResumen.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_ImprimirResumen.DisabledColor = System.Drawing.Color.Gray;
       this.btn_ImprimirResumen.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_ImprimirResumen.Iconimage = global::entrega_cupones.Properties.Resources.impresora_PNG_24;
+      this.btn_ImprimirResumen.Iconimage = global::AutoGestion.Properties.Resources.impresora_PNG_24;
       this.btn_ImprimirResumen.Iconimage_right = null;
       this.btn_ImprimirResumen.Iconimage_right_Selected = null;
       this.btn_ImprimirResumen.Iconimage_Selected = null;
@@ -1011,7 +1011,7 @@
       this.btn_Asignar.DisabledColor = System.Drawing.Color.Gray;
       this.btn_Asignar.Enabled = false;
       this.btn_Asignar.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_Asignar.Iconimage = global::entrega_cupones.Properties.Resources.check30___32;
+      this.btn_Asignar.Iconimage = global::AutoGestion.Properties.Resources.check30___32;
       this.btn_Asignar.Iconimage_right = null;
       this.btn_Asignar.Iconimage_right_Selected = null;
       this.btn_Asignar.Iconimage_Selected = null;
@@ -1125,7 +1125,7 @@
       this.btn_Imprimir.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_Imprimir.DisabledColor = System.Drawing.Color.Gray;
       this.btn_Imprimir.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_Imprimir.Iconimage = global::entrega_cupones.Properties.Resources.impresora_PNG_24;
+      this.btn_Imprimir.Iconimage = global::AutoGestion.Properties.Resources.impresora_PNG_24;
       this.btn_Imprimir.Iconimage_right = null;
       this.btn_Imprimir.Iconimage_right_Selected = null;
       this.btn_Imprimir.Iconimage_Selected = null;
@@ -2663,7 +2663,7 @@
       this.btn_Actualizar.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_Actualizar.DisabledColor = System.Drawing.Color.Gray;
       this.btn_Actualizar.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_Actualizar.Iconimage = global::entrega_cupones.Properties.Resources.refresh_arrow;
+      this.btn_Actualizar.Iconimage = global::AutoGestion.Properties.Resources.refresh_arrow;
       this.btn_Actualizar.Iconimage_right = null;
       this.btn_Actualizar.Iconimage_right_Selected = null;
       this.btn_Actualizar.Iconimage_Selected = null;
@@ -2746,7 +2746,7 @@
       // dataGridViewImageColumn1
       // 
       this.dataGridViewImageColumn1.HeaderText = "Ver";
-      this.dataGridViewImageColumn1.Image = global::entrega_cupones.Properties.Resources.magnifier13;
+      this.dataGridViewImageColumn1.Image = global::AutoGestion.Properties.Resources.magnifier13;
       this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
       this.dataGridViewImageColumn1.Width = 30;
       // 

@@ -5,6 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoGestion;
 
 namespace entrega_cupones.Clases
 {

@@ -1,4 +1,5 @@
-﻿using entrega_cupones.Clases;
+﻿using AutoGestion;
+using entrega_cupones.Clases;
 using entrega_cupones.Metodos;
 using entrega_cupones.Modelos;
 using System;
@@ -65,10 +66,12 @@ namespace entrega_cupones.Formularios
 
       msk_Desde.Text = MesDesde + "/" + AñoDesde;
       msk_Hasta.Text = MesHasta + "/" + AñoHasta;
+      string fe = DateTime.Today.Date.AddDays(15).ToString();
       msk_Vencimiento.Text = DateTime.Today.Date.AddDays(15).ToString();
 
       cbx_TipoDeInteres.SelectedIndex = 0;
       Cargar_cbxInspectores();
+      Cargar_cbx_Estcont();
 
       //EstadoEmpleado();
     }
@@ -78,6 +81,13 @@ namespace entrega_cupones.Formularios
       cbx_Inspectores.DisplayMember = "Nombre";
       cbx_Inspectores.ValueMember = "Id";
       cbx_Inspectores.DataSource = mtdInspectores.Get_Inspectores();
+    }
+
+    private void Cargar_cbx_Estcont()
+    {
+      cbx_EstCont.DisplayMember = "Nombre";
+      cbx_EstCont.ValueMember = "Id";
+      cbx_EstCont.DataSource = MtdEstCont.GetEstCont();
     }
 
     private void BuscarEmpresa()
@@ -102,14 +112,15 @@ namespace entrega_cupones.Formularios
     private void CalcularDeuda()
     {
       _ddjj.Clear();
+
       _ddjj = mtdEmpresas.ListadoDDJJT(
-              txt_CUIT.Text,
-              Convert.ToDateTime("01/" + msk_Desde.Text),
-              Convert.ToDateTime("01/" + msk_Hasta.Text),
-              Convert.ToDateTime(msk_Vencimiento.Text),
-              cbx_TipoDeInteres.SelectedIndex,
-              Convert.ToDecimal(txt_InteresDiario.Text)
-              );
+         txt_CUIT.Text,
+         Convert.ToDateTime("01/" + msk_Desde.Text),
+         Convert.ToDateTime("01/" + msk_Hasta.Text),
+         Convert.ToDateTime(msk_Vencimiento.Text),
+         cbx_TipoDeInteres.SelectedIndex,
+        Convert.ToDecimal(txt_InteresDiario.Text)
+         );
 
       dgv_ddjj.DataSource = _ddjj;
 
@@ -130,11 +141,14 @@ namespace entrega_cupones.Formularios
     private void CalcularTotales()
     {
       decimal InteresResarcitorio = 0;
-      InteresResarcitorio = Math.Round(_ddjj.Where(x => x.Acta == "" && x.DiasDeMora > 0 && x.FechaDePago != null).Sum(x => x.Capital), 2);
+      InteresResarcitorio = Math.Round(_ddjj.Where(x => x.Acta == "").Sum(x => x.Interes), 2);
+      //Math.Round(_ddjj.Where(x => x.Acta == "" && x.DiasDeMora > 0 && x.FechaDePago != null).Sum(x => x.Capital), 2);
       txt_Total.Text = Math.Round(_ddjj.Where(x => x.Acta == "").Sum(x => x.Total), 2).ToString("N2");
       txt_Pagado.Text = Math.Round(_ddjj.Where(x => x.Acta == "").Sum(x => x.ImporteDepositado), 2).ToString("N2");
-      txt_Deuda.Text = Math.Round(_ddjj.Where(x => x.Acta == "" && x.DiasDeMora > 0 && x.FechaDePago == null).Sum(x => x.Capital), 2).ToString("N2");
-      txt_TotalInteres.Text = Math.Round(_ddjj.Where(x => x.Acta == "").Sum(x => x.Interes) + InteresResarcitorio, 2).ToString("N2");
+      //txt_Deuda.Text = Math.Round(_ddjj.Where(x => x.Acta == "" && x.DiasDeMora > 0 && x.FechaDePago == null).Sum(x => x.Capital), 2).ToString("N2");
+      txt_Deuda.Text = Math.Round(_ddjj.Where(x => x.Acta == "" && x.DiasDeMora > 0 && x.Capital > 0).Sum(x => x.Capital), 2).ToString("N2");
+      //txt_TotalInteres.Text = Math.Round(_ddjj.Where(x => x.Acta == "").Sum(x => x.Interes) + InteresResarcitorio, 2).ToString("N2");
+      txt_TotalInteres.Text = InteresResarcitorio.ToString("N2");//Math.Round(_ddjj.Where(x => x.Acta == "").Sum(x => x.Interes) + InteresResarcitorio, 2).ToString("N2");
       txt_PerNoDec.Text = _ddjj.Where(x => x.Acta == "").Count(x => x.PerNoDec == 1).ToString();
       txt_DeudaInicial.Text = txt_Total.Text;
       txt_Anticipo.Text = "";
@@ -322,12 +336,13 @@ namespace entrega_cupones.Formularios
       formReporte.Parametro1 = empresa.MAEEMP_RAZSOC.Trim();
       formReporte.Parametro2 = empresa.MEEMP_CUIT_STR;
       formReporte.Parametro3 = "-";
-      formReporte.Parametro4 = Math.Round(_ddjj.Where(x => x.Acta == "").Sum(x => x.Capital), 2).ToString("N2");
-      formReporte.Parametro5 = Math.Round(_ddjj.Where(x => x.Acta == "").Sum(x => x.Interes), 2).ToString("N2");
-      formReporte.Parametro6 = Math.Round(_ddjj.Where(x => x.Acta == "").Sum(x => x.Total), 2).ToString("N2");
+      formReporte.Parametro4 = txt_Deuda.Text;//Math.Round(_ddjj.Where(x => x.Acta == "").Sum(x => x.Capital), 2).ToString("N2");
+      formReporte.Parametro5 = txt_TotalInteres.Text;//Math.Round(_ddjj.Where(x => x.Acta == "").Sum(x => x.Interes), 2).ToString("N2");
+      formReporte.Parametro6 = txt_Total.Text;//Math.Round(_ddjj.Where(x => x.Acta == "").Sum(x => x.Total), 2).ToString("N2");
       formReporte.Parametro8 = " ";
       formReporte.Parametro9 = msk_Vencimiento.Text;
       formReporte.Parametro10 = txt_PerNoDec.Text;
+      formReporte.Parametro11 = txt_Domicilio.Text;
 
       formReporte.NombreDelReporte = "entrega_cupones.Reportes.rpt_VerificacionDeDeuda.rdlc";
       formReporte.Show();
@@ -433,6 +448,7 @@ namespace entrega_cupones.Formularios
         else
         {
           EmitirActa();
+          //CalcularDeuda();
         }
       }
 
@@ -459,7 +475,11 @@ namespace entrega_cupones.Formularios
       formActasGenerar.txt_InteresDiario.Text = txt_InteresDiario.Text;
       formActasGenerar.txt_Cuotas.Text = txt_CantidadDeCuotas.Text;
       formActasGenerar.txt_ImporteDeCuota.Text = txt_ImporteDeCuota.Text;
+      formActasGenerar._Capital = Convert.ToDecimal(txt_Deuda.Text);
+      formActasGenerar._Interes = Convert.ToDecimal(txt_TotalInteres.Text);
+      formActasGenerar._Total = Convert.ToDecimal(txt_Total.Text);
       formActasGenerar.Show();
+
     }
 
     private void btn_VerPlanDePago_Click(object sender, EventArgs e)
@@ -767,6 +787,59 @@ namespace entrega_cupones.Formularios
       f_VerVD.txt_Interes.Text = txt_Interes.Text;
       f_VerVD.txt_InteresDiario.Text = txt_InteresDiario.Text;
       f_VerVD.Show();
+    }
+
+    private void cbx_EstCont_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      dgv_EstCont.DataSource = MtdEstCont.Get_EmpresaDeuda(Convert.ToInt32(cbx_EstCont.SelectedValue),
+        Convert.ToDateTime("01/" + msk_Desde.Text),
+        Convert.ToDateTime("01/" + msk_Hasta.Text),
+        Convert.ToDateTime(msk_Vencimiento.Text));
+    }
+
+    private void btn_GetIngormeGeneral_Click(object sender, EventArgs e)
+    {
+      var EstContDeuda = MtdEstCont.Get_Informe_EstContDeudas(
+        Convert.ToDateTime("01/" + msk_Desde.Text),
+        Convert.ToDateTime("01/" + msk_Hasta.Text),
+        Convert.ToDateTime(msk_Vencimiento.Text));
+      decimal TotalGeneral = 0;
+      //dgv_EstudiosConDeuda.DataSource = xxx;
+
+      DS_cupones ds = new DS_cupones();
+      DataTable dt_InformeGeneralDeuda = ds.InformeGeneralDeuda;
+      dt_InformeGeneralDeuda.Clear();
+
+      foreach (var item in EstContDeuda)
+      {
+        
+        foreach (var empresa in item.EmpresasConDeuda)
+        {
+          DataRow row = dt_InformeGeneralDeuda.NewRow();
+          row["EstContNombre"] = item.EstContNombre;
+          row["EstContDomicilio"] = item.Domicilio;
+          row["EstContTelefono"] = item.Telefono  ;
+          row["EstContEmail"] = item.Email  ;
+          row["Empresa"] = empresa.Empresa;
+          row["CUIT"] = empresa.CUIT;
+          row["Deuda"] = empresa.Deuda.ToString("N2");
+          TotalGeneral += empresa.Deuda;
+          dt_InformeGeneralDeuda.Rows.Add(row);
+        };
+      }
+
+      reportes formReporte = new reportes();
+      formReporte.dt = dt_InformeGeneralDeuda;
+      formReporte.dt2 = mtdFilial.Get_DatosFilial();
+
+//      formReporte.Parametro10 = acta.Domicilio;// txt_Domicilio.Text + " " + txt_Localidad.Text;
+      formReporte.NombreDelReporte = "entrega_cupones.Reportes.rpt_InformeEstContDeuda.rdlc";
+      formReporte.Show();
+    }
+
+    private void panel2_Paint(object sender, PaintEventArgs e)
+    {
+
     }
   }
 }

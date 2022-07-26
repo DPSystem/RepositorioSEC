@@ -640,7 +640,7 @@
       this.btn_Actualizar.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_Actualizar.DisabledColor = System.Drawing.Color.Gray;
       this.btn_Actualizar.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_Actualizar.Iconimage = global::entrega_cupones.Properties.Resources.refreshing__1_;
+      this.btn_Actualizar.Iconimage = global::AutoGestion.Properties.Resources.refreshing__1_;
       this.btn_Actualizar.Iconimage_right = null;
       this.btn_Actualizar.Iconimage_right_Selected = null;
       this.btn_Actualizar.Iconimage_Selected = null;
@@ -761,7 +761,7 @@
       this.btn_MensajeAlCobrador.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_MensajeAlCobrador.DisabledColor = System.Drawing.Color.Gray;
       this.btn_MensajeAlCobrador.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_MensajeAlCobrador.Iconimage = global::entrega_cupones.Properties.Resources.conversation__2_;
+      this.btn_MensajeAlCobrador.Iconimage = global::AutoGestion.Properties.Resources.conversation__2_;
       this.btn_MensajeAlCobrador.Iconimage_right = null;
       this.btn_MensajeAlCobrador.Iconimage_right_Selected = null;
       this.btn_MensajeAlCobrador.Iconimage_Selected = null;
@@ -797,7 +797,7 @@
       this.btn_CambiarCobrador.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_CambiarCobrador.DisabledColor = System.Drawing.Color.Gray;
       this.btn_CambiarCobrador.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_CambiarCobrador.Iconimage = global::entrega_cupones.Properties.Resources.check30___32;
+      this.btn_CambiarCobrador.Iconimage = global::AutoGestion.Properties.Resources.check30___32;
       this.btn_CambiarCobrador.Iconimage_right = null;
       this.btn_CambiarCobrador.Iconimage_right_Selected = null;
       this.btn_CambiarCobrador.Iconimage_Selected = null;
@@ -870,7 +870,7 @@
       this.btn_GuardarComentario.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_GuardarComentario.DisabledColor = System.Drawing.Color.Gray;
       this.btn_GuardarComentario.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_GuardarComentario.Iconimage = global::entrega_cupones.Properties.Resources.Modificar_24;
+      this.btn_GuardarComentario.Iconimage = global::AutoGestion.Properties.Resources.Modificar_24;
       this.btn_GuardarComentario.Iconimage_right = null;
       this.btn_GuardarComentario.Iconimage_right_Selected = null;
       this.btn_GuardarComentario.Iconimage_Selected = null;
@@ -906,7 +906,7 @@
       this.btn_EliminarAsignacion.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_EliminarAsignacion.DisabledColor = System.Drawing.Color.Gray;
       this.btn_EliminarAsignacion.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_EliminarAsignacion.Iconimage = global::entrega_cupones.Properties.Resources.rubbish_bin__1_;
+      this.btn_EliminarAsignacion.Iconimage = global::AutoGestion.Properties.Resources.rubbish_bin__1_;
       this.btn_EliminarAsignacion.Iconimage_right = null;
       this.btn_EliminarAsignacion.Iconimage_right_Selected = null;
       this.btn_EliminarAsignacion.Iconimage_Selected = null;
@@ -1073,7 +1073,7 @@
       this.btn_ImprimirPlanDePago.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_ImprimirPlanDePago.DisabledColor = System.Drawing.Color.Gray;
       this.btn_ImprimirPlanDePago.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_ImprimirPlanDePago.Iconimage = global::entrega_cupones.Properties.Resources.impresora_PNG_24;
+      this.btn_ImprimirPlanDePago.Iconimage = global::AutoGestion.Properties.Resources.impresora_PNG_24;
       this.btn_ImprimirPlanDePago.Iconimage_right = null;
       this.btn_ImprimirPlanDePago.Iconimage_right_Selected = null;
       this.btn_ImprimirPlanDePago.Iconimage_Selected = null;
@@ -1563,7 +1563,7 @@
       this.btn_ImprimirPlanDePago2.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_ImprimirPlanDePago2.DisabledColor = System.Drawing.Color.Gray;
       this.btn_ImprimirPlanDePago2.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_ImprimirPlanDePago2.Iconimage = global::entrega_cupones.Properties.Resources.impresora_PNG_24;
+      this.btn_ImprimirPlanDePago2.Iconimage = global::AutoGestion.Properties.Resources.impresora_PNG_24;
       this.btn_ImprimirPlanDePago2.Iconimage_right = null;
       this.btn_ImprimirPlanDePago2.Iconimage_right_Selected = null;
       this.btn_ImprimirPlanDePago2.Iconimage_Selected = null;
@@ -1631,7 +1631,7 @@
       this.btn_ActivarPlan.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_ActivarPlan.DisabledColor = System.Drawing.Color.Gray;
       this.btn_ActivarPlan.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_ActivarPlan.Iconimage = global::entrega_cupones.Properties.Resources.check30___32;
+      this.btn_ActivarPlan.Iconimage = global::AutoGestion.Properties.Resources.check30___32;
       this.btn_ActivarPlan.Iconimage_right = null;
       this.btn_ActivarPlan.Iconimage_right_Selected = null;
       this.btn_ActivarPlan.Iconimage_Selected = null;
@@ -1667,7 +1667,7 @@
       this.btn_AsentarPlan.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_AsentarPlan.DisabledColor = System.Drawing.Color.Gray;
       this.btn_AsentarPlan.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_AsentarPlan.Iconimage = global::entrega_cupones.Properties.Resources.hand_shake__1_;
+      this.btn_AsentarPlan.Iconimage = global::AutoGestion.Properties.Resources.hand_shake__1_;
       this.btn_AsentarPlan.Iconimage_right = null;
       this.btn_AsentarPlan.Iconimage_right_Selected = null;
       this.btn_AsentarPlan.Iconimage_Selected = null;
@@ -1728,7 +1728,7 @@
       this.btn_VerPlanDePago.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_VerPlanDePago.DisabledColor = System.Drawing.Color.Gray;
       this.btn_VerPlanDePago.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_VerPlanDePago.Iconimage = global::entrega_cupones.Properties.Resources.calculator__1_;
+      this.btn_VerPlanDePago.Iconimage = global::AutoGestion.Properties.Resources.calculator__1_;
       this.btn_VerPlanDePago.Iconimage_right = null;
       this.btn_VerPlanDePago.Iconimage_right_Selected = null;
       this.btn_VerPlanDePago.Iconimage_Selected = null;

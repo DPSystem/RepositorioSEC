@@ -182,7 +182,7 @@
       this.btn_VerAsignadas.DisabledColor = System.Drawing.Color.Gray;
       this.btn_VerAsignadas.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btn_VerAsignadas.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_VerAsignadas.Iconimage = global::entrega_cupones.Properties.Resources.magnifier13;
+      this.btn_VerAsignadas.Iconimage = global::AutoGestion.Properties.Resources.magnifier13;
       this.btn_VerAsignadas.Iconimage_right = null;
       this.btn_VerAsignadas.Iconimage_right_Selected = null;
       this.btn_VerAsignadas.Iconimage_Selected = null;
@@ -241,7 +241,7 @@
       this.btn_Actualizar.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_Actualizar.DisabledColor = System.Drawing.Color.Gray;
       this.btn_Actualizar.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_Actualizar.Iconimage = global::entrega_cupones.Properties.Resources.refresh_arrow;
+      this.btn_Actualizar.Iconimage = global::AutoGestion.Properties.Resources.refresh_arrow;
       this.btn_Actualizar.Iconimage_right = null;
       this.btn_Actualizar.Iconimage_right_Selected = null;
       this.btn_Actualizar.Iconimage_Selected = null;

@@ -423,7 +423,7 @@
       // 
       this.btn_cerrar_futbol.BackColor = System.Drawing.Color.Transparent;
       this.btn_cerrar_futbol.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btn_cerrar_futbol.Image = global::entrega_cupones.Properties.Resources.cross_close_or_delete_circular_interface_button_symbol;
+      this.btn_cerrar_futbol.Image = global::AutoGestion.Properties.Resources.cross_close_or_delete_circular_interface_button_symbol;
       this.btn_cerrar_futbol.ImageActive = null;
       this.btn_cerrar_futbol.Location = new System.Drawing.Point(1199, 3);
       this.btn_cerrar_futbol.Name = "btn_cerrar_futbol";
@@ -519,7 +519,7 @@
       // 
       this.btn_imprmir_equipos.BackColor = System.Drawing.Color.White;
       this.btn_imprmir_equipos.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btn_imprmir_equipos.Image = global::entrega_cupones.Properties.Resources.impresora_PNG_24;
+      this.btn_imprmir_equipos.Image = global::AutoGestion.Properties.Resources.impresora_PNG_24;
       this.btn_imprmir_equipos.ImageActive = null;
       this.btn_imprmir_equipos.Location = new System.Drawing.Point(490, 51);
       this.btn_imprmir_equipos.Name = "btn_imprmir_equipos";
@@ -743,7 +743,7 @@
       // 
       this.btn_cancelar.BackColor = System.Drawing.Color.White;
       this.btn_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btn_cancelar.Image = global::entrega_cupones.Properties.Resources.cancel_square_button__2_;
+      this.btn_cancelar.Image = global::AutoGestion.Properties.Resources.cancel_square_button__2_;
       this.btn_cancelar.ImageActive = null;
       this.btn_cancelar.Location = new System.Drawing.Point(305, 226);
       this.btn_cancelar.Name = "btn_cancelar";
@@ -1423,7 +1423,7 @@
       // picbox_jugadores_inscriptos
       // 
       this.picbox_jugadores_inscriptos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.picbox_jugadores_inscriptos.Image = global::entrega_cupones.Properties.Resources.contorno_usuario;
+      this.picbox_jugadores_inscriptos.Image = global::AutoGestion.Properties.Resources.contorno_usuario;
       this.picbox_jugadores_inscriptos.Location = new System.Drawing.Point(6, 63);
       this.picbox_jugadores_inscriptos.Name = "picbox_jugadores_inscriptos";
       this.picbox_jugadores_inscriptos.Size = new System.Drawing.Size(100, 100);
@@ -1791,7 +1791,7 @@
       // picbox_inscripcion_jugadores
       // 
       this.picbox_inscripcion_jugadores.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.picbox_inscripcion_jugadores.Image = global::entrega_cupones.Properties.Resources.contorno_usuario;
+      this.picbox_inscripcion_jugadores.Image = global::AutoGestion.Properties.Resources.contorno_usuario;
       this.picbox_inscripcion_jugadores.Location = new System.Drawing.Point(201, 61);
       this.picbox_inscripcion_jugadores.Name = "picbox_inscripcion_jugadores";
       this.picbox_inscripcion_jugadores.Size = new System.Drawing.Size(100, 100);
@@ -2921,7 +2921,7 @@
       // 
       // picbox_formacion
       // 
-      this.picbox_formacion.Image = global::entrega_cupones.Properties.Resources.cancha;
+      this.picbox_formacion.Image = global::AutoGestion.Properties.Resources.cancha;
       this.picbox_formacion.Location = new System.Drawing.Point(11, 3);
       this.picbox_formacion.Name = "picbox_formacion";
       this.picbox_formacion.Size = new System.Drawing.Size(969, 550);
@@ -3136,7 +3136,7 @@
       this.btn_salir.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_salir.DisabledColor = System.Drawing.Color.Gray;
       this.btn_salir.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_salir.Iconimage = global::entrega_cupones.Properties.Resources.cancel__1_;
+      this.btn_salir.Iconimage = global::AutoGestion.Properties.Resources.cancel__1_;
       this.btn_salir.Iconimage_right = null;
       this.btn_salir.Iconimage_right_Selected = null;
       this.btn_salir.Iconimage_Selected = null;
@@ -3173,7 +3173,7 @@
       this.btn_inscripcion_.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_inscripcion_.DisabledColor = System.Drawing.Color.Gray;
       this.btn_inscripcion_.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_inscripcion_.Iconimage = global::entrega_cupones.Properties.Resources.check30___32;
+      this.btn_inscripcion_.Iconimage = global::AutoGestion.Properties.Resources.check30___32;
       this.btn_inscripcion_.Iconimage_right = null;
       this.btn_inscripcion_.Iconimage_right_Selected = null;
       this.btn_inscripcion_.Iconimage_Selected = null;
@@ -4072,7 +4072,7 @@
       // 
       this.btn_posiciones.BackColor = System.Drawing.Color.Transparent;
       this.btn_posiciones.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btn_posiciones.Image = global::entrega_cupones.Properties.Resources.podium__2_;
+      this.btn_posiciones.Image = global::AutoGestion.Properties.Resources.podium__2_;
       this.btn_posiciones.ImageActive = null;
       this.btn_posiciones.Location = new System.Drawing.Point(3, 256);
       this.btn_posiciones.Name = "btn_posiciones";
@@ -4100,7 +4100,7 @@
       // 
       this.btn_partidos.BackColor = System.Drawing.Color.Transparent;
       this.btn_partidos.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btn_partidos.Image = global::entrega_cupones.Properties.Resources.football__4_;
+      this.btn_partidos.Image = global::AutoGestion.Properties.Resources.football__4_;
       this.btn_partidos.ImageActive = null;
       this.btn_partidos.Location = new System.Drawing.Point(3, 206);
       this.btn_partidos.Name = "btn_partidos";
@@ -4128,7 +4128,7 @@
       // 
       this.btn_jugadores.BackColor = System.Drawing.Color.Transparent;
       this.btn_jugadores.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btn_jugadores.Image = global::entrega_cupones.Properties.Resources.group__2_;
+      this.btn_jugadores.Image = global::AutoGestion.Properties.Resources.group__2_;
       this.btn_jugadores.ImageActive = null;
       this.btn_jugadores.Location = new System.Drawing.Point(3, 156);
       this.btn_jugadores.Name = "btn_jugadores";
@@ -4156,7 +4156,7 @@
       // 
       this.btn_equipos.BackColor = System.Drawing.Color.Transparent;
       this.btn_equipos.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btn_equipos.Image = global::entrega_cupones.Properties.Resources.real_madrid__2_;
+      this.btn_equipos.Image = global::AutoGestion.Properties.Resources.real_madrid__2_;
       this.btn_equipos.ImageActive = null;
       this.btn_equipos.Location = new System.Drawing.Point(3, 106);
       this.btn_equipos.Name = "btn_equipos";
@@ -4171,7 +4171,7 @@
       // 
       this.btn_ligas.BackColor = System.Drawing.Color.Transparent;
       this.btn_ligas.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btn_ligas.Image = global::entrega_cupones.Properties.Resources.triumph_soccer_ball_symbol__2_;
+      this.btn_ligas.Image = global::AutoGestion.Properties.Resources.triumph_soccer_ball_symbol__2_;
       this.btn_ligas.ImageActive = null;
       this.btn_ligas.Location = new System.Drawing.Point(3, 6);
       this.btn_ligas.Name = "btn_ligas";
@@ -4212,7 +4212,7 @@
       // 
       this.btn_campeonato.BackColor = System.Drawing.Color.Transparent;
       this.btn_campeonato.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btn_campeonato.Image = global::entrega_cupones.Properties.Resources.trophy_with_a_star__2_;
+      this.btn_campeonato.Image = global::AutoGestion.Properties.Resources.trophy_with_a_star__2_;
       this.btn_campeonato.ImageActive = null;
       this.btn_campeonato.Location = new System.Drawing.Point(3, 56);
       this.btn_campeonato.Name = "btn_campeonato";

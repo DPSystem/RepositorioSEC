@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using entrega_cupones.Metodos;
 using Org.BouncyCastle.Asn1.Mozilla;
 using System.Windows.Forms;
+using AutoGestion;
 
 namespace entrega_cupones.Metodos
 {
@@ -21,7 +22,7 @@ namespace entrega_cupones.Metodos
 
     public static List<EstadoDDJJ> _ddjj = new List<EstadoDDJJ>();
 
-    public static List<EstadoDDJJ> ListadoDDJJT(string cuit, DateTime desde, DateTime hasta, DateTime FechaVencimiento, int TipoInteres, decimal TazaInteres)
+    public static List<EstadoDDJJ> ListadoDDJJT(string cuit, DateTime desde, DateTime hasta, DateTime FechaVencimientoActa, int TipoInteres, decimal TazaInteres)
     {
       _ddjj.Clear();
       using (var context = new lts_sindicatoDataContext())
@@ -40,69 +41,77 @@ namespace entrega_cupones.Metodos
            Empleados = context.ddjj.Where(x => x.CUIT_STR == cuit && (x.periodo == row.periodo) && (x.rect == row.rect)).Count(),
            Socios = context.ddjj.Where(x => x.CUIT_STR == cuit && (x.periodo == row.periodo) && x.rect == row.rect && x.item2 == true).Count(),
 
-           Capital =
-                    CalcularCapital((decimal)(row.impban1), (decimal)row.titem1, (decimal)row.titem2,
-                    Convert.ToDateTime(row.fpago), FechaVencimiento, Convert.ToDateTime(row.periodo), TipoInteres, TazaInteres
-           ),
-
-           Interes =
-                    CalcularInteres(Convert.ToDateTime(row.fpago), Convert.ToDateTime(row.periodo),
-                    CalcularCapital((decimal)(row.impban1), (decimal)row.titem1, (decimal)row.titem2,
-                    Convert.ToDateTime(row.fpago), FechaVencimiento, Convert.ToDateTime(row.periodo), TipoInteres, TazaInteres),
-                    FechaVencimiento, TipoInteres, TazaInteres
-           ),
-
-           DiasDeMora = CalcularDias(Convert.ToDateTime(row.periodo), Convert.ToDateTime(row.fpago) == null ? FechaVencimiento : Convert.ToDateTime(row.fpago)), //Convert.ToDecimal(0.99)
-
-           Total =
-                  CalcularTotal(
-                    CalcularCapital((decimal)(row.impban1), (decimal)row.titem1, (decimal)row.titem2, Convert.ToDateTime(row.fpago), FechaVencimiento, Convert.ToDateTime(row.periodo), TipoInteres, TazaInteres),
-
-                    CalcularInteres(
-                                     Convert.ToDateTime(row.fpago), Convert.ToDateTime(row.periodo),
-                                     CalcularCapital(
-                                                    (decimal)(row.impban1), (decimal)row.titem1, (decimal)row.titem2,
-                                                    Convert.ToDateTime(row.fpago), FechaVencimiento, Convert.ToDateTime(row.periodo), TipoInteres, TazaInteres),
-                                                    FechaVencimiento, TipoInteres, TazaInteres)),
-
            Acta = GetNroDeActa(Convert.ToDateTime(row.periodo), row.CUIT_STR),
            VerifDeuda = GetNroVerifDeuda(cuit, Convert.ToDateTime(row.periodo), Convert.ToInt32(row.rect), false, Convert.ToDateTime(row.fpago))
          });
 
         _ddjj.AddRange(_EstadoDDJJ);
+
+        foreach (var vD in _ddjj)
+        {
+          
+          int DiasDeMora = CalcularDias(Convert.ToDateTime(vD.Periodo), vD.FechaDePago == null ? FechaVencimientoActa : Convert.ToDateTime(vD.FechaDePago)); //Convert.ToDecimal(0.99)
+
+          decimal Capital = CalcularCapital(vD.ImporteDepositado, (vD.AporteLey +  vD.AporteSocio),
+                Convert.ToDateTime(vD.FechaDePago), FechaVencimientoActa, Convert.ToDateTime(vD.Periodo),
+                TipoInteres, TazaInteres, DiasDeMora);
+
+          decimal InteresGenerado = 
+                CalcularInteres(Convert.ToDateTime(vD.FechaDePago), Convert.ToDateTime(vD.Periodo),
+                Capital, FechaVencimientoActa, TipoInteres, TazaInteres);
+
+          if (Capital < 0) 
+          {
+            Capital *= -1;
+          }
+
+          decimal Total = CalcularTotal(Capital, InteresGenerado);
+
+          vD.Capital = Capital;
+          vD.Interes = InteresGenerado;
+          vD.DiasDeMora = DiasDeMora;
+          vD.Total = Total;
+        }
+
         EliminarRectificacion();
         return _ddjj.Union(GenerarPerNoDec(desde, hasta, cuit)).OrderBy(x => x.Periodo).ToList();
       }
     }
 
-    public static decimal CalcularCapital(decimal Depositado, decimal titem1, decimal titem2, DateTime? FechaDePago, DateTime FechaDeVencimientoDeActa, DateTime Periodo, int TipoDeInteres, decimal TazaDeInteres)
+    public static decimal CalcularCapital(decimal Depositado, decimal ImporteDDJJ, DateTime? FechaDePago, DateTime FechaDeVencimientoDeActa, DateTime Periodo, int TipoDeInteres, decimal TazaDeInteres, int DiasDeMora)
     {
-      decimal Capital = Depositado - (titem1 + titem2);
+      decimal Saldo = Depositado - ImporteDDJJ;
 
-      if (Capital > 0)
+      if (Saldo > 0)
       {
-        Capital = 0; // POR QUE PAGO CON SISTEMA NUEVO QUE YA INCLUYE LOS INTERESES
+        Saldo = 0; // POR QUE PAGO CON SISTEMA NUEVO QUE YA INCLUYE LOS INTERESES (o sea paga de mas)
       }
-      else
-      {
-        if (Capital < 0)
-        {
-          Capital = Capital * -1; // IMPORTE NO DEPOSITADO
-        }
-        else
-        {
-          if (Capital == 0) // QUE EL CAPITAL ES IGUAL A LA SUMA DE LOS 2 %
-          {
-            Capital = (titem1 + titem2);
-          }
-        }
-        // si Fecha de Pago es no null entonces calculo el coeficiente A
-        if (!(FechaDePago == Convert.ToDateTime("01/01/0001") || FechaDePago == null))
-        {
-          Capital = mtdIntereses.GetCoeficienteA(Periodo.AddMonths(1).AddDays(14), Convert.ToDateTime(FechaDePago), Capital, TipoDeInteres, TazaDeInteres, Periodo, FechaDeVencimientoDeActa);
-        }
-      }
-      return Capital;
+      //else
+      
+      //{
+      //  if (Saldo < 0)
+      //  {
+      //    Saldo = Saldo * -1; 
+      //  }
+      //  else
+      //  {
+      //    if (Saldo == 0) // QUE EL CAPITAL ES IGUAL A LA SUMA DE LOS 2 %
+      //    {
+      //      if (FechaDePago != Convert.ToDateTime("01/01/0001").Date || FechaDePago != null)
+      //      {
+      //        if (DiasDeMora > 0)
+      //        {
+      //          Saldo = mtdIntereses.GetCoeficienteA(Periodo.AddMonths(1).AddDays(14), Convert.ToDateTime(FechaDePago), Depositado, TipoDeInteres, TazaDeInteres, Periodo, FechaDeVencimientoDeActa);
+      //        }
+              
+      //      }
+
+      //      //Capital = (titem1 + titem2);
+
+      //    }
+      //  }
+      //}
+      return Saldo;
     }
 
     public static decimal DifAporteSocioJorPar(string Cuit, DateTime Periodo, int Rectif)
@@ -112,17 +121,17 @@ namespace entrega_cupones.Metodos
       return DiferenciaAporteSocioJorPar;
     }
 
-    public static decimal CalcularInteres(DateTime? FechaDePago, DateTime Periodo, decimal importe, DateTime FechaVencimiento, int TipoInteres, decimal Interes)
+    public static decimal CalcularInteres(DateTime? FechaDePago, DateTime Periodo, decimal importe, DateTime FechaVencimientoDeActa, int TipoInteres, decimal Interes)
     {
       decimal interes;
       if (TipoInteres == 1) //TipoInteres == 1 => AFIP
       {
-        interes = mtdIntereses.CalcularInteresAFIP(FechaDePago, Periodo, FechaVencimiento, importe, TipoInteres, Interes);// .GetInteresAFIP(Periodo, Convert.ToDateTime(FechaDePago), importe, TipoInteres, FechaVencimiento); 
+        interes = mtdIntereses.CalcularInteresAFIP(FechaDePago, Periodo, FechaVencimientoDeActa, importe, TipoInteres, Interes);// .GetInteresAFIP(Periodo, Convert.ToDateTime(FechaDePago), importe, TipoInteres, FechaVencimiento); 
         //interes = mtdIntereses.GetInteresAFIP(Periodo, Convert.ToDateTime(FechaDePago), importe, TipoInteres, FechaVencimiento); //CalcularInteres(FechaDePago, Periodo, importe, FechaVencimiento);
       }
       else
       {
-        interes = mtdIntereses.GetInteresManual(FechaDePago, Periodo, FechaVencimiento, importe, Interes); //CalcularInteresManual(Periodo,FechaVencimiento,importe,Interes);
+        interes = mtdIntereses.GetInteresManual2(FechaDePago, Periodo, FechaVencimientoDeActa, importe, Interes); //CalcularInteresManual(Periodo,FechaVencimiento,importe,Interes);
       }
       return interes;
     }
@@ -137,7 +146,6 @@ namespace entrega_cupones.Metodos
     {
       return ImporteNoDepositado + Interes;
     }
-
     public static decimal CalcularTotal2(DateTime? FechaDePago, DateTime Periodo, decimal importe, DateTime FechaVencimiento, int TipoInteres, decimal TazaInteres)
     {
 
@@ -304,60 +312,60 @@ namespace entrega_cupones.Metodos
         return vd;
       }
     }
-    public static List<EstadoDDJJ> VD_ListadoDDJJT(string cuit, DateTime desde, DateTime hasta, DateTime FechaVencimiento, int TipoInteres, decimal TazaInteres, int VDId)
-    {
-      _ddjj.Clear();
-      using (var context = new lts_sindicatoDataContext())
-      {
-        var _EstadoDDJJ = context.VD_Detalle.Where(x => x.VDInspectorId == VDId)
-         .Select(row => new EstadoDDJJ
-         {
-           Periodo = row.Periodo.Date, // Convert.ToDateTime(row.Periodo),
-           Rectificacion = (int)row.Rectificacion,
-           AporteLey = (decimal)row.TotalAporteEmpleados,
-           AporteSocio = (decimal)row.TotalAporteSocios,
-           TotalSueldoEmpleados = (decimal)row.TotalSueldoEmpleados, /*.titem1 / Convert.ToDecimal(0.02)*/
-           TotalSueldoSocios = (decimal)row.TotalSueldoSocios, //.titem2 / Convert.ToDecimal(0.02),
-           FechaDePago = row.FechaDePago == null ? null : row.FechaDePago, //.fpago == null ? null : row.fpago,
-           ImporteDepositado = (decimal)row.ImporteDepositado, //row.impban1,
-           Empleados = row.CantidadEmpleados,//context.ddjj.Where(x => x.CUIT_STR == cuit && (x.periodo == row.periodo) && (x.rect == row.rect)).Count(),
-           Socios = row.CantidadSocios,//context.ddjj.Where(x => x.CUIT_STR == cuit && (x.periodo == row.periodo) && x.rect == row.rect && x.item2 == true).Count(),
-           Capital =
-                    CalcularCapital((decimal)row.ImporteDepositado, (decimal)row.TotalSueldoEmpleados, (decimal)row.TotalSueldoSocios,
-                    Convert.ToDateTime(row.FechaDePago), FechaVencimiento, Convert.ToDateTime(row.Periodo), TipoInteres, TazaInteres
-           ),
+    //public static List<EstadoDDJJ> VD_ListadoDDJJT(string cuit, DateTime desde, DateTime hasta, DateTime FechaVencimiento, int TipoInteres, decimal TazaInteres, int VDId)
+    //{
+    //  _ddjj.Clear();
+    //  using (var context = new lts_sindicatoDataContext())
+    //  {
+    //    var _EstadoDDJJ = context.VD_Detalle.Where(x => x.VDInspectorId == VDId)
+    //     .Select(row => new EstadoDDJJ
+    //     {
+    //       Periodo = row.Periodo.Date, // Convert.ToDateTime(row.Periodo),
+    //       Rectificacion = (int)row.Rectificacion,
+    //       AporteLey = (decimal)row.TotalAporteEmpleados,
+    //       AporteSocio = (decimal)row.TotalAporteSocios,
+    //       TotalSueldoEmpleados = (decimal)row.TotalSueldoEmpleados, /*.titem1 / Convert.ToDecimal(0.02)*/
+    //       TotalSueldoSocios = (decimal)row.TotalSueldoSocios, //.titem2 / Convert.ToDecimal(0.02),
+    //       FechaDePago = row.FechaDePago == null ? null : row.FechaDePago, //.fpago == null ? null : row.fpago,
+    //       ImporteDepositado = (decimal)row.ImporteDepositado, //row.impban1,
+    //       Empleados = row.CantidadEmpleados,//context.ddjj.Where(x => x.CUIT_STR == cuit && (x.periodo == row.periodo) && (x.rect == row.rect)).Count(),
+    //       Socios = row.CantidadSocios,//context.ddjj.Where(x => x.CUIT_STR == cuit && (x.periodo == row.periodo) && x.rect == row.rect && x.item2 == true).Count(),
+    //       Capital =
+    //                CalcularCapital((decimal)row.ImporteDepositado, (decimal)row.TotalSueldoEmpleados, (decimal)row.TotalSueldoSocios,
+    //                Convert.ToDateTime(row.FechaDePago), FechaVencimiento, Convert.ToDateTime(row.Periodo), TipoInteres, TazaInteres
+    //       ),
 
-           Interes =
-                    CalcularInteres(Convert.ToDateTime(row.FechaDePago), Convert.ToDateTime(row.Periodo),
-                    CalcularCapital((decimal)(row.ImporteDepositado), (decimal)row.TotalSueldoEmpleados, (decimal)row.TotalSueldoSocios,
-                    Convert.ToDateTime(row.FechaDePago), FechaVencimiento, Convert.ToDateTime(row.Periodo), TipoInteres, TazaInteres),
-                    FechaVencimiento, TipoInteres, TazaInteres
-           ),
+    //       Interes =
+    //                CalcularInteres(Convert.ToDateTime(row.FechaDePago), Convert.ToDateTime(row.Periodo),
+    //                CalcularCapital((decimal)(row.ImporteDepositado), (decimal)row.TotalSueldoEmpleados, (decimal)row.TotalSueldoSocios,
+    //                Convert.ToDateTime(row.FechaDePago), FechaVencimiento, Convert.ToDateTime(row.Periodo), TipoInteres, TazaInteres),
+    //                FechaVencimiento, TipoInteres, TazaInteres
+    //       ),
 
-           DiasDeMora = CalcularDias(Convert.ToDateTime(row.Periodo), Convert.ToDateTime(row.FechaDePago) == null ? FechaVencimiento : Convert.ToDateTime(row.FechaDePago)), //Convert.ToDecimal(0.99)
+    //       DiasDeMora = CalcularDias(Convert.ToDateTime(row.Periodo), Convert.ToDateTime(row.FechaDePago) == null ? FechaVencimiento : Convert.ToDateTime(row.FechaDePago)), //Convert.ToDecimal(0.99)
 
-           Total =
-                  CalcularTotal(
-                    CalcularCapital((decimal)(row.ImporteDepositado), (decimal)row.TotalSueldoEmpleados, (decimal)row.TotalSueldoSocios, Convert.ToDateTime(row.TotalSueldoSocios), FechaVencimiento, Convert.ToDateTime(row.Periodo), TipoInteres, TazaInteres),
+    //       Total =
+    //              CalcularTotal(
+    //                CalcularCapital((decimal)(row.ImporteDepositado), (decimal)row.TotalSueldoEmpleados, (decimal)row.TotalSueldoSocios, Convert.ToDateTime(row.TotalSueldoSocios), FechaVencimiento, Convert.ToDateTime(row.Periodo), TipoInteres, TazaInteres),
 
-                    CalcularInteres(
-                                     Convert.ToDateTime(row.FechaDePago), Convert.ToDateTime(row.Periodo),
-                                     CalcularCapital(
-                                                    (decimal)(row.ImporteDepositado), (decimal)row.TotalSueldoEmpleados, (decimal)row.TotalSueldoSocios,
-                                                    Convert.ToDateTime(row.FechaDePago), FechaVencimiento, Convert.ToDateTime(row.Periodo), TipoInteres, TazaInteres),
-                                                    FechaVencimiento, TipoInteres, TazaInteres)),
+    //                CalcularInteres(
+    //                                 Convert.ToDateTime(row.FechaDePago), Convert.ToDateTime(row.Periodo),
+    //                                 CalcularCapital(
+    //                                                (decimal)(row.ImporteDepositado), (decimal)row.TotalSueldoEmpleados, (decimal)row.TotalSueldoSocios,
+    //                                                Convert.ToDateTime(row.FechaDePago), FechaVencimiento, Convert.ToDateTime(row.Periodo), TipoInteres, TazaInteres),
+    //                                                FechaVencimiento, TipoInteres, TazaInteres)),
 
-           Acta = GetNroDeActa(Convert.ToDateTime(row.Periodo), mtdVDInspector.Get_VDCuit((int)row.VDInspectorId)),
-           VerifDeuda = GetNroVerifDeuda(cuit, Convert.ToDateTime(row.Periodo), Convert.ToInt32(row.Rectificacion), false, Convert.ToDateTime(row.FechaDePago))
-         });
+    //       Acta = GetNroDeActa(Convert.ToDateTime(row.Periodo), mtdVDInspector.Get_VDCuit((int)row.VDInspectorId)),
+    //       VerifDeuda = GetNroVerifDeuda(cuit, Convert.ToDateTime(row.Periodo), Convert.ToInt32(row.Rectificacion), false, Convert.ToDateTime(row.FechaDePago))
+    //     });
 
-        //( _ddjj.AddRange(_EstadoDDJJ);
-        //EliminarRectificacion();
-        //_ddjj.Union(GenerarPerNoDec(desde, hasta, cuit)).OrderBy(x => x.Periodo).ToList();
-        //return _ddjj.OrderBy(x => x.Periodo).ToList();
-        return (List<EstadoDDJJ>)_EstadoDDJJ;
-      }
-    }
+    //    //( _ddjj.AddRange(_EstadoDDJJ);
+    //    //EliminarRectificacion();
+    //    //_ddjj.Union(GenerarPerNoDec(desde, hasta, cuit)).OrderBy(x => x.Periodo).ToList();
+    //    //return _ddjj.OrderBy(x => x.Periodo).ToList();
+    //    return (List<EstadoDDJJ>)_EstadoDDJJ;
+    //  }
+    //}
     public static string GetDomicilio(string cuit)
     {
       using (var context = new lts_sindicatoDataContext())
@@ -371,7 +379,6 @@ namespace entrega_cupones.Metodos
         return domicilio;
       }
     }
-
     public static string GetEmpresaNombre(string cuit)
     {
       string nombre = string.Empty;
@@ -380,22 +387,30 @@ namespace entrega_cupones.Metodos
         if (!string.IsNullOrWhiteSpace(cuit))
         {
           var n = from a in context.maeemp where a.MEEMP_CUIT_STR == cuit select new { Nombre = a.MAEEMP_RAZSOC.Trim() + " - " + a.MAEEMP_NOMFAN.Trim() };
-          //int x = n.Count();
-          //if (x > 0 )
-          //{
-          //if (!string.IsNullOrWhiteSpace(n.SingleOrDefault().MAEEMP_RAZSOC))
-          //{
-          nombre = n.Count() > 0 ? n.SingleOrDefault().Nombre : "";
-          //}
 
-          //if (!string.IsNullOrEmpty(n.SingleOrDefault().MAEEMP_NOMFAN))
-          //{
-          //  nombre = nombre + " " +  n.SingleOrDefault().MAEEMP_NOMFAN.Trim();
-          //}
-          //}
+          nombre = n.Count() > 0 ? n.SingleOrDefault().Nombre : "";
+
         }
       }
       return nombre;
     }
+    public static List<Empresa> GetListadoEmpresas()
+    {
+      using (var context = new lts_sindicatoDataContext())
+      {
+        //var n = from a in context.maeemp where a.MEEMP_CUIT_STR == cuit select new { Nombre = a.MAEEMP_RAZSOC.Trim() + " - " + a.MAEEMP_NOMFAN.Trim() };
+
+        var empresa = from a in context.maeemp
+                      select new Empresa
+                      {
+                        MEEMP_CUIT_STR = a.MEEMP_CUIT_STR,
+                        MAEEMP_RAZSOC = a.MAEEMP_RAZSOC
+                      };
+        return empresa.ToList();
+
+      }
+
+    }
+
   }
 }

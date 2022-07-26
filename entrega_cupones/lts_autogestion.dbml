@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SIMUBA" Class="lts_autogestionDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=diego-lenovo;Initial Catalog=SIMUBA;Integrated Security=True" SettingsObjectName="AutoGestion.Properties.Settings" SettingsPropertyName="SIMUBAConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Objetos_" Member="Objetos_">
+    <Type Name="Objetos_">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RolId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModuloId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Proveedores" Member="Proveedores">
+    <Type Name="Proveedores">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="RazonSocial" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TelefonoFijo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Celular" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Domicilio" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LocalidadId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CUIT" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Cuenta_Banco" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CBU" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Roles_" Member="Roles_">
+    <Type Name="Roles_">
+      <Column Name="IdRol_" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NombreRol_" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Usuarios_" Member="Usuarios_">
+    <Type Name="Usuarios_">
+      <Column Name="idUsuario_" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idRol_" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Apellido_" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre_" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Domicilio_" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DNI_" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tel1_" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Tel2_" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Usuario_" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Password_" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CobradorId_" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UsuariosObjetos_" Member="UsuariosObjetos_">
+    <Type Name="UsuariosObjetos_">
+      <Column Name="UsuarioObjetoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UsuarioId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ObjetoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RolId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="egestion.autogestion_liquidacion" Member="autogestion_liquidacion">
+    <Type Name="autogestion_liquidacion">
+      <Column Name="ALIQ_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="ALIQ_FECHA_EM" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="ALIQ_ANIO_IMPUTACION" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ALIQ_MES_IMPUTACION" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="ALIQ_TOTAL" Type="System.Decimal" DbType="Decimal(14,4)" CanBeNull="true" />
+      <Column Name="ALIQ_ESTADO" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="ALIQ_USR_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ALIQ_EMPR_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ALIQ_DESCRIPCION" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="egestion.autogestion_liquidacion_detalle" Member="autogestion_liquidacion_detalle">
+    <Type Name="autogestion_liquidacion_detalle">
+      <Column Name="ALIQD_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="ALIQD_ALIQ_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ALIQD_EMP_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ALIQD_FECHA_EM" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="ALIQD_MES_IMPUTACION" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="ALIQD_IMPORTE" Type="System.Decimal" DbType="Decimal(14,4)" CanBeNull="true" />
+      <Column Name="ALIQD_ESTADO" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="egestion.empleados_bancos" Member="empleados_bancos">
+    <Type Name="empleados_bancos">
+      <Column Name="EMPB_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="EMPB_EMP_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EMPB_BAN_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EMPB_CUE_CODIGO" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="EMPB_CBU" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="EMPB_ESTADO" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="EMPB_SUC_CODIGO" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EMPB_CUE_TIPO" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="EMPB_CUE_LIQ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.empleados" Member="empleados">
+    <Type Name="empleados">
+      <Column Name="EMP_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EMP_CODIGO" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EMP_NOMBRE" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="EMP_DNI" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="EMP_TEL" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="EMP_CATE_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EMP_EMPR_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EMP_ESTADO" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EMP_DIRECCION" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="EMP_SUELDO" Type="System.Decimal" DbType="Decimal(14,4)" CanBeNull="true" />
+      <Column Name="EMP_APELLIDO" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="EMP_CCO_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EMP_FECHA_INGRESO" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="EMP_REGIMEN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EMP_CELULAR" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="EMP_ESTADO_CIVIL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EMP_CANTIDAD_HIJOS" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EMP_FECHA_BAJA" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="EMP_FECHA_NACIMIENTO" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="EMP_TIPO" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EMP_SUC_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EMP_TIPO_DOC" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EMP_COMISION_PORCMAY" Type="System.Decimal" DbType="Decimal(14,2)" CanBeNull="true" />
+      <Column Name="EMP_COMISION_PORCMIN" Type="System.Decimal" DbType="Decimal(14,2)" CanBeNull="true" />
+      <Column Name="EMP_COMISION_PORCCOSTO" Type="System.Decimal" DbType="Decimal(14,2)" CanBeNull="true" />
+      <Column Name="EMP_COMISION_NOCOBRA" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EMP_SEXO" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="EMP_FECHA_INICIO_ACTIVIDAD" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="EMP_BAN_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EMP_NRO_CUENTA" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="EMP_CUIT" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="EMP_PAIS_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EMP_MAIL" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="EMP_USAENWEB" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="EMP_USUARIOWEB" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="EMP_CLAVEWEB" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="EMP_USUARIOCEL" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="EMP_CLAVECEL" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="EMP_CBU" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="EMP_PLANTEL" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EMP_EPROF_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EMP_TAREA" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EMP_FUNCION" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EMP_MATRICULA" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="EMP_CONTRATO" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EMP_ESP_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EMP_ACTIVO" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EMP_AFECTADO_COVID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EMP_FECHA_UM" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="EMP_CUIT_EFECTOR" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="EMP_APENOM" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="EMP_ESTADO_CREDITO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EMP_LEGAJO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EMP_MARGEN" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="EMP_MARGEN_DISPONIBLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Creditos" Member="Creditos">
+    <Type Name="Creditos">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Legajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmpleadoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Numero" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UsuarioId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProveedorId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Importe" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Cuotas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaCancelacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SinCargo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Creditos_Cobros" Member="Creditos_Cobros">
+    <Type Name="Creditos_Cobros">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CuotaId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumeroDeCredito" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumeroCuota" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ImportePagado" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="FechaPago" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Creditos_Detalles" Member="Creditos_Detalles">
+    <Type Name="Creditos_Detalles">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CreditoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Numero" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NroCuota" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Importe" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="FechaDePago" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaDeVenc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PagoParcial" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Saldo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

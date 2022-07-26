@@ -432,7 +432,7 @@
       this.toolStripSplitButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.diegoToolStripMenuItem,
             this.aleToolStripMenuItem});
-      this.toolStripSplitButton2.Image = global::entrega_cupones.Properties.Resources.dollars_bag__3_;
+      this.toolStripSplitButton2.Image = global::AutoGestion.Properties.Resources.dollars_bag__3_;
       this.toolStripSplitButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.toolStripSplitButton2.ImageTransparentColor = System.Drawing.SystemColors.MenuHighlight;
       this.toolStripSplitButton2.Name = "toolStripSplitButton2";
@@ -460,7 +460,7 @@
       this.toolStripSplitButton1.DropDownButtonWidth = 25;
       this.toolStripSplitButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ordenesToolStripMenuItem});
-      this.toolStripSplitButton1.Image = global::entrega_cupones.Properties.Resources.football__4_;
+      this.toolStripSplitButton1.Image = global::AutoGestion.Properties.Resources.football__4_;
       this.toolStripSplitButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
       this.toolStripSplitButton1.Name = "toolStripSplitButton1";
@@ -479,7 +479,7 @@
       this.toolStripDropDownButton1.DropDownButtonWidth = 25;
       this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menu1ToolStripMenuItem});
-      this.toolStripDropDownButton1.Image = global::entrega_cupones.Properties.Resources.triumph_soccer_ball_symbol__2_;
+      this.toolStripDropDownButton1.Image = global::AutoGestion.Properties.Resources.triumph_soccer_ball_symbol__2_;
       this.toolStripDropDownButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
       this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";

@@ -12,6 +12,7 @@ using entrega_cupones.Clases;
 using System.Collections;
 using entrega_cupones.Modelos;
 using entrega_cupones.Metodos;
+using AutoGestion;
 
 namespace entrega_cupones
 {

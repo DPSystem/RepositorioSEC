@@ -1,4 +1,5 @@
-﻿using entrega_cupones.Formularios;
+﻿using AutoGestion;
+using entrega_cupones.Formularios;
 using entrega_cupones.Modelos;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,8 @@ namespace entrega_cupones.Metodos
   class mtdActas
   {
     public static mdlActa ActaReturn = new mdlActa();
+    public static List<Empresa> _Empresas = mtdEmpresas.GetListadoEmpresas();
+    public static List<mdlInspector> _Inspectores = mtdInspectores.Get_Inspectores();
 
     public static int ObtenerNroDeActa()
     {
@@ -22,7 +25,7 @@ namespace entrega_cupones.Metodos
       }
     }
 
-    public static void GuardarActaCabecera(List<EstadoDDJJ> ddjjt, DateTime FechaDeConfeccion, DateTime desde, DateTime hasta, DateTime vencimiento, int empresaId, string cuit, int cantidadEmpleados, decimal InteresMensual, decimal InteresDiario, List<mdlCuadroAmortizacion> _PlanDePago)
+    public static void GuardarActaCabecera(List<EstadoDDJJ> ddjjt, DateTime FechaDeConfeccion, DateTime desde, DateTime hasta, DateTime vencimiento, int empresaId, string cuit, int cantidadEmpleados, decimal InteresMensual, decimal InteresDiario, List<mdlCuadroAmortizacion> _PlanDePago, int InspectorId, decimal _Deuda, decimal _Interes, decimal _Total)
     {
       using (var context = new lts_sindicatoDataContext())
       {
@@ -40,12 +43,12 @@ namespace entrega_cupones.Metodos
         acta.Hasta = hasta;
         acta.Vencimiento = vencimiento;
         acta.EmpresaId = empresaId;
-        acta.Capital = Math.Round(ddjjt.Sum(x => x.Capital), 2);
+        acta.Capital = _Deuda; //Math.Round(ddjjt.Sum(x => x.Capital), 2);
         acta.EmpresaCuit = cuit;
-        acta.Interes = Math.Round(ddjjt.Sum(x => x.Interes), 2);
-        acta.Total = Math.Round(ddjjt.Sum(x => x.Total), 2);
+        acta.Interes = _Interes;//Math.Round(ddjjt.Sum(x => x.Interes), 2);
+        acta.Total =  _Total;//Math.Round(ddjjt.Sum(x => x.Total), 2);
         acta.PlanDePago = NroDePlan;
-        acta.InspectorId = 0;
+        acta.InspectorId = InspectorId;
         acta.EmpleadosCantidad = cantidadEmpleados;
         acta.InteresMensualAplicado = InteresMensual;
         acta.InteresDiarioAplicado = InteresDiario;
@@ -158,11 +161,6 @@ namespace entrega_cupones.Metodos
       {
         var deuda = context.ddjjt.Where(x => x.CUIT_STR == cuit && x.fpago == null).Sum(x => x.titem1 + x.titem2);
 
-
-
-        //var ddjj = context.ddjjt.Where(x => x.CUIT_STR == cuit && x.fpago == null).Sum(x=>x.titem1 + x.titem2);
-
-
         return Convert.ToDecimal(deuda);
       }
     }
@@ -172,27 +170,66 @@ namespace entrega_cupones.Metodos
       using (var datacontext = new lts_sindicatoDataContext())
       {
         var actas = (from a in datacontext.Acta
-                     where a.Estado == 0 || a.Estado == 2
+                     //where a.Estado == 0 || a.Estado == 1
                      select new mdlActa
                      {
                        NroActa = a.Numero,
                        Fecha = Convert.ToDateTime(a.Fecha),
                        Cuit = a.EmpresaCuit,
-                       RazonSocial = mtdEmpresas.GetEmpresaNombre(a.EmpresaCuit),
+                       RazonSocial = GetEmpresaNombre(a.EmpresaCuit),
+                       //RazonSocial = mtdEmpresas.GetEmpresaNombre(a.EmpresaCuit),
                        Desde = Convert.ToDateTime(a.Desde),
                        Hasta = Convert.ToDateTime(a.Hasta),
                        Importe = a.Total,
-                       NroDePlan = a.PlanDePago
+                       NroDePlan = a.PlanDePago,
+                       InspectorId = a.InspectorId,
+                       InspectorNombre = Get_InspectorNombre(a.InspectorId),
+                       Estado = a.Estado
+                       //InspectorNombre = mtdInspectores.Get_InspectorNombre(a.InspectorId)
 
-                     }).OrderByDescending(x => x.NroActa);
-        if (actas.Count() > 0)
+                     }).OrderByDescending(x => x.NroActa).ToList();
+
+        //actas.ForEach(x => x.RazonSocial = empresas.Where(y=>y.MEEMP_CUIT_STR == x.Cuit).FirstOrDefault().MAEEMP_RAZSOC);//mtdEmpresas.GetEmpresaNombre(x.Cuit));
+        //actas.ForEach(x => x.InspectorNombre = mtdInspectores.Get_InspectorNombre(x.InspectorId));
+
+        return actas;
+      }
+    }
+
+    public static string GetEmpresaNombre(string cuit)
+    {
+      string nombre = string.Empty;
+      using (var context = new lts_sindicatoDataContext())
+      {
+        if (!string.IsNullOrWhiteSpace(cuit))
         {
-          return actas.ToList();
+          var n = from a in _Empresas where a.MEEMP_CUIT_STR == cuit select new { Nombre = a.MAEEMP_RAZSOC.Trim() };// + " - " + a.MAEEMP_NOMFAN.Trim() };
+
+          nombre = n.Count() > 0 ? n.SingleOrDefault().Nombre : "";
+
+        }
+      }
+      return nombre;
+    }
+
+    public static string Get_InspectorNombre(int InspectorId)
+    {
+      using (var context = new lts_sindicatoDataContext())
+      {
+        var inspector = from a in _Inspectores
+                        where a.Id == InspectorId
+                        select new { Nombre =  a.Nombre };
+
+
+        if (inspector.Count() > 0)
+        {
+          return inspector.Single().Nombre;
         }
         else
         {
-          return null;
+          return "";
         }
+
       }
     }
 
@@ -202,6 +239,7 @@ namespace entrega_cupones.Metodos
 
       frm_GenerarActa formActasGenerar = new frm_GenerarActa();
 
+      formActasGenerar.NombreInspector = GetNombreInspector(NumeroActa);
       formActasGenerar.msk_FechaConfeccion.Text = Convert.ToDateTime(Acta.Fecha).ToString("dd/MM/yyyy");
       formActasGenerar.txt_NumeroDeActa.Text = Acta.NroActa.ToString();
       formActasGenerar.txt_CantidadEmpleado.Text = Acta.CantidadEmpleados.ToString();
@@ -226,38 +264,10 @@ namespace entrega_cupones.Metodos
       formActasGenerar.txt_Cuotas.Text = "";//txt_CantidadDeCuotas.Text;
       formActasGenerar.txt_ImporteDeCuota.Text = "";// txt_ImporteDeCuota.Text;
       formActasGenerar.txt_Telefono.Text = Acta.TelefonoEmpresa;
+      //formActasGenerar.cbx_Inspectores.Text = 
       formActasGenerar.Show();
 
 
-      //reportes formReporte = new reportes();
-
-      //formReporte.Parametro1 = Acta.NroActa.ToString();// NumeroDeActa.ToString();
-      //formReporte.Parametro2 = Acta.RazonSocial;//.Text.Trim();
-      //formReporte.Parametro3 = Acta.Domicilio.ToString();
-      //formReporte.Parametro4 = Convert.ToDateTime(Acta.Desde).ToString("MM/yyyy");//desde.ToString("MM/yyyy");
-      //formReporte.Parametro5 = Convert.ToDateTime(Acta.Hasta).ToString("MM/yyyy");//hasta.ToString("MM/yyyy");
-      //formReporte.Parametro6 = Convert.ToDateTime(Acta.FechaVenc).ToString("dd/MM/yyyy");//Vencimiento.ToString("dd/MM/yyyy");
-      //formReporte.Parametro7 = Acta.Cuit; //txt_CUIT.Text;
-      //formReporte.Parametro8 = Acta.Importe.ToString("N2");//_PreActa.Sum(x => x.Total).ToString("N2");
-      //formReporte.Parametro9 = "";// txt_ActasAnteriores.Text;
-      //formReporte.Parametro10 = "";// msk_InicioDeActividad.Text;
-      //formReporte.Parametro11 = Acta.CantidadEmpleados.ToString();//txt_CantidadEmpleado.Text;
-      //formReporte.Parametro12 = Acta.TelefonoEmpresa;//txt_Telefono.Text;
-      //formReporte.Parametro13 = Convert.ToDateTime(Acta.Fecha).ToString("dd/MM/yyyy"); //msk_FechaConfeccion.Text;
-      //formReporte.Parametro14 = "Santiago del Estero";//txt_Lugar.Text;
-      //formReporte.Parametro15 = Convert.ToDateTime(Acta.Fecha).Day.ToString();// FechaDeConfeccion.Day.ToString();
-      //formReporte.Parametro16 = mtdFechas.NombreDelMes(Convert.ToDateTime(Acta.Fecha).Month);//mtdFechas.NombreDelMes(FechaDeConfeccion.Month); //FechaDeConfeccion.Month.ToString("mm");
-      //formReporte.Parametro17 = Convert.ToDateTime(Acta.Fecha).Year.ToString();  //FechaDeConfeccion.Year.ToString();
-      //formReporte.Parametro18 = ""; //txt_persona.Text;
-      //formReporte.Parametro19 = "";// txt_Relacion.Text;
-      //formReporte.Parametro20 = mtdNum2words.enletras(Acta.Importe.ToString());
-      //formReporte.Parametro21 = "";// txt_Observaciones.Text;
-
-      //formReporte.dt = mtdFilial.Get_DatosFilial();
-      //formReporte.NombreDelReporte = "entrega_cupones.Reportes.rpt_ActaCabecera.rdlc";
-      //formReporte.Show();
-
-      //ImprimirActaDetalle();
     }
 
     public static void GetDDJJPorNumeroActa(int NumeroActa)
@@ -265,17 +275,17 @@ namespace entrega_cupones.Metodos
       using (var context = new lts_sindicatoDataContext())
       {
         List<EstadoDDJJ> estadoDDJJs = new List<EstadoDDJJ>();
+        //string fechaVacia = "01/01/0001";
         var _ddjj = from a in context.ActasDetalle
                     where a.NumeroDeActa == NumeroActa
                     select new EstadoDDJJ
                     {
                       Periodo = Convert.ToDateTime(a.Periodo),
-
                       AporteLey = (decimal)a.TotalAporteEmpleados,
                       AporteSocio = (decimal)a.TotalAporteSocios,
-                      TotalSueldoEmpleados = (decimal)a.TotalSueldoEmpleados / Convert.ToDecimal(0.02),
-                      TotalSueldoSocios = (decimal)a.TotalSueldoSocios / Convert.ToDecimal(0.02),
-                      FechaDePago = a.FechaDePago, //  a.FechaDePago == null ? null : Convert.ToDateTime(a.FechaDePago),// a.FechaDePago == null ? null : a.FechaDePago,
+                      TotalSueldoEmpleados = (decimal)a.TotalSueldoEmpleados,// * Convert.ToDecimal(0.02),
+                      TotalSueldoSocios = (decimal)a.TotalSueldoSocios,// * Convert.ToDecimal(0.02),
+                      FechaDePago = a.FechaDePago, //a.FechaDePago == null ? null : Convert.ToDateTime(a.FechaDePago),// a.FechaDePago == null ? null : a.FechaDePago,
                       ImporteDepositado = (decimal)a.ImporteDepositado,
                       Empleados = a.CantidadEmpleados,
                       Socios = a.CantidadSocios,
@@ -285,6 +295,7 @@ namespace entrega_cupones.Metodos
                       Total = a.Total
                     };
         estadoDDJJs.AddRange(_ddjj);
+        //estadoDDJJs.ForEach(x => x.FechaDePago.ToString() == fechaVacia ? null : x.FechaDePago);
         mdlActa Acta = GetActa(NumeroActa);
         ReimprimirDDJJ(estadoDDJJs, Acta);
       }
@@ -309,10 +320,21 @@ namespace entrega_cupones.Metodos
         row["TotalSueldoSocios"] = periodo.TotalSueldoSocios;
         row["TotalAporteEmpleados"] = periodo.AporteLey;
         row["TotalAporteSocios"] = periodo.AporteSocio;
-        fecha2 = periodo.FechaDePago.ToString();
+        fecha2 = fecha2 = Convert.ToDateTime(periodo.FechaDePago).Date.ToString("dd/MM/yyyy");// periodo.FechaDePago.ToString("dd/MM/yyyy");
         if (fecha2 != "")
         {
-          fecha2 = Convert.ToDateTime(periodo.FechaDePago).Date.ToString("dd/MM/yyyy");
+          if (fecha2 != "01/01/0001")
+          {
+            fecha2 = Convert.ToDateTime(periodo.FechaDePago).Date.ToString("dd/MM/yyyy");
+          }
+          else
+          {
+            fecha2 = "";
+          }
+        }
+        else
+        {
+          fecha2 = "";
         }
         row["FechaDePago"] = fecha2;//periodo.FechaDePago.ToString();//== null ? "01/01/0001" : periodo.FechaDePago.Value.Date.ToString();
         row["ImporteDepositado"] = periodo.ImporteDepositado;
@@ -343,6 +365,45 @@ namespace entrega_cupones.Metodos
       formReporte.Parametro10 = acta.Domicilio;// txt_Domicilio.Text + " " + txt_Localidad.Text;
       formReporte.NombreDelReporte = "entrega_cupones.Reportes.rpt_ActaDetalle.rdlc";
       formReporte.Show();
+    }
+
+    public static string GetNombreInspector(int NumeroActa)
+    {
+
+      using (var context = new lts_sindicatoDataContext())
+      {
+
+        Int32 IdInspector = (from a in context.Acta
+                             where a.Numero == NumeroActa
+                             select a).SingleOrDefault().InspectorId;
+        return mtdInspectores.Get_Inspector(IdInspector).Nombre;
+      }
+    }
+
+    public static bool AnularActa(int NroActa)
+    {
+      using (var context = new lts_sindicatoDataContext())
+      {
+        var anular = from a in context.Acta where a.Numero == NroActa select a;
+        if (anular.Count() > 0 )
+        {
+          anular.Single().Estado = 1;
+          context.SubmitChanges();
+          return true;
+        }
+        else
+        {
+          return false;
+        }
+      }
+    }
+
+    public static bool VerificarSiEstaAnulada(int NroActa)
+    {
+      using (var context = new lts_sindicatoDataContext())
+      {
+        return  (from a in context.Acta where a.Numero == NroActa && a.Estado == 1 select a).Count() > 0;
+      }
     }
 
   }

@@ -90,9 +90,16 @@ namespace entrega_cupones
 
       if (NombreDelReporte == "entrega_cupones.Reportes.rpt_VerificacionDeDeuda.rdlc")
       {
+        string fechastring = DateTime.Now.Date.ToShortDateString();
+        //string fecha = fechastring.Substring(1, 2) + "/" + fechastring.Substring(4, 5);
+
+        string ReportNameStore = "VD - " + Parametro1 + " - " + Parametro2 + " - " + fechastring;
+
+        rv.LocalReport.DisplayName = ReportNameStore;
+
         rv.LocalReport.ReportEmbeddedResource = NombreDelReporte;
         //Array que contendrá los parámetros
-        ReportParameter[] parameters = new ReportParameter[10];
+        ReportParameter[] parameters = new ReportParameter[11];
         //Establecemos el valor de los parámetros
         parameters[0] = new ReportParameter("Empresa", Parametro1);
         parameters[1] = new ReportParameter("Cuit", Parametro2);
@@ -104,6 +111,7 @@ namespace entrega_cupones
         parameters[7] = new ReportParameter("InformeDeInspector", Parametro8);
         parameters[8] = new ReportParameter("Vencimiento", Parametro9);
         parameters[9] = new ReportParameter("PerNoDec", Parametro10);
+        parameters[10] = new ReportParameter("Domicilio", Parametro11);
 
         this.rv.LocalReport.SetParameters(parameters);
       }
@@ -164,6 +172,11 @@ namespace entrega_cupones
 
       if (NombreDelReporte == "entrega_cupones.Reportes.rpt_ActaDetalle.rdlc")
       {
+
+        string ReportNameStore = "Acta " + Parametro3 + " - " + Parametro1;
+        
+        rv.LocalReport.DisplayName = ReportNameStore;
+
         this.rv.LocalReport.ReportEmbeddedResource = NombreDelReporte;
         //Array que contendrá los parámetros
         ReportParameter[] parameters = new ReportParameter[10];
@@ -226,6 +239,7 @@ namespace entrega_cupones
       if (nombreReporte == "planilla_partidos")
       {
         rv.LocalReport.ReportEmbeddedResource = "entrega_cupones.Reportes.planilla_partidos.rdlc";
+        
         //reportViewer1.LocalReport.ReportPath = Path.Combine(entrega_cupones.reportes, "planilla_partidos.rdlc");
         //nueva_fuente_de_datos.Name = "DataSet1";
         //nueva_fuente_de_datos.Value = impresion_comprobanteBindingSource;
@@ -514,14 +528,26 @@ namespace entrega_cupones
         //Pasamos el array de los parámetros al ReportViewer
 
         rv.LocalReport.ReportEmbeddedResource = "entrega_cupones.Reportes.rpt_EntradaDiaDeLaMujer.rdlc";
-        //nueva_fuente_de_datos.Name = "DataSet1";
-        //nueva_fuente_de_datos.Value = DtDiaDeLaMujer;
-
-        //rv.LocalReport.DataSources.Add(nueva_fuente_de_datos);
         rv.LocalReport.SetParameters(parameters);
       }
 
+      if (NombreDelReporte == "rpt_CuponSorteoDDEDC")
+      {
+        rv.LocalReport.ReportEmbeddedResource = "entrega_cupones.Reportes.rpt_CuponSorteoDDEDC.rdlc";
+      }
+
+      if (NombreDelReporte == "rpt_CuponSorteoDDLM")
+      {
+        rv.LocalReport.ReportEmbeddedResource = "entrega_cupones.Reportes.rpt_CuponSorteoDDLM.rdlc";
+      }
+
+      if (NombreDelReporte == "entrega_cupones.Reportes.rpt_InformeEstContDeuda.rdlc")
+      {
+        rv.LocalReport.ReportEmbeddedResource = "entrega_cupones.Reportes.rpt_InformeEstContDeuda.rdlc";
+      }
       rv.RefreshReport();
+
+
     }
   }
 }

@@ -333,7 +333,7 @@
       this.btn_futbol.Enabled = false;
       this.btn_futbol.Font = new System.Drawing.Font("Century Gothic", 10F);
       this.btn_futbol.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_futbol.Iconimage = global::entrega_cupones.Properties.Resources.football__3_;
+      this.btn_futbol.Iconimage = global::AutoGestion.Properties.Resources.football__3_;
       this.btn_futbol.Iconimage_right = null;
       this.btn_futbol.Iconimage_right_Selected = null;
       this.btn_futbol.Iconimage_Selected = null;
@@ -373,7 +373,7 @@
       this.btn_inspectores.Enabled = false;
       this.btn_inspectores.Font = new System.Drawing.Font("Century Gothic", 10F);
       this.btn_inspectores.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_inspectores.Iconimage = global::entrega_cupones.Properties.Resources.policeman__2_;
+      this.btn_inspectores.Iconimage = global::AutoGestion.Properties.Resources.policeman__2_;
       this.btn_inspectores.Iconimage_right = null;
       this.btn_inspectores.Iconimage_right_Selected = null;
       this.btn_inspectores.Iconimage_Selected = null;
@@ -413,7 +413,7 @@
       this.btn_actualizar22.Enabled = false;
       this.btn_actualizar22.Font = new System.Drawing.Font("Century Gothic", 10F);
       this.btn_actualizar22.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_actualizar22.Iconimage = global::entrega_cupones.Properties.Resources.id_card;
+      this.btn_actualizar22.Iconimage = global::AutoGestion.Properties.Resources.id_card;
       this.btn_actualizar22.Iconimage_right = null;
       this.btn_actualizar22.Iconimage_right_Selected = null;
       this.btn_actualizar22.Iconimage_Selected = null;
@@ -453,7 +453,7 @@
       this.bunifuFlatButton1.Enabled = false;
       this.bunifuFlatButton1.Font = new System.Drawing.Font("Century Gothic", 10F);
       this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
-      this.bunifuFlatButton1.Iconimage = global::entrega_cupones.Properties.Resources.earth_paradise;
+      this.bunifuFlatButton1.Iconimage = global::AutoGestion.Properties.Resources.earth_paradise;
       this.bunifuFlatButton1.Iconimage_right = null;
       this.bunifuFlatButton1.Iconimage_right_Selected = null;
       this.bunifuFlatButton1.Iconimage_Selected = null;
@@ -493,7 +493,7 @@
       this.btn_colonia.Enabled = false;
       this.btn_colonia.Font = new System.Drawing.Font("Century Gothic", 10F);
       this.btn_colonia.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_colonia.Iconimage = global::entrega_cupones.Properties.Resources.swimming_pool__1_;
+      this.btn_colonia.Iconimage = global::AutoGestion.Properties.Resources.swimming_pool__1_;
       this.btn_colonia.Iconimage_right = null;
       this.btn_colonia.Iconimage_right_Selected = null;
       this.btn_colonia.Iconimage_Selected = null;
@@ -533,7 +533,7 @@
       this.btn_odontologo.Enabled = false;
       this.btn_odontologo.Font = new System.Drawing.Font("Century Gothic", 10F);
       this.btn_odontologo.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_odontologo.Iconimage = global::entrega_cupones.Properties.Resources.molar_with_cavity;
+      this.btn_odontologo.Iconimage = global::AutoGestion.Properties.Resources.molar_with_cavity;
       this.btn_odontologo.Iconimage_right = null;
       this.btn_odontologo.Iconimage_right_Selected = null;
       this.btn_odontologo.Iconimage_Selected = null;
@@ -573,7 +573,7 @@
       this.btn_gimnasio.Enabled = false;
       this.btn_gimnasio.Font = new System.Drawing.Font("Century Gothic", 10F);
       this.btn_gimnasio.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_gimnasio.Iconimage = global::entrega_cupones.Properties.Resources.man_lifting_weights__4_;
+      this.btn_gimnasio.Iconimage = global::AutoGestion.Properties.Resources.man_lifting_weights__4_;
       this.btn_gimnasio.Iconimage_right = null;
       this.btn_gimnasio.Iconimage_right_Selected = null;
       this.btn_gimnasio.Iconimage_Selected = null;
@@ -625,7 +625,7 @@
       this.btn_masajista.Enabled = false;
       this.btn_masajista.Font = new System.Drawing.Font("Century Gothic", 10F);
       this.btn_masajista.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_masajista.Iconimage = global::entrega_cupones.Properties.Resources.revenue__1_;
+      this.btn_masajista.Iconimage = global::AutoGestion.Properties.Resources.revenue__1_;
       this.btn_masajista.Iconimage_right = null;
       this.btn_masajista.Iconimage_right_Selected = null;
       this.btn_masajista.Iconimage_Selected = null;
@@ -666,7 +666,7 @@
       this.btn_pedicuro.Enabled = false;
       this.btn_pedicuro.Font = new System.Drawing.Font("Century Gothic", 10F);
       this.btn_pedicuro.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_pedicuro.Iconimage = global::entrega_cupones.Properties.Resources.footprints1;
+      this.btn_pedicuro.Iconimage = global::AutoGestion.Properties.Resources.footprints1;
       this.btn_pedicuro.Iconimage_right = null;
       this.btn_pedicuro.Iconimage_right_Selected = null;
       this.btn_pedicuro.Iconimage_Selected = null;
@@ -706,7 +706,7 @@
       this.btn_quinchos.Enabled = false;
       this.btn_quinchos.Font = new System.Drawing.Font("Century Gothic", 10F);
       this.btn_quinchos.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_quinchos.Iconimage = global::entrega_cupones.Properties.Resources.cottage__6_;
+      this.btn_quinchos.Iconimage = global::AutoGestion.Properties.Resources.cottage__6_;
       this.btn_quinchos.Iconimage_right = null;
       this.btn_quinchos.Iconimage_right_Selected = null;
       this.btn_quinchos.Iconimage_Selected = null;
@@ -746,7 +746,7 @@
       this.btn_mochila.Enabled = false;
       this.btn_mochila.Font = new System.Drawing.Font("Century Gothic", 10F);
       this.btn_mochila.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_mochila.Iconimage = global::entrega_cupones.Properties.Resources.description__1_;
+      this.btn_mochila.Iconimage = global::AutoGestion.Properties.Resources.description__1_;
       this.btn_mochila.Iconimage_right = null;
       this.btn_mochila.Iconimage_right_Selected = null;
       this.btn_mochila.Iconimage_Selected = null;
@@ -806,7 +806,7 @@
       this.btn_minimizar.BackColor = System.Drawing.Color.Transparent;
       this.btn_minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
       this.pnl_menu_transition.SetDecoration(this.btn_minimizar, BunifuAnimatorNS.DecorationType.None);
-      this.btn_minimizar.Image = global::entrega_cupones.Properties.Resources.minus__1_;
+      this.btn_minimizar.Image = global::AutoGestion.Properties.Resources.minus__1_;
       this.btn_minimizar.ImageActive = null;
       this.btn_minimizar.Location = new System.Drawing.Point(1273, 3);
       this.btn_minimizar.Name = "btn_minimizar";
@@ -829,7 +829,7 @@
       this.pnl_menu_transition.SetDecoration(this.btn_close, BunifuAnimatorNS.DecorationType.None);
       this.btn_close.DisabledColor = System.Drawing.Color.Gray;
       this.btn_close.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_close.Iconimage = global::entrega_cupones.Properties.Resources.cross_close_or_delete_circular_interface_button_symbol;
+      this.btn_close.Iconimage = global::AutoGestion.Properties.Resources.cross_close_or_delete_circular_interface_button_symbol;
       this.btn_close.Iconimage_right = null;
       this.btn_close.Iconimage_right_Selected = null;
       this.btn_close.Iconimage_Selected = null;
@@ -1089,7 +1089,7 @@
       this.btn_imprimir_aportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
       this.btn_imprimir_aportes.Cursor = System.Windows.Forms.Cursors.Hand;
       this.pnl_menu_transition.SetDecoration(this.btn_imprimir_aportes, BunifuAnimatorNS.DecorationType.None);
-      this.btn_imprimir_aportes.Image = global::entrega_cupones.Properties.Resources.printer_with_paper__1_;
+      this.btn_imprimir_aportes.Image = global::AutoGestion.Properties.Resources.printer_with_paper__1_;
       this.btn_imprimir_aportes.ImageActive = null;
       this.btn_imprimir_aportes.Location = new System.Drawing.Point(316, 3);
       this.btn_imprimir_aportes.Name = "btn_imprimir_aportes";
@@ -1266,7 +1266,7 @@
       this.btn_imprimir_ficha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
       this.btn_imprimir_ficha.Cursor = System.Windows.Forms.Cursors.Hand;
       this.pnl_menu_transition.SetDecoration(this.btn_imprimir_ficha, BunifuAnimatorNS.DecorationType.None);
-      this.btn_imprimir_ficha.Image = global::entrega_cupones.Properties.Resources.printer_with_paper__1_;
+      this.btn_imprimir_ficha.Image = global::AutoGestion.Properties.Resources.printer_with_paper__1_;
       this.btn_imprimir_ficha.ImageActive = null;
       this.btn_imprimir_ficha.Location = new System.Drawing.Point(959, 584);
       this.btn_imprimir_ficha.Name = "btn_imprimir_ficha";

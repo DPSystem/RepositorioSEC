@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AutoGestion;
 
 namespace entrega_cupones.Clases
 {
@@ -135,7 +136,7 @@ namespace entrega_cupones.Clases
         else
         {
           // cuando no hay foto trae la imagen del contorno del usuario.
-          foto = cnv_img.ImageToByteArray(Properties.Resources.contorno_usuario);
+          foto = cnv_img.ImageToByteArray(AutoGestion.Properties.Resources.contorno_usuario);
         }
       };
       return foto;
@@ -154,7 +155,7 @@ namespace entrega_cupones.Clases
         else
         {
           // cuando no hay foto trae la imagen del contorno del usuario.
-          foto = cnv_img.ImageToByteArray(Properties.Resources.contorno_usuario);
+          foto = cnv_img.ImageToByteArray(AutoGestion.Properties.Resources.contorno_usuario);
         }
       };
       return foto;

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using entrega_cupones.Modelos;
+using AutoGestion;
 
 namespace entrega_cupones.Metodos
 {

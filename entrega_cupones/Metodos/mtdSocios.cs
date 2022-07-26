@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoGestion;
 
 namespace entrega_cupones.Metodos
 {
@@ -36,9 +37,9 @@ namespace entrega_cupones.Metodos
                    where (sc.SOCEMP_ULT_EMPRESA == 'S') &&
                    (_FiltroDeSocio == 0 ? essocio.SOCCEN_ESTADO >= 0 : _FiltroDeSocio == 1 ? essocio.SOCCEN_ESTADO == 1 : essocio.SOCCEN_ESTADO == 0) &&
                    (_BuscarPor == 0 ? a.MAESOC_NRODOC == DatoABuscar.Trim() : _BuscarPor == 1 ? a.APENOM.Contains(DatoABuscar) : _BuscarPor == 2 ? empr.MEEMP_CUIT_STR == cuit : a.MAESOC_CUIL_STR != "0") &&
-                   (_CodigoPostal == "0" ? a.MAESOC_CODPOS != _CodigoPostal : a.MAESOC_CODPOS == _CodigoPostal) &&
+                   //(_CodigoPostal == "0" ? a.MAESOC_CODPOS != _CodigoPostal : a.MAESOC_CODPOS == _CodigoPostal) &&
                    (_NroDeSocio == 0 ? a.MAESOC_NROAFIL != "0" : _NroDeSocio == 1 ? a.MAESOC_NROAFIL != "" : a.MAESOC_NROAFIL == "") &&
-                   (_CodigoCategoria == 0 ? a.MAESOC_CODCAT != _CodigoCategoria : a.MAESOC_CODCAT == _CodigoCategoria) &&
+                   //(_CodigoCategoria == 0 ? a.MAESOC_CODCAT != _CodigoCategoria : a.MAESOC_CODCAT == _CodigoCategoria)  
                    (_Jubilados == 0 ? a.MAESOC_JUBIL != 4 : _Jubilados == 1 ? a.MAESOC_JUBIL == 1 : a.MAESOC_JUBIL == 0)
                    select new mdlSocio
                    {
@@ -95,7 +96,8 @@ namespace entrega_cupones.Metodos
 
         _Socios.ForEach(x => x.JornadaParcial = GetJornada(_BuscarPor, x.CUIL));
         _Socios.ForEach(x => x.Aportes = GetAportes(x.CUIL));
-        _Socios.ForEach(x => x.Carencia = VerificarCarencia(x.Aportes.Max(y => y.Periodo)));
+        _Socios.ForEach(x => x.Carencia = x.Aportes.Count()> 0 ? VerificarCarencia(x.Aportes.Max(y => y.Periodo)) : true);
+        //_Socios.ForEach(x => x.Carencia =  VerificarCarencia(x.Aportes.Max(y => y.Periodo)));
 
         if (Carencia)
         {
@@ -112,7 +114,18 @@ namespace entrega_cupones.Metodos
     public static bool GetJornada(int buscarpor, string CUIL)
     {
 
-      return _ddjj.Where(x => x.cuil == CUIL).OrderByDescending(x => x.periodo).FirstOrDefault().jorp;
+      var j = from a in _ddjj.OrderByDescending(x=>x.periodo) where a.cuil == CUIL select a;
+
+      if (j.Count()>0)
+      {
+        return j.FirstOrDefault().jorp;
+      }
+      else
+      {
+        return false;
+      }
+      
+      //return _ddjj.Where(x => x.cuil == CUIL).OrderByDescending(x => x.periodo).FirstOrDefault().jorp;
     }
 
     public static void Getddjj(int buscarPor, string cuit)
@@ -246,40 +259,7 @@ namespace entrega_cupones.Metodos
         return false;
       }
 
-      //    int F = 0;
-      //  int ContadorDeAportes = 0;
-
-      //  if (meses <= 3)
-      //  {
-      //    switch (meses)
-      //    {
-      //      case 1:
-      //        F = Fila - 1;
-      //        break;
-      //      case 2:
-      //        F = Fila - 2;
-      //        break;
-      //      case 3:
-      //        F = Fila - 3;
-      //        break;
-      //      default:
-
-      //        break;
-      //    }
-      //  }
-      //  else
-      //  {
-      //    F = 0;
-      //    Fila = 0;
-      //  }
-      //  for (int i = F; i < Fila; i++)
-      //  {
-      //    if (Convert.ToDecimal(dgv_MostrarAportes.Rows[i].Cells["aporte_socio"].Value) > 0)
-      //    {
-      //      ContadorDeAportes += 1;
-      //    }
-      //  }
-      //  return ContadorDeAportes > 0 ? true : false;
+     
     }
   }
 }

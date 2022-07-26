@@ -155,7 +155,7 @@ namespace entrega_cupones
 
     private void Login_Load(object sender, EventArgs e)
     {
-      picbox_logo.Image = Image.FromFile("C:\\SEC_Gestion\\Imagen\\Logo.png");
+      picbox_logo.Image = Image.FromFile("C:\\SIGES\\Logo.png");
 
     }
   }

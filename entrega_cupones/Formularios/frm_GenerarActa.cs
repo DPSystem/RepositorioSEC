@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoGestion;
 using System.Windows.Forms;
 
 namespace entrega_cupones.Formularios
@@ -16,7 +17,11 @@ namespace entrega_cupones.Formularios
   {
     public List<EstadoDDJJ> _PreActa;
     public List<mdlCuadroAmortizacion> _PlanDePago;
+    public decimal _Capital;
+    public decimal _Interes;
+    public decimal _Total;
     public bool EsReimpresion;
+    public string NombreInspector;
 
     public frm_GenerarActa()
     {
@@ -26,6 +31,7 @@ namespace entrega_cupones.Formularios
     private void btn_GenerarActa_Click(object sender, EventArgs e)
     {
       GenerarActa();
+      btn_GenerarActa.Enabled = false;
       btn_Imprimir.Enabled = true;
     }
 
@@ -44,11 +50,14 @@ namespace entrega_cupones.Formularios
       {
         EmpresaId = context.maeemp.Where(x => x.MEEMP_CUIT_STR == txt_CUIT.Text).FirstOrDefault().Id;
       }
-      mtdActas.GuardarActaCabecera(_PreActa, FechaDeConfeccion, desde, hasta, Vencimiento, EmpresaId, txt_CUIT.Text, Convert.ToInt32(txt_CantidadEmpleado.Text), InteresMensual, InteresDiario, _PlanDePago);
+      mtdActas.GuardarActaCabecera(_PreActa, FechaDeConfeccion, desde, hasta, Vencimiento, EmpresaId, txt_CUIT.Text, Convert.ToInt32(txt_CantidadEmpleado.Text), InteresMensual, InteresDiario, _PlanDePago, Convert.ToInt32(cbx_Inspectores.SelectedValue), _Capital, _Interes, _Total);
     }
 
     private void frm_Generar_Acta_Load(object sender, EventArgs e)
     {
+      Cargar_cbxInspectores();
+      cbx_Inspectores.Text = NombreInspector;
+
       if (!EsReimpresion)
       {
         using (var context = new lts_sindicatoDataContext())
@@ -68,7 +77,15 @@ namespace entrega_cupones.Formularios
       {
         btn_GenerarActa.Enabled = false;
         btn_Imprimir.Enabled = true;
+        btn_ImprimirVerificacion.Enabled = true;
       }
+    }
+
+    private void Cargar_cbxInspectores()
+    {
+      cbx_Inspectores.DisplayMember = "Nombre";
+      cbx_Inspectores.ValueMember = "Id";
+      cbx_Inspectores.DataSource = mtdInspectores.Get_Inspectores();
     }
 
     private void btn_Imprimir_Click(object sender, EventArgs e)
@@ -110,7 +127,7 @@ namespace entrega_cupones.Formularios
       formReporte.Parametro15 = FechaDeConfeccion.Day.ToString();
       formReporte.Parametro16 = mtdFechas.NombreDelMes(FechaDeConfeccion.Month); //FechaDeConfeccion.Month.ToString("mm");
       formReporte.Parametro17 = FechaDeConfeccion.Year.ToString();
-      formReporte.Parametro18 = txt_persona.Text;
+      formReporte.Parametro18 = mtdInspectores.Get_InspectorDesdeNumeroActa(!EsReimpresion ? NumeroDeActa : Convert.ToInt32( txt_NumeroDeActa.Text)); //txt_persona.Text;
       formReporte.Parametro19 = txt_Relacion.Text;
       formReporte.Parametro20 = mtdNum2words.enletras(txt_Total.Text);
       formReporte.Parametro21 = txt_Observaciones.Text;
@@ -120,7 +137,6 @@ namespace entrega_cupones.Formularios
       formReporte.Show();
 
       if (!EsReimpresion) ImprimirActaDetalle();
-
 
     }
 
@@ -172,9 +188,9 @@ namespace entrega_cupones.Formularios
       formReporte.Parametro1 = empresa.MAEEMP_RAZSOC.Trim();
       formReporte.Parametro2 = empresa.MEEMP_CUIT_STR;
       formReporte.Parametro3 = mtdFuncUtiles.generar_ceros(NumeroDeActa.ToString(), 6);
-      formReporte.Parametro4 = _PreActa.Sum(x => x.Capital).ToString("N2");
-      formReporte.Parametro5 = _PreActa.Sum(x => x.Interes).ToString("N2");
-      formReporte.Parametro6 = _PreActa.Sum(x => x.Total).ToString("N2");
+      formReporte.Parametro4 = _Capital.ToString("N2"); // ; _PreActa.Sum(x => x.Capital).ToString("N2");
+      formReporte.Parametro5 = _Interes.ToString("N2"); //_PreActa.Sum(x => x.Interes).ToString("N2");
+      formReporte.Parametro6 = _Total.ToString("N2"); // _PreActa.Sum(x => x.Total).ToString("N2");
       formReporte.Parametro7 = "Original";
       formReporte.Parametro8 = " ";
       formReporte.Parametro9 = msk_Vencimiento.Text;

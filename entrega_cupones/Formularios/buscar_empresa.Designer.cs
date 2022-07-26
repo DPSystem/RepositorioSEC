@@ -95,7 +95,7 @@
       // 
       this.btn_cerrar_busqueda.BackColor = System.Drawing.Color.Transparent;
       this.btn_cerrar_busqueda.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btn_cerrar_busqueda.Image = global::entrega_cupones.Properties.Resources.cross_close_or_delete_circular_interface_button_symbol;
+      this.btn_cerrar_busqueda.Image = global::AutoGestion.Properties.Resources.cross_close_or_delete_circular_interface_button_symbol;
       this.btn_cerrar_busqueda.ImageActive = null;
       this.btn_cerrar_busqueda.Location = new System.Drawing.Point(606, 9);
       this.btn_cerrar_busqueda.Name = "btn_cerrar_busqueda";
@@ -110,7 +110,7 @@
       // 
       this.btn_cerrar.BackColor = System.Drawing.Color.Transparent;
       this.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btn_cerrar.Image = global::entrega_cupones.Properties.Resources.cross_close_or_delete_circular_interface_button_symbol;
+      this.btn_cerrar.Image = global::AutoGestion.Properties.Resources.cross_close_or_delete_circular_interface_button_symbol;
       this.btn_cerrar.ImageActive = null;
       this.btn_cerrar.Location = new System.Drawing.Point(1297, 3);
       this.btn_cerrar.Name = "btn_cerrar";

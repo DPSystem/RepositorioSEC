@@ -114,7 +114,7 @@
       // 
       this.btn_cerrar.BackColor = System.Drawing.Color.Transparent;
       this.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btn_cerrar.Image = global::entrega_cupones.Properties.Resources.cross_close_or_delete_circular_interface_button_symbol;
+      this.btn_cerrar.Image = global::AutoGestion.Properties.Resources.cross_close_or_delete_circular_interface_button_symbol;
       this.btn_cerrar.ImageActive = null;
       this.btn_cerrar.Location = new System.Drawing.Point(732, 10);
       this.btn_cerrar.Name = "btn_cerrar";

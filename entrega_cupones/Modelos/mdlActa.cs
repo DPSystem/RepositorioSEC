@@ -29,6 +29,8 @@ namespace entrega_cupones.Modelos
     public decimal Capital { get; set; }
     public decimal  Interes { get; set; }
     public decimal Total { get; set; }
+    public int InspectorId { get; set; }
+    public string InspectorNombre { get; set; }
 
   }
 }

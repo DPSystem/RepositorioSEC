@@ -141,7 +141,7 @@
       // 
       this.btn_minimizar.BackColor = System.Drawing.Color.Transparent;
       this.btn_minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btn_minimizar.Image = global::entrega_cupones.Properties.Resources.minus__1_;
+      this.btn_minimizar.Image = global::AutoGestion.Properties.Resources.minus__1_;
       this.btn_minimizar.ImageActive = null;
       this.btn_minimizar.Location = new System.Drawing.Point(792, 12);
       this.btn_minimizar.Name = "btn_minimizar";
@@ -167,7 +167,7 @@
       // 
       this.btn_cerrar.BackColor = System.Drawing.Color.Transparent;
       this.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btn_cerrar.Image = global::entrega_cupones.Properties.Resources.cross_close_or_delete_circular_interface_button_symbol;
+      this.btn_cerrar.Image = global::AutoGestion.Properties.Resources.cross_close_or_delete_circular_interface_button_symbol;
       this.btn_cerrar.ImageActive = null;
       this.btn_cerrar.Location = new System.Drawing.Point(832, 8);
       this.btn_cerrar.Name = "btn_cerrar";
@@ -506,7 +506,7 @@
       this.btn_ImprimirSinCargo.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_ImprimirSinCargo.DisabledColor = System.Drawing.Color.Gray;
       this.btn_ImprimirSinCargo.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_ImprimirSinCargo.Iconimage = global::entrega_cupones.Properties.Resources.happy__1_;
+      this.btn_ImprimirSinCargo.Iconimage = global::AutoGestion.Properties.Resources.happy__1_;
       this.btn_ImprimirSinCargo.Iconimage_right = null;
       this.btn_ImprimirSinCargo.Iconimage_right_Selected = null;
       this.btn_ImprimirSinCargo.Iconimage_Selected = null;
@@ -544,7 +544,7 @@
       this.btn_ConsultarCaja.DisabledColor = System.Drawing.Color.Gray;
       this.btn_ConsultarCaja.Enabled = false;
       this.btn_ConsultarCaja.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_ConsultarCaja.Iconimage = global::entrega_cupones.Properties.Resources.verificar;
+      this.btn_ConsultarCaja.Iconimage = global::AutoGestion.Properties.Resources.verificar;
       this.btn_ConsultarCaja.Iconimage_right = null;
       this.btn_ConsultarCaja.Iconimage_right_Selected = null;
       this.btn_ConsultarCaja.Iconimage_Selected = null;
@@ -578,7 +578,7 @@
       this.btn_ImprimirEntrada.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_ImprimirEntrada.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btn_ImprimirEntrada.ForeColor = System.Drawing.Color.Black;
-      this.btn_ImprimirEntrada.Image = global::entrega_cupones.Properties.Resources.impresora_PNG_64;
+      this.btn_ImprimirEntrada.Image = global::AutoGestion.Properties.Resources.impresora_PNG_64;
       this.btn_ImprimirEntrada.ImagePosition = 10;
       this.btn_ImprimirEntrada.ImageZoom = 40;
       this.btn_ImprimirEntrada.LabelPosition = 36;
@@ -602,7 +602,7 @@
       this.btn_CerrarCaja.DisabledColor = System.Drawing.Color.Gray;
       this.btn_CerrarCaja.Enabled = false;
       this.btn_CerrarCaja.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_CerrarCaja.Iconimage = global::entrega_cupones.Properties.Resources.dollars_bag__3_;
+      this.btn_CerrarCaja.Iconimage = global::AutoGestion.Properties.Resources.dollars_bag__3_;
       this.btn_CerrarCaja.Iconimage_right = null;
       this.btn_CerrarCaja.Iconimage_right_Selected = null;
       this.btn_CerrarCaja.Iconimage_Selected = null;
@@ -640,7 +640,7 @@
       this.btn_AbrirCaja.DisabledColor = System.Drawing.Color.Gray;
       this.btn_AbrirCaja.Enabled = false;
       this.btn_AbrirCaja.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_AbrirCaja.Iconimage = global::entrega_cupones.Properties.Resources.dollar__1_;
+      this.btn_AbrirCaja.Iconimage = global::AutoGestion.Properties.Resources.dollar__1_;
       this.btn_AbrirCaja.Iconimage_right = null;
       this.btn_AbrirCaja.Iconimage_right_Selected = null;
       this.btn_AbrirCaja.Iconimage_Selected = null;
@@ -678,7 +678,7 @@
       this.btn_reimprimir.DisabledColor = System.Drawing.Color.Gray;
       this.btn_reimprimir.Enabled = false;
       this.btn_reimprimir.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_reimprimir.Iconimage = global::entrega_cupones.Properties.Resources.refresh_arrow;
+      this.btn_reimprimir.Iconimage = global::AutoGestion.Properties.Resources.refresh_arrow;
       this.btn_reimprimir.Iconimage_right = null;
       this.btn_reimprimir.Iconimage_right_Selected = null;
       this.btn_reimprimir.Iconimage_Selected = null;
@@ -926,7 +926,7 @@
       this.pnl_Reimprimir.Controls.Add(this.btn_ReimprimirNoSocio);
       this.pnl_Reimprimir.Controls.Add(this.btn_ReimprimirSocio);
       this.pnl_Reimprimir.Controls.Add(this.bunifuCustomLabel4);
-      this.pnl_Reimprimir.Location = new System.Drawing.Point(291, 58);
+      this.pnl_Reimprimir.Location = new System.Drawing.Point(396, 147);
       this.pnl_Reimprimir.Name = "pnl_Reimprimir";
       this.pnl_Reimprimir.Size = new System.Drawing.Size(325, 267);
       this.pnl_Reimprimir.TabIndex = 517;

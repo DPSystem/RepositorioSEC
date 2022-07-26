@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="sindicato" Class="lts_sindicatoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DIEGO-LENOVO;Initial Catalog=sindicato;Integrated Security=True" SettingsObjectName="entrega_cupones.Properties.Settings" SettingsPropertyName="sindicatoConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DIEGO-LENOVO;Initial Catalog=sindicato;Integrated Security=True" SettingsObjectName="AutoGestion.Properties.Settings" SettingsPropertyName="sindicatoConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="fotos_.socflia" Member="socflia">
     <Type Name="socflia">
       <Column Name="SOCFLIA_CUIL" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
@@ -355,20 +355,6 @@
       <Column Name="JUG_MAESOC_NROAFIL" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.jugadores" Member="jugadores">
-    <Type Name="jugadores">
-      <Column Name="JUGID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="JUG_EQUIPOID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="JUG_SOCCENCUIL" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="JUG_MAESOC_NROAFIL" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="JUG_APELLIDO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="JUG_NOMBRE" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
-      <Column Name="JUG_ESTADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="JUG_TIPO" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="JUG_FOTO" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="JUG_EMPRESA" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.jueces" Member="jueces">
     <Type Name="jueces">
       <Column Name="JUEZID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -515,13 +501,6 @@
   </Table>
   <Table Name="dbo.equipos_" Member="equipos_">
     <Type Name="equipos_">
-      <Column Name="EQUIPOID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="EQUIPONOMBRE" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="EQUIPO_CATID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.equipos" Member="equipos">
-    <Type Name="equipos">
       <Column Name="EQUIPOID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="EQUIPONOMBRE" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
       <Column Name="EQUIPO_CATID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -1381,6 +1360,45 @@
       <Column Name="ActaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Acta" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.equipos" Member="equipos">
+    <Type Name="equipos">
+      <Column Name="EQUIPOID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EQUIPONOMBRE" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="EQUIPO_CATID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.jugadores" Member="jugadores">
+    <Type Name="jugadores">
+      <Column Name="JUGID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="JUG_EQUIPOID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="JUG_SOCCENCUIL" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="JUG_MAESOC_NROAFIL" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="JUG_APELLIDO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="JUG_NOMBRE" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="JUG_ESTADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="JUG_TIPO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="JUG_FOTO" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="JUG_EMPRESA" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EstudioContableEmpresa" Member="EstudioContableEmpresa">
+    <Type Name="EstudioContableEmpresa">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EstudioContableId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CUIT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EstudiosContables" Member="EstudiosContables">
+    <Type Name="EstudiosContables">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estudio" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Telefono2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Domicilio" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Localidad" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.limpiar_tabla_socios" Method="limpiar_tabla_socios">

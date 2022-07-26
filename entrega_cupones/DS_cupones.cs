@@ -1,9 +1,14 @@
-﻿namespace entrega_cupones
+﻿namespace AutoGestion
 {
 
 
   partial class DS_cupones
   {
+    partial class InformeGeneralDeudaDataTable
+    {
+
+    }
+
     partial class FilialDataTable
     {
     }

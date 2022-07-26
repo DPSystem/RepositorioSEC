@@ -12,6 +12,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AutoGestion;
 
 namespace entrega_cupones.Formularios
 {

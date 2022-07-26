@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoGestion;
 using System.Windows.Forms;
 
 namespace entrega_cupones.Formularios

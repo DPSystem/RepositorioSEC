@@ -5,6 +5,7 @@ using System.Windows.Forms;
 //using CrystalDecisions.CrystalReports.Engine;
 using entrega_cupones.Clases;
 using Microsoft.Reporting.WebForms;
+using AutoGestion;
 
 namespace entrega_cupones.Formularios
 {

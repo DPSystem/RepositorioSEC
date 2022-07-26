@@ -88,7 +88,7 @@
             // 
             this.btn_cerrar_inspeccionar.BackColor = System.Drawing.Color.Transparent;
             this.btn_cerrar_inspeccionar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cerrar_inspeccionar.Image = global::entrega_cupones.Properties.Resources.cross_close_or_delete_circular_interface_button_symbol;
+            this.btn_cerrar_inspeccionar.Image = global::AutoGestion.Properties.Resources.cross_close_or_delete_circular_interface_button_symbol;
             this.btn_cerrar_inspeccionar.ImageActive = null;
             this.btn_cerrar_inspeccionar.Location = new System.Drawing.Point(765, 10);
             this.btn_cerrar_inspeccionar.Name = "btn_cerrar_inspeccionar";
@@ -103,7 +103,7 @@
             // 
             this.btn_cerrar.BackColor = System.Drawing.Color.Transparent;
             this.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cerrar.Image = global::entrega_cupones.Properties.Resources.cross_close_or_delete_circular_interface_button_symbol;
+            this.btn_cerrar.Image = global::AutoGestion.Properties.Resources.cross_close_or_delete_circular_interface_button_symbol;
             this.btn_cerrar.ImageActive = null;
             this.btn_cerrar.Location = new System.Drawing.Point(1297, 3);
             this.btn_cerrar.Name = "btn_cerrar";
@@ -191,7 +191,7 @@
             this.btn_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_cancelar.DisabledColor = System.Drawing.Color.Gray;
             this.btn_cancelar.Iconcolor = System.Drawing.Color.Transparent;
-            this.btn_cancelar.Iconimage = global::entrega_cupones.Properties.Resources.cancel_square_button__2_;
+            this.btn_cancelar.Iconimage = global::AutoGestion.Properties.Resources.cancel_square_button__2_;
             this.btn_cancelar.Iconimage_right = null;
             this.btn_cancelar.Iconimage_right_Selected = null;
             this.btn_cancelar.Iconimage_Selected = null;
@@ -384,7 +384,7 @@
             // picbox_socio
             // 
             this.picbox_socio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picbox_socio.Image = global::entrega_cupones.Properties.Resources.imagen_no_disponible_PNG;
+            this.picbox_socio.Image = global::AutoGestion.Properties.Resources.imagen_no_disponible_PNG;
             this.picbox_socio.Location = new System.Drawing.Point(5, 6);
             this.picbox_socio.Name = "picbox_socio";
             this.picbox_socio.Size = new System.Drawing.Size(246, 213);

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using System.IO;
 using MySql.Data.MySqlClient;
+using AutoGestion;
 
 namespace entrega_cupones
 {

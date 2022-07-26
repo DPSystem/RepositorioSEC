@@ -950,7 +950,7 @@ namespace entrega_cupones.Formularios
       this.btn_ImprimirPlanDePago2.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_ImprimirPlanDePago2.DisabledColor = System.Drawing.Color.Gray;
       this.btn_ImprimirPlanDePago2.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_ImprimirPlanDePago2.Iconimage = global::entrega_cupones.Properties.Resources.impresora_PNG_24;
+      this.btn_ImprimirPlanDePago2.Iconimage = global::AutoGestion.Properties.Resources.impresora_PNG_24;
       this.btn_ImprimirPlanDePago2.Iconimage_right = null;
       this.btn_ImprimirPlanDePago2.Iconimage_right_Selected = null;
       this.btn_ImprimirPlanDePago2.Iconimage_Selected = null;
@@ -1017,7 +1017,7 @@ namespace entrega_cupones.Formularios
       this.btn_ActivarPlan.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_ActivarPlan.DisabledColor = System.Drawing.Color.Gray;
       this.btn_ActivarPlan.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_ActivarPlan.Iconimage = global::entrega_cupones.Properties.Resources.check30___32;
+      this.btn_ActivarPlan.Iconimage = global::AutoGestion.Properties.Resources.check30___32;
       this.btn_ActivarPlan.Iconimage_right = null;
       this.btn_ActivarPlan.Iconimage_right_Selected = null;
       this.btn_ActivarPlan.Iconimage_Selected = null;
@@ -1053,7 +1053,7 @@ namespace entrega_cupones.Formularios
       this.btn_AsentarPlan.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_AsentarPlan.DisabledColor = System.Drawing.Color.Gray;
       this.btn_AsentarPlan.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_AsentarPlan.Iconimage = global::entrega_cupones.Properties.Resources.hand_shake__1_;
+      this.btn_AsentarPlan.Iconimage = global::AutoGestion.Properties.Resources.hand_shake__1_;
       this.btn_AsentarPlan.Iconimage_right = null;
       this.btn_AsentarPlan.Iconimage_right_Selected = null;
       this.btn_AsentarPlan.Iconimage_Selected = null;
@@ -1158,7 +1158,7 @@ namespace entrega_cupones.Formularios
       this.btn_VerPlanDePago.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_VerPlanDePago.DisabledColor = System.Drawing.Color.Gray;
       this.btn_VerPlanDePago.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_VerPlanDePago.Iconimage = global::entrega_cupones.Properties.Resources.calculator__1_;
+      this.btn_VerPlanDePago.Iconimage = global::AutoGestion.Properties.Resources.calculator__1_;
       this.btn_VerPlanDePago.Iconimage_right = null;
       this.btn_VerPlanDePago.Iconimage_right_Selected = null;
       this.btn_VerPlanDePago.Iconimage_Selected = null;

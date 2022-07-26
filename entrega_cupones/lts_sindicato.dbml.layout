@@ -218,12 +218,6 @@
         <elementListCompartment Id="6c7eb0ec-ab6c-4655-ba25-bdff61ea6bdf" absoluteBounds="8.39, 4.7100000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="16f3f4fb-1a4d-4be9-a3ad-faf7bb0ae24b" isExpanded="false" absoluteBounds="13.25, 5.5, 2, 0.45">
-      <DataClassMoniker Name="/lts_sindicatoDataContext/jugadores" />
-      <nestedChildShapes>
-        <elementListCompartment Id="cb9ac239-d55e-45b3-9b88-ee921eb9efe2" absoluteBounds="13.265, 5.9600000000000009, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="a3d8a829-ade6-4042-b595-452a4d186bdf" isExpanded="false" absoluteBounds="13.25, 6.125, 2, 0.45">
       <DataClassMoniker Name="/lts_sindicatoDataContext/jueces" />
       <nestedChildShapes>
@@ -270,12 +264,6 @@
       <DataClassMoniker Name="/lts_sindicatoDataContext/equipos_" />
       <nestedChildShapes>
         <elementListCompartment Id="bd484f5e-2ff5-41e1-a2a0-5ad45933e8bb" absoluteBounds="13.265, 4.7100000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="4dfcf2ae-1a50-4e3c-9560-30db3a5ec3c5" isExpanded="false" absoluteBounds="13.25, 4.875, 2, 0.45">
-      <DataClassMoniker Name="/lts_sindicatoDataContext/equipos" />
-      <nestedChildShapes>
-        <elementListCompartment Id="45fd40c4-9f4b-477f-9d48-1fb369445ece" absoluteBounds="13.265, 5.3350000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="d6ecd07f-b32e-4282-8dca-f0240ddcf936" isExpanded="false" absoluteBounds="6.125, 3.625, 2, 0.45">
@@ -624,6 +612,30 @@
       <DataClassMoniker Name="/lts_sindicatoDataContext/PlanesDePago" />
       <nestedChildShapes>
         <elementListCompartment Id="33dcf3ec-51bb-44f6-b9c9-10dc5f431cfc" absoluteBounds="8.39, 11.585, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="67cd9514-b479-4383-925d-40baa8a40d8b" isExpanded="false" absoluteBounds="13.25, 4.875, 2, 0.45">
+      <DataClassMoniker Name="/lts_sindicatoDataContext/equipos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="07915cd2-5aea-4b28-bd64-47c8c2cb3422" absoluteBounds="13.265, 5.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d6c8b43f-cbee-46e4-a904-2a877baaf936" isExpanded="false" absoluteBounds="13.25, 5.5, 2, 0.45">
+      <DataClassMoniker Name="/lts_sindicatoDataContext/jugadores" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d131954e-814c-4a82-8b49-782a4d1aafa6" absoluteBounds="13.265, 5.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="49306027-91c3-4d7a-8f99-6d9c0832913e" isExpanded="false" absoluteBounds="8.375, 11.75, 2, 0.45">
+      <DataClassMoniker Name="/lts_sindicatoDataContext/EstudioContableEmpresa" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b3e94a47-e79f-4894-a817-6e4367e2a25a" absoluteBounds="8.39, 12.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="901fe016-a7ef-4ad5-b302-5cfcd9735d84" isExpanded="false" absoluteBounds="8.375, 12.375, 2, 0.45">
+      <DataClassMoniker Name="/lts_sindicatoDataContext/EstudiosContables" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b775303c-5079-49f1-8e39-e4c5048b7889" absoluteBounds="8.39, 12.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

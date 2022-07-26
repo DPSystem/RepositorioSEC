@@ -264,7 +264,7 @@
       // 
       this.btn_cerrar_actas.BackColor = System.Drawing.Color.Transparent;
       this.btn_cerrar_actas.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btn_cerrar_actas.Image = global::entrega_cupones.Properties.Resources.cross_close_or_delete_circular_interface_button_symbol;
+      this.btn_cerrar_actas.Image = global:: AutoGestion.Properties.Resources.cross_close_or_delete_circular_interface_button_symbol;
       this.btn_cerrar_actas.ImageActive = null;
       this.btn_cerrar_actas.Location = new System.Drawing.Point(1308, 10);
       this.btn_cerrar_actas.Name = "btn_cerrar_actas";
@@ -2140,7 +2140,7 @@
       this.btn_copiar_anterior.DisabledColor = System.Drawing.Color.Gray;
       this.btn_copiar_anterior.Enabled = false;
       this.btn_copiar_anterior.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_copiar_anterior.Iconimage = global::entrega_cupones.Properties.Resources.business__2_;
+      this.btn_copiar_anterior.Iconimage = global::AutoGestion.Properties.Resources.business__2_;
       this.btn_copiar_anterior.Iconimage_right = null;
       this.btn_copiar_anterior.Iconimage_right_Selected = null;
       this.btn_copiar_anterior.Iconimage_Selected = null;
@@ -2211,7 +2211,7 @@
       this.btn_pasar_a_consulta.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_pasar_a_consulta.DisabledColor = System.Drawing.Color.Gray;
       this.btn_pasar_a_consulta.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_pasar_a_consulta.Iconimage = global::entrega_cupones.Properties.Resources.business__2_;
+      this.btn_pasar_a_consulta.Iconimage = global::AutoGestion.Properties.Resources.business__2_;
       this.btn_pasar_a_consulta.Iconimage_right = null;
       this.btn_pasar_a_consulta.Iconimage_right_Selected = null;
       this.btn_pasar_a_consulta.Iconimage_Selected = null;
@@ -2247,7 +2247,7 @@
       this.btn_ranking.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_ranking.DisabledColor = System.Drawing.Color.Gray;
       this.btn_ranking.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_ranking.Iconimage = global::entrega_cupones.Properties.Resources.business__2_;
+      this.btn_ranking.Iconimage = global::AutoGestion.Properties.Resources.business__2_;
       this.btn_ranking.Iconimage_right = null;
       this.btn_ranking.Iconimage_right_Selected = null;
       this.btn_ranking.Iconimage_Selected = null;
@@ -2284,7 +2284,7 @@
       this.btn_cobrar.DisabledColor = System.Drawing.Color.Gray;
       this.btn_cobrar.Enabled = false;
       this.btn_cobrar.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_cobrar.Iconimage = global::entrega_cupones.Properties.Resources.business__2_;
+      this.btn_cobrar.Iconimage = global::AutoGestion.Properties.Resources.business__2_;
       this.btn_cobrar.Iconimage_right = null;
       this.btn_cobrar.Iconimage_right_Selected = null;
       this.btn_cobrar.Iconimage_Selected = null;
@@ -2499,7 +2499,7 @@
       this.btn_actas_quitar.DisabledColor = System.Drawing.Color.Gray;
       this.btn_actas_quitar.Enabled = false;
       this.btn_actas_quitar.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_actas_quitar.Iconimage = global::entrega_cupones.Properties.Resources.cancel_square_button__2_1;
+      this.btn_actas_quitar.Iconimage = global::AutoGestion.Properties.Resources.cancel_square_button__2_1;
       this.btn_actas_quitar.Iconimage_right = null;
       this.btn_actas_quitar.Iconimage_right_Selected = null;
       this.btn_actas_quitar.Iconimage_Selected = null;
@@ -2646,7 +2646,7 @@
       this.txt_actas_buscar_empresa.DisabledColor = System.Drawing.Color.Gray;
       this.txt_actas_buscar_empresa.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.txt_actas_buscar_empresa.Iconcolor = System.Drawing.Color.Transparent;
-      this.txt_actas_buscar_empresa.Iconimage = global::entrega_cupones.Properties.Resources.user_searching__3_;
+      this.txt_actas_buscar_empresa.Iconimage = global::AutoGestion.Properties.Resources.user_searching__3_;
       this.txt_actas_buscar_empresa.Iconimage_right = null;
       this.txt_actas_buscar_empresa.Iconimage_right_Selected = null;
       this.txt_actas_buscar_empresa.Iconimage_Selected = null;

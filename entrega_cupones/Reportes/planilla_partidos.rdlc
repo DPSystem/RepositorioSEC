@@ -1282,7 +1282,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>TORNEO ANUAL 2019</Value>
+                  <Value>TORNEO 2021</Value>
                   <Style>
                     <FontSize>15pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -1317,7 +1317,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>MARCELO OVEJERO</Value>
+                  <Value />
                   <Style>
                     <FontSize>15pt</FontSize>
                     <FontWeight>Bold</FontWeight>

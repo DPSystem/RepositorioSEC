@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace entrega_cupones
+namespace AutoGestion
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -54,7 +54,7 @@ namespace entrega_cupones
     #endregion
 		
 		public lts_scios_mysqlDataContext() : 
-				base(global::entrega_cupones.Properties.Settings.Default.pruebaConnectionString1, mappingSource)
+				base(global::AutoGestion.Properties.Settings.Default.pruebaConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}

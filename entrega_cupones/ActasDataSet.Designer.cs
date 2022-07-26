@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace entrega_cupones {
+namespace AutoGestion {
     
     
     /// <summary>
@@ -852,7 +852,7 @@ namespace entrega_cupones {
         }
     }
 }
-namespace entrega_cupones.ActasDataSetTableAdapters {
+namespace AutoGestion.ActasDataSetTableAdapters {
     
     
     /// <summary>
@@ -1043,7 +1043,7 @@ SELECT id_impresion_actas, acta, importe, desde, hasta, inspector, cobrado FROM 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::entrega_cupones.Properties.Settings.Default.sindicatoConnectionString1;
+            this._connection.ConnectionString = global::AutoGestion.Properties.Settings.Default.sindicatoConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

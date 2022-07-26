@@ -88,7 +88,7 @@
       this.btn_reimprimir.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_reimprimir.DisabledColor = System.Drawing.Color.Gray;
       this.btn_reimprimir.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_reimprimir.Iconimage = global::entrega_cupones.Properties.Resources.refresh_arrow;
+      this.btn_reimprimir.Iconimage = global::AutoGestion.Properties.Resources.refresh_arrow;
       this.btn_reimprimir.Iconimage_right = null;
       this.btn_reimprimir.Iconimage_right_Selected = null;
       this.btn_reimprimir.Iconimage_Selected = null;
@@ -125,7 +125,7 @@
       this.btn_emitir_cupon.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_emitir_cupon.DisabledColor = System.Drawing.Color.Gray;
       this.btn_emitir_cupon.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_emitir_cupon.Iconimage = global::entrega_cupones.Properties.Resources.check30___32;
+      this.btn_emitir_cupon.Iconimage = global::AutoGestion.Properties.Resources.check30___32;
       this.btn_emitir_cupon.Iconimage_right = null;
       this.btn_emitir_cupon.Iconimage_right_Selected = null;
       this.btn_emitir_cupon.Iconimage_Selected = null;
@@ -456,7 +456,7 @@
       this.btn_cargar_exepcion.DisabledColor = System.Drawing.Color.Gray;
       this.btn_cargar_exepcion.Enabled = false;
       this.btn_cargar_exepcion.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_cargar_exepcion.Iconimage = global::entrega_cupones.Properties.Resources.check30___32;
+      this.btn_cargar_exepcion.Iconimage = global::AutoGestion.Properties.Resources.check30___32;
       this.btn_cargar_exepcion.Iconimage_right = null;
       this.btn_cargar_exepcion.Iconimage_right_Selected = null;
       this.btn_cargar_exepcion.Iconimage_Selected = null;

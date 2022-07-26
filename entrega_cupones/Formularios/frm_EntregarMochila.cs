@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using entrega_cupones.Clases;
 using entrega_cupones.Modelos;
+using AutoGestion;
 
 namespace entrega_cupones.Formularios
 {

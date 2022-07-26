@@ -384,7 +384,7 @@
       this.btn_VerRecibosDelActa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btn_VerRecibosDelActa.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btn_VerRecibosDelActa.ForeColor = System.Drawing.Color.Gainsboro;
-      this.btn_VerRecibosDelActa.Image = global::entrega_cupones.Properties.Resources.cancel__1_1;
+      this.btn_VerRecibosDelActa.Image = global::AutoGestion.Properties.Resources.cancel__1_1;
       this.btn_VerRecibosDelActa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.btn_VerRecibosDelActa.Location = new System.Drawing.Point(192, 169);
       this.btn_VerRecibosDelActa.Name = "btn_VerRecibosDelActa";
@@ -403,7 +403,7 @@
       this.btn_VerRecibosDeCuota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btn_VerRecibosDeCuota.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btn_VerRecibosDeCuota.ForeColor = System.Drawing.Color.Gainsboro;
-      this.btn_VerRecibosDeCuota.Image = global::entrega_cupones.Properties.Resources.portapapeles_24;
+      this.btn_VerRecibosDeCuota.Image = global::AutoGestion.Properties.Resources.portapapeles_24;
       this.btn_VerRecibosDeCuota.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.btn_VerRecibosDeCuota.Location = new System.Drawing.Point(5, 169);
       this.btn_VerRecibosDeCuota.Name = "btn_VerRecibosDeCuota";
@@ -715,7 +715,7 @@
       this.btn_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btn_Salir.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btn_Salir.ForeColor = System.Drawing.Color.Gainsboro;
-      this.btn_Salir.Image = global::entrega_cupones.Properties.Resources.cancel__1_1;
+      this.btn_Salir.Image = global::AutoGestion.Properties.Resources.cancel__1_1;
       this.btn_Salir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.btn_Salir.Location = new System.Drawing.Point(8, 457);
       this.btn_Salir.Name = "btn_Salir";
@@ -734,7 +734,7 @@
       this.btn_Cobrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btn_Cobrar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btn_Cobrar.ForeColor = System.Drawing.Color.Gainsboro;
-      this.btn_Cobrar.Image = global::entrega_cupones.Properties.Resources.check30___32;
+      this.btn_Cobrar.Image = global::AutoGestion.Properties.Resources.check30___32;
       this.btn_Cobrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.btn_Cobrar.Location = new System.Drawing.Point(7, 503);
       this.btn_Cobrar.Name = "btn_Cobrar";
@@ -977,7 +977,7 @@
       this.btn_AsentarEfectivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btn_AsentarEfectivo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btn_AsentarEfectivo.ForeColor = System.Drawing.Color.Gainsboro;
-      this.btn_AsentarEfectivo.Image = global::entrega_cupones.Properties.Resources.check30___32;
+      this.btn_AsentarEfectivo.Image = global::AutoGestion.Properties.Resources.check30___32;
       this.btn_AsentarEfectivo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.btn_AsentarEfectivo.Location = new System.Drawing.Point(240, 146);
       this.btn_AsentarEfectivo.Name = "btn_AsentarEfectivo";
@@ -1055,7 +1055,7 @@
       this.btn_QuitarCheque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btn_QuitarCheque.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btn_QuitarCheque.ForeColor = System.Drawing.Color.Gainsboro;
-      this.btn_QuitarCheque.Image = global::entrega_cupones.Properties.Resources.cancel__1_1;
+      this.btn_QuitarCheque.Image = global::AutoGestion.Properties.Resources.cancel__1_1;
       this.btn_QuitarCheque.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.btn_QuitarCheque.Location = new System.Drawing.Point(394, 60);
       this.btn_QuitarCheque.Name = "btn_QuitarCheque";
@@ -1074,7 +1074,7 @@
       this.btn_CargarCheque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btn_CargarCheque.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btn_CargarCheque.ForeColor = System.Drawing.Color.Gainsboro;
-      this.btn_CargarCheque.Image = global::entrega_cupones.Properties.Resources.check30___32;
+      this.btn_CargarCheque.Image = global::AutoGestion.Properties.Resources.check30___32;
       this.btn_CargarCheque.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.btn_CargarCheque.Location = new System.Drawing.Point(297, 60);
       this.btn_CargarCheque.Name = "btn_CargarCheque";
@@ -1404,7 +1404,7 @@
       this.btn_CargarTransf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btn_CargarTransf.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btn_CargarTransf.ForeColor = System.Drawing.Color.Gainsboro;
-      this.btn_CargarTransf.Image = global::entrega_cupones.Properties.Resources.check30___32;
+      this.btn_CargarTransf.Image = global::AutoGestion.Properties.Resources.check30___32;
       this.btn_CargarTransf.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.btn_CargarTransf.Location = new System.Drawing.Point(207, 165);
       this.btn_CargarTransf.Name = "btn_CargarTransf";
@@ -1582,7 +1582,7 @@
       this.btn_CargarCanje.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btn_CargarCanje.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btn_CargarCanje.ForeColor = System.Drawing.Color.Gainsboro;
-      this.btn_CargarCanje.Image = global::entrega_cupones.Properties.Resources.check30___32;
+      this.btn_CargarCanje.Image = global::AutoGestion.Properties.Resources.check30___32;
       this.btn_CargarCanje.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.btn_CargarCanje.Location = new System.Drawing.Point(71, 217);
       this.btn_CargarCanje.Name = "btn_CargarCanje";

@@ -166,7 +166,7 @@
       // 
       this.btn_cerrar.BackColor = System.Drawing.Color.Transparent;
       this.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btn_cerrar.Image = global::entrega_cupones.Properties.Resources.cross_close_or_delete_circular_interface_button_symbol;
+      this.btn_cerrar.Image = global::AutoGestion.Properties.Resources.cross_close_or_delete_circular_interface_button_symbol;
       this.btn_cerrar.ImageActive = null;
       this.btn_cerrar.Location = new System.Drawing.Point(1038, 10);
       this.btn_cerrar.Name = "btn_cerrar";
@@ -188,7 +188,7 @@
       this.btn_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_cancelar.DisabledColor = System.Drawing.Color.Gray;
       this.btn_cancelar.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_cancelar.Iconimage = global::entrega_cupones.Properties.Resources.cancel_square_button__2_;
+      this.btn_cancelar.Iconimage = global::AutoGestion.Properties.Resources.cancel_square_button__2_;
       this.btn_cancelar.Iconimage_right = null;
       this.btn_cancelar.Iconimage_right_Selected = null;
       this.btn_cancelar.Iconimage_Selected = null;
@@ -261,7 +261,7 @@
       this.btn_buscar_empresa.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_buscar_empresa.DisabledColor = System.Drawing.Color.Gray;
       this.btn_buscar_empresa.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_buscar_empresa.Iconimage = global::entrega_cupones.Properties.Resources.searching_a_person__3_;
+      this.btn_buscar_empresa.Iconimage = global::AutoGestion.Properties.Resources.searching_a_person__3_;
       this.btn_buscar_empresa.Iconimage_right = null;
       this.btn_buscar_empresa.Iconimage_right_Selected = null;
       this.btn_buscar_empresa.Iconimage_Selected = null;

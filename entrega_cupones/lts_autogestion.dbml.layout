@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14, 12.375" name="lts_autogestion">
+  <DataContextMoniker Name="/lts_autogestionDataContext" />
+  <nestedChildShapes>
+    <classShape Id="90cd1b99-68b6-46f8-978c-03ed65d107fc" absoluteBounds="0.75, 0.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/lts_autogestionDataContext/Objetos_" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e1ea61f6-a27b-4330-b16f-b9e5a0bd72a9" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0e24fad4-092e-4ffb-af61-c6149cba1c80" absoluteBounds="3.75, 0.75, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/lts_autogestionDataContext/Proveedores" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2706e4c8-1714-451a-b798-ac73b9b2ee29" absoluteBounds="3.765, 1.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8d592790-eda8-4b6a-81eb-4fc963c2b4b6" absoluteBounds="0.75, 5.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/lts_autogestionDataContext/Roles_" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9976c88a-547b-4ab3-8337-3f1372dddc87" absoluteBounds="0.765, 6.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="733dbeb8-d696-4841-84a5-ed1a80b39e25" absoluteBounds="3.75, 4.5, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/lts_autogestionDataContext/Usuarios_" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c7386920-3bdc-45df-ac69-b14746758234" absoluteBounds="3.765, 4.96, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7ba47ef0-8ea0-4daa-a8b0-68de54f01f1e" absoluteBounds="6.75, 0.75, 2, 1.7708968098958329">
+      <DataClassMoniker Name="/lts_autogestionDataContext/UsuariosObjetos_" />
+      <nestedChildShapes>
+        <elementListCompartment Id="efc5b8ec-31cb-4597-82bc-96d5ab995748" absoluteBounds="6.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8b2e695b-5d89-4efc-92af-54ddbf0770a0" absoluteBounds="11.75, 0.75, 2, 2.5401025390624996">
+      <DataClassMoniker Name="/lts_autogestionDataContext/autogestion_liquidacion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="74f986c0-1154-4284-a61b-c4a95108f648" absoluteBounds="11.765, 1.2100000000000009, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="10beb756-0afd-4477-adc0-b988256a23dc" absoluteBounds="11.75, 3.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/lts_autogestionDataContext/autogestion_liquidacion_detalle" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7c9a4403-7ccd-4106-a396-8162f25793a9" absoluteBounds="11.765, 3.9600000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1bd516cf-2826-4ab1-9e9a-c4d69ff52fd1" absoluteBounds="11.75, 6, 2, 2.5401025390624987">
+      <DataClassMoniker Name="/lts_autogestionDataContext/empleados_bancos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7968904a-d792-469f-b3f8-28dbd96e4bee" absoluteBounds="11.765, 6.4600000000000009, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2951748a-7486-4237-a615-5528ad9021a3" absoluteBounds="9.25, 0.75, 2, 11.385968424479165">
+      <DataClassMoniker Name="/lts_autogestionDataContext/empleados" />
+      <nestedChildShapes>
+        <elementListCompartment Id="11c0297f-1bb7-464c-840e-02fff84c2590" absoluteBounds="9.265, 1.21, 1.9700000000000002, 10.825968424479166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2549ed27-7090-41c8-9392-3cf8b3e2ac31" absoluteBounds="6.625, 2.625, 2, 3.1170068359375">
+      <DataClassMoniker Name="/lts_autogestionDataContext/Creditos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f6fb28f1-648f-4758-a95b-29f0abe88b8f" absoluteBounds="6.64, 3.085, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2692019d-c023-4ba1-83d6-f48006b7bf6c" absoluteBounds="0.75, 3.75, 2, 1.9631982421875">
+      <DataClassMoniker Name="/lts_autogestionDataContext/Creditos_Cobros" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b4932314-1519-4831-9a7d-e4ef640be7f9" absoluteBounds="0.76500000000000012, 4.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="318f7545-3e5c-4e5f-ae0b-e05e53ecab08" absoluteBounds="6.5, 5.875, 2, 2.5401025390625">
+      <DataClassMoniker Name="/lts_autogestionDataContext/Creditos_Detalles" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c538f704-0868-4a7b-a8b9-68f041236170" absoluteBounds="6.5150000000000006, 6.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

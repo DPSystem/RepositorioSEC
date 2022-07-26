@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace entrega_cupones
+namespace AutoGestion
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -99,9 +99,6 @@ namespace entrega_cupones
     partial void Insertjugadores___(jugadores___ instance);
     partial void Updatejugadores___(jugadores___ instance);
     partial void Deletejugadores___(jugadores___ instance);
-    partial void Insertjugadores(jugadores instance);
-    partial void Updatejugadores(jugadores instance);
-    partial void Deletejugadores(jugadores instance);
     partial void Insertjueces(jueces instance);
     partial void Updatejueces(jueces instance);
     partial void Deletejueces(jueces instance);
@@ -282,10 +279,22 @@ namespace entrega_cupones
     partial void InsertPlanesDePago(PlanesDePago instance);
     partial void UpdatePlanesDePago(PlanesDePago instance);
     partial void DeletePlanesDePago(PlanesDePago instance);
+    partial void Insertequipos(equipos instance);
+    partial void Updateequipos(equipos instance);
+    partial void Deleteequipos(equipos instance);
+    partial void Insertjugadores(jugadores instance);
+    partial void Updatejugadores(jugadores instance);
+    partial void Deletejugadores(jugadores instance);
+    partial void InsertEstudioContableEmpresa(EstudioContableEmpresa instance);
+    partial void UpdateEstudioContableEmpresa(EstudioContableEmpresa instance);
+    partial void DeleteEstudioContableEmpresa(EstudioContableEmpresa instance);
+    partial void InsertEstudiosContables(EstudiosContables instance);
+    partial void UpdateEstudiosContables(EstudiosContables instance);
+    partial void DeleteEstudiosContables(EstudiosContables instance);
     #endregion
 		
 		public lts_sindicatoDataContext() : 
-				base(global::entrega_cupones.Properties.Settings.Default.sindicatoConnectionString1, mappingSource)
+				base(global::AutoGestion.Properties.Settings.Default.sindicatoConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -602,14 +611,6 @@ namespace entrega_cupones
 			}
 		}
 		
-		public System.Data.Linq.Table<jugadores> jugadores
-		{
-			get
-			{
-				return this.GetTable<jugadores>();
-			}
-		}
-		
 		public System.Data.Linq.Table<jueces> jueces
 		{
 			get
@@ -671,14 +672,6 @@ namespace entrega_cupones
 			get
 			{
 				return this.GetTable<equipos_>();
-			}
-		}
-		
-		public System.Data.Linq.Table<equipos> equipos
-		{
-			get
-			{
-				return this.GetTable<equipos>();
 			}
 		}
 		
@@ -1143,6 +1136,38 @@ namespace entrega_cupones
 			get
 			{
 				return this.GetTable<PlanesDePago>();
+			}
+		}
+		
+		public System.Data.Linq.Table<equipos> equipos
+		{
+			get
+			{
+				return this.GetTable<equipos>();
+			}
+		}
+		
+		public System.Data.Linq.Table<jugadores> jugadores
+		{
+			get
+			{
+				return this.GetTable<jugadores>();
+			}
+		}
+		
+		public System.Data.Linq.Table<EstudioContableEmpresa> EstudioContableEmpresa
+		{
+			get
+			{
+				return this.GetTable<EstudioContableEmpresa>();
+			}
+		}
+		
+		public System.Data.Linq.Table<EstudiosContables> EstudiosContables
+		{
+			get
+			{
+				return this.GetTable<EstudiosContables>();
 			}
 		}
 		
@@ -6767,284 +6792,6 @@ namespace entrega_cupones
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.jugadores")]
-	public partial class jugadores : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _JUGID;
-		
-		private int _JUG_EQUIPOID;
-		
-		private double _JUG_SOCCENCUIL;
-		
-		private string _JUG_MAESOC_NROAFIL;
-		
-		private string _JUG_APELLIDO;
-		
-		private string _JUG_NOMBRE;
-		
-		private System.Nullable<int> _JUG_ESTADO;
-		
-		private System.Nullable<int> _JUG_TIPO;
-		
-		private System.Data.Linq.Binary _JUG_FOTO;
-		
-		private string _JUG_EMPRESA;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnJUGIDChanging(int value);
-    partial void OnJUGIDChanged();
-    partial void OnJUG_EQUIPOIDChanging(int value);
-    partial void OnJUG_EQUIPOIDChanged();
-    partial void OnJUG_SOCCENCUILChanging(double value);
-    partial void OnJUG_SOCCENCUILChanged();
-    partial void OnJUG_MAESOC_NROAFILChanging(string value);
-    partial void OnJUG_MAESOC_NROAFILChanged();
-    partial void OnJUG_APELLIDOChanging(string value);
-    partial void OnJUG_APELLIDOChanged();
-    partial void OnJUG_NOMBREChanging(string value);
-    partial void OnJUG_NOMBREChanged();
-    partial void OnJUG_ESTADOChanging(System.Nullable<int> value);
-    partial void OnJUG_ESTADOChanged();
-    partial void OnJUG_TIPOChanging(System.Nullable<int> value);
-    partial void OnJUG_TIPOChanged();
-    partial void OnJUG_FOTOChanging(System.Data.Linq.Binary value);
-    partial void OnJUG_FOTOChanged();
-    partial void OnJUG_EMPRESAChanging(string value);
-    partial void OnJUG_EMPRESAChanged();
-    #endregion
-		
-		public jugadores()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JUGID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int JUGID
-		{
-			get
-			{
-				return this._JUGID;
-			}
-			set
-			{
-				if ((this._JUGID != value))
-				{
-					this.OnJUGIDChanging(value);
-					this.SendPropertyChanging();
-					this._JUGID = value;
-					this.SendPropertyChanged("JUGID");
-					this.OnJUGIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JUG_EQUIPOID", DbType="Int NOT NULL")]
-		public int JUG_EQUIPOID
-		{
-			get
-			{
-				return this._JUG_EQUIPOID;
-			}
-			set
-			{
-				if ((this._JUG_EQUIPOID != value))
-				{
-					this.OnJUG_EQUIPOIDChanging(value);
-					this.SendPropertyChanging();
-					this._JUG_EQUIPOID = value;
-					this.SendPropertyChanged("JUG_EQUIPOID");
-					this.OnJUG_EQUIPOIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JUG_SOCCENCUIL", DbType="Float NOT NULL")]
-		public double JUG_SOCCENCUIL
-		{
-			get
-			{
-				return this._JUG_SOCCENCUIL;
-			}
-			set
-			{
-				if ((this._JUG_SOCCENCUIL != value))
-				{
-					this.OnJUG_SOCCENCUILChanging(value);
-					this.SendPropertyChanging();
-					this._JUG_SOCCENCUIL = value;
-					this.SendPropertyChanged("JUG_SOCCENCUIL");
-					this.OnJUG_SOCCENCUILChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JUG_MAESOC_NROAFIL", DbType="VarChar(15)")]
-		public string JUG_MAESOC_NROAFIL
-		{
-			get
-			{
-				return this._JUG_MAESOC_NROAFIL;
-			}
-			set
-			{
-				if ((this._JUG_MAESOC_NROAFIL != value))
-				{
-					this.OnJUG_MAESOC_NROAFILChanging(value);
-					this.SendPropertyChanging();
-					this._JUG_MAESOC_NROAFIL = value;
-					this.SendPropertyChanged("JUG_MAESOC_NROAFIL");
-					this.OnJUG_MAESOC_NROAFILChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JUG_APELLIDO", DbType="VarChar(50)")]
-		public string JUG_APELLIDO
-		{
-			get
-			{
-				return this._JUG_APELLIDO;
-			}
-			set
-			{
-				if ((this._JUG_APELLIDO != value))
-				{
-					this.OnJUG_APELLIDOChanging(value);
-					this.SendPropertyChanging();
-					this._JUG_APELLIDO = value;
-					this.SendPropertyChanged("JUG_APELLIDO");
-					this.OnJUG_APELLIDOChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JUG_NOMBRE", DbType="VarChar(70)")]
-		public string JUG_NOMBRE
-		{
-			get
-			{
-				return this._JUG_NOMBRE;
-			}
-			set
-			{
-				if ((this._JUG_NOMBRE != value))
-				{
-					this.OnJUG_NOMBREChanging(value);
-					this.SendPropertyChanging();
-					this._JUG_NOMBRE = value;
-					this.SendPropertyChanged("JUG_NOMBRE");
-					this.OnJUG_NOMBREChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JUG_ESTADO", DbType="Int")]
-		public System.Nullable<int> JUG_ESTADO
-		{
-			get
-			{
-				return this._JUG_ESTADO;
-			}
-			set
-			{
-				if ((this._JUG_ESTADO != value))
-				{
-					this.OnJUG_ESTADOChanging(value);
-					this.SendPropertyChanging();
-					this._JUG_ESTADO = value;
-					this.SendPropertyChanged("JUG_ESTADO");
-					this.OnJUG_ESTADOChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JUG_TIPO", DbType="Int")]
-		public System.Nullable<int> JUG_TIPO
-		{
-			get
-			{
-				return this._JUG_TIPO;
-			}
-			set
-			{
-				if ((this._JUG_TIPO != value))
-				{
-					this.OnJUG_TIPOChanging(value);
-					this.SendPropertyChanging();
-					this._JUG_TIPO = value;
-					this.SendPropertyChanged("JUG_TIPO");
-					this.OnJUG_TIPOChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JUG_FOTO", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary JUG_FOTO
-		{
-			get
-			{
-				return this._JUG_FOTO;
-			}
-			set
-			{
-				if ((this._JUG_FOTO != value))
-				{
-					this.OnJUG_FOTOChanging(value);
-					this.SendPropertyChanging();
-					this._JUG_FOTO = value;
-					this.SendPropertyChanged("JUG_FOTO");
-					this.OnJUG_FOTOChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JUG_EMPRESA", DbType="VarChar(100)")]
-		public string JUG_EMPRESA
-		{
-			get
-			{
-				return this._JUG_EMPRESA;
-			}
-			set
-			{
-				if ((this._JUG_EMPRESA != value))
-				{
-					this.OnJUG_EMPRESAChanging(value);
-					this.SendPropertyChanging();
-					this._JUG_EMPRESA = value;
-					this.SendPropertyChanged("JUG_EMPRESA");
-					this.OnJUG_EMPRESAChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.jueces")]
 	public partial class jueces : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -10106,69 +9853,6 @@ namespace entrega_cupones
 		private int _EQUIPO_CATID;
 		
 		public equipos_()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EQUIPOID", DbType="Int NOT NULL")]
-		public int EQUIPOID
-		{
-			get
-			{
-				return this._EQUIPOID;
-			}
-			set
-			{
-				if ((this._EQUIPOID != value))
-				{
-					this._EQUIPOID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EQUIPONOMBRE", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string EQUIPONOMBRE
-		{
-			get
-			{
-				return this._EQUIPONOMBRE;
-			}
-			set
-			{
-				if ((this._EQUIPONOMBRE != value))
-				{
-					this._EQUIPONOMBRE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EQUIPO_CATID", DbType="Int NOT NULL")]
-		public int EQUIPO_CATID
-		{
-			get
-			{
-				return this._EQUIPO_CATID;
-			}
-			set
-			{
-				if ((this._EQUIPO_CATID != value))
-				{
-					this._EQUIPO_CATID = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.equipos")]
-	public partial class equipos
-	{
-		
-		private int _EQUIPOID;
-		
-		private string _EQUIPONOMBRE;
-		
-		private int _EQUIPO_CATID;
-		
-		public equipos()
 		{
 		}
 		
@@ -26757,6 +26441,710 @@ namespace entrega_cupones
 					this._UserId = value;
 					this.SendPropertyChanged("UserId");
 					this.OnUserIdChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.equipos")]
+	public partial class equipos : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _EQUIPOID;
+		
+		private string _EQUIPONOMBRE;
+		
+		private int _EQUIPO_CATID;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnEQUIPOIDChanging(int value);
+    partial void OnEQUIPOIDChanged();
+    partial void OnEQUIPONOMBREChanging(string value);
+    partial void OnEQUIPONOMBREChanged();
+    partial void OnEQUIPO_CATIDChanging(int value);
+    partial void OnEQUIPO_CATIDChanged();
+    #endregion
+		
+		public equipos()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EQUIPOID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int EQUIPOID
+		{
+			get
+			{
+				return this._EQUIPOID;
+			}
+			set
+			{
+				if ((this._EQUIPOID != value))
+				{
+					this.OnEQUIPOIDChanging(value);
+					this.SendPropertyChanging();
+					this._EQUIPOID = value;
+					this.SendPropertyChanged("EQUIPOID");
+					this.OnEQUIPOIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EQUIPONOMBRE", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string EQUIPONOMBRE
+		{
+			get
+			{
+				return this._EQUIPONOMBRE;
+			}
+			set
+			{
+				if ((this._EQUIPONOMBRE != value))
+				{
+					this.OnEQUIPONOMBREChanging(value);
+					this.SendPropertyChanging();
+					this._EQUIPONOMBRE = value;
+					this.SendPropertyChanged("EQUIPONOMBRE");
+					this.OnEQUIPONOMBREChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EQUIPO_CATID", DbType="Int NOT NULL")]
+		public int EQUIPO_CATID
+		{
+			get
+			{
+				return this._EQUIPO_CATID;
+			}
+			set
+			{
+				if ((this._EQUIPO_CATID != value))
+				{
+					this.OnEQUIPO_CATIDChanging(value);
+					this.SendPropertyChanging();
+					this._EQUIPO_CATID = value;
+					this.SendPropertyChanged("EQUIPO_CATID");
+					this.OnEQUIPO_CATIDChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.jugadores")]
+	public partial class jugadores : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _JUGID;
+		
+		private int _JUG_EQUIPOID;
+		
+		private double _JUG_SOCCENCUIL;
+		
+		private string _JUG_MAESOC_NROAFIL;
+		
+		private string _JUG_APELLIDO;
+		
+		private string _JUG_NOMBRE;
+		
+		private System.Nullable<int> _JUG_ESTADO;
+		
+		private System.Nullable<int> _JUG_TIPO;
+		
+		private System.Data.Linq.Binary _JUG_FOTO;
+		
+		private string _JUG_EMPRESA;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnJUGIDChanging(int value);
+    partial void OnJUGIDChanged();
+    partial void OnJUG_EQUIPOIDChanging(int value);
+    partial void OnJUG_EQUIPOIDChanged();
+    partial void OnJUG_SOCCENCUILChanging(double value);
+    partial void OnJUG_SOCCENCUILChanged();
+    partial void OnJUG_MAESOC_NROAFILChanging(string value);
+    partial void OnJUG_MAESOC_NROAFILChanged();
+    partial void OnJUG_APELLIDOChanging(string value);
+    partial void OnJUG_APELLIDOChanged();
+    partial void OnJUG_NOMBREChanging(string value);
+    partial void OnJUG_NOMBREChanged();
+    partial void OnJUG_ESTADOChanging(System.Nullable<int> value);
+    partial void OnJUG_ESTADOChanged();
+    partial void OnJUG_TIPOChanging(System.Nullable<int> value);
+    partial void OnJUG_TIPOChanged();
+    partial void OnJUG_FOTOChanging(System.Data.Linq.Binary value);
+    partial void OnJUG_FOTOChanged();
+    partial void OnJUG_EMPRESAChanging(string value);
+    partial void OnJUG_EMPRESAChanged();
+    #endregion
+		
+		public jugadores()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JUGID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int JUGID
+		{
+			get
+			{
+				return this._JUGID;
+			}
+			set
+			{
+				if ((this._JUGID != value))
+				{
+					this.OnJUGIDChanging(value);
+					this.SendPropertyChanging();
+					this._JUGID = value;
+					this.SendPropertyChanged("JUGID");
+					this.OnJUGIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JUG_EQUIPOID", DbType="Int NOT NULL")]
+		public int JUG_EQUIPOID
+		{
+			get
+			{
+				return this._JUG_EQUIPOID;
+			}
+			set
+			{
+				if ((this._JUG_EQUIPOID != value))
+				{
+					this.OnJUG_EQUIPOIDChanging(value);
+					this.SendPropertyChanging();
+					this._JUG_EQUIPOID = value;
+					this.SendPropertyChanged("JUG_EQUIPOID");
+					this.OnJUG_EQUIPOIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JUG_SOCCENCUIL", DbType="Float NOT NULL")]
+		public double JUG_SOCCENCUIL
+		{
+			get
+			{
+				return this._JUG_SOCCENCUIL;
+			}
+			set
+			{
+				if ((this._JUG_SOCCENCUIL != value))
+				{
+					this.OnJUG_SOCCENCUILChanging(value);
+					this.SendPropertyChanging();
+					this._JUG_SOCCENCUIL = value;
+					this.SendPropertyChanged("JUG_SOCCENCUIL");
+					this.OnJUG_SOCCENCUILChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JUG_MAESOC_NROAFIL", DbType="VarChar(15)")]
+		public string JUG_MAESOC_NROAFIL
+		{
+			get
+			{
+				return this._JUG_MAESOC_NROAFIL;
+			}
+			set
+			{
+				if ((this._JUG_MAESOC_NROAFIL != value))
+				{
+					this.OnJUG_MAESOC_NROAFILChanging(value);
+					this.SendPropertyChanging();
+					this._JUG_MAESOC_NROAFIL = value;
+					this.SendPropertyChanged("JUG_MAESOC_NROAFIL");
+					this.OnJUG_MAESOC_NROAFILChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JUG_APELLIDO", DbType="VarChar(50)")]
+		public string JUG_APELLIDO
+		{
+			get
+			{
+				return this._JUG_APELLIDO;
+			}
+			set
+			{
+				if ((this._JUG_APELLIDO != value))
+				{
+					this.OnJUG_APELLIDOChanging(value);
+					this.SendPropertyChanging();
+					this._JUG_APELLIDO = value;
+					this.SendPropertyChanged("JUG_APELLIDO");
+					this.OnJUG_APELLIDOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JUG_NOMBRE", DbType="VarChar(70)")]
+		public string JUG_NOMBRE
+		{
+			get
+			{
+				return this._JUG_NOMBRE;
+			}
+			set
+			{
+				if ((this._JUG_NOMBRE != value))
+				{
+					this.OnJUG_NOMBREChanging(value);
+					this.SendPropertyChanging();
+					this._JUG_NOMBRE = value;
+					this.SendPropertyChanged("JUG_NOMBRE");
+					this.OnJUG_NOMBREChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JUG_ESTADO", DbType="Int")]
+		public System.Nullable<int> JUG_ESTADO
+		{
+			get
+			{
+				return this._JUG_ESTADO;
+			}
+			set
+			{
+				if ((this._JUG_ESTADO != value))
+				{
+					this.OnJUG_ESTADOChanging(value);
+					this.SendPropertyChanging();
+					this._JUG_ESTADO = value;
+					this.SendPropertyChanged("JUG_ESTADO");
+					this.OnJUG_ESTADOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JUG_TIPO", DbType="Int")]
+		public System.Nullable<int> JUG_TIPO
+		{
+			get
+			{
+				return this._JUG_TIPO;
+			}
+			set
+			{
+				if ((this._JUG_TIPO != value))
+				{
+					this.OnJUG_TIPOChanging(value);
+					this.SendPropertyChanging();
+					this._JUG_TIPO = value;
+					this.SendPropertyChanged("JUG_TIPO");
+					this.OnJUG_TIPOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JUG_FOTO", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary JUG_FOTO
+		{
+			get
+			{
+				return this._JUG_FOTO;
+			}
+			set
+			{
+				if ((this._JUG_FOTO != value))
+				{
+					this.OnJUG_FOTOChanging(value);
+					this.SendPropertyChanging();
+					this._JUG_FOTO = value;
+					this.SendPropertyChanged("JUG_FOTO");
+					this.OnJUG_FOTOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JUG_EMPRESA", DbType="VarChar(100)")]
+		public string JUG_EMPRESA
+		{
+			get
+			{
+				return this._JUG_EMPRESA;
+			}
+			set
+			{
+				if ((this._JUG_EMPRESA != value))
+				{
+					this.OnJUG_EMPRESAChanging(value);
+					this.SendPropertyChanging();
+					this._JUG_EMPRESA = value;
+					this.SendPropertyChanged("JUG_EMPRESA");
+					this.OnJUG_EMPRESAChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.EstudioContableEmpresa")]
+	public partial class EstudioContableEmpresa : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private System.Nullable<int> _EstudioContableId;
+		
+		private string _CUIT;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnEstudioContableIdChanging(System.Nullable<int> value);
+    partial void OnEstudioContableIdChanged();
+    partial void OnCUITChanging(string value);
+    partial void OnCUITChanged();
+    #endregion
+		
+		public EstudioContableEmpresa()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstudioContableId", DbType="Int")]
+		public System.Nullable<int> EstudioContableId
+		{
+			get
+			{
+				return this._EstudioContableId;
+			}
+			set
+			{
+				if ((this._EstudioContableId != value))
+				{
+					this.OnEstudioContableIdChanging(value);
+					this.SendPropertyChanging();
+					this._EstudioContableId = value;
+					this.SendPropertyChanged("EstudioContableId");
+					this.OnEstudioContableIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CUIT", DbType="VarChar(20)")]
+		public string CUIT
+		{
+			get
+			{
+				return this._CUIT;
+			}
+			set
+			{
+				if ((this._CUIT != value))
+				{
+					this.OnCUITChanging(value);
+					this.SendPropertyChanging();
+					this._CUIT = value;
+					this.SendPropertyChanged("CUIT");
+					this.OnCUITChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.EstudiosContables")]
+	public partial class EstudiosContables : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Email;
+		
+		private string _Telefono;
+		
+		private string _Estudio;
+		
+		private string _Telefono2;
+		
+		private string _Domicilio;
+		
+		private string _Localidad;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnTelefonoChanging(string value);
+    partial void OnTelefonoChanged();
+    partial void OnEstudioChanging(string value);
+    partial void OnEstudioChanged();
+    partial void OnTelefono2Changing(string value);
+    partial void OnTelefono2Changed();
+    partial void OnDomicilioChanging(string value);
+    partial void OnDomicilioChanged();
+    partial void OnLocalidadChanging(string value);
+    partial void OnLocalidadChanged();
+    #endregion
+		
+		public EstudiosContables()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(50)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Telefono", DbType="VarChar(50)")]
+		public string Telefono
+		{
+			get
+			{
+				return this._Telefono;
+			}
+			set
+			{
+				if ((this._Telefono != value))
+				{
+					this.OnTelefonoChanging(value);
+					this.SendPropertyChanging();
+					this._Telefono = value;
+					this.SendPropertyChanged("Telefono");
+					this.OnTelefonoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estudio", DbType="VarChar(50)")]
+		public string Estudio
+		{
+			get
+			{
+				return this._Estudio;
+			}
+			set
+			{
+				if ((this._Estudio != value))
+				{
+					this.OnEstudioChanging(value);
+					this.SendPropertyChanging();
+					this._Estudio = value;
+					this.SendPropertyChanged("Estudio");
+					this.OnEstudioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Telefono2", DbType="VarChar(50)")]
+		public string Telefono2
+		{
+			get
+			{
+				return this._Telefono2;
+			}
+			set
+			{
+				if ((this._Telefono2 != value))
+				{
+					this.OnTelefono2Changing(value);
+					this.SendPropertyChanging();
+					this._Telefono2 = value;
+					this.SendPropertyChanged("Telefono2");
+					this.OnTelefono2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Domicilio", DbType="VarChar(50)")]
+		public string Domicilio
+		{
+			get
+			{
+				return this._Domicilio;
+			}
+			set
+			{
+				if ((this._Domicilio != value))
+				{
+					this.OnDomicilioChanging(value);
+					this.SendPropertyChanging();
+					this._Domicilio = value;
+					this.SendPropertyChanged("Domicilio");
+					this.OnDomicilioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Localidad", DbType="VarChar(50)")]
+		public string Localidad
+		{
+			get
+			{
+				return this._Localidad;
+			}
+			set
+			{
+				if ((this._Localidad != value))
+				{
+					this.OnLocalidadChanging(value);
+					this.SendPropertyChanging();
+					this._Localidad = value;
+					this.SendPropertyChanged("Localidad");
+					this.OnLocalidadChanged();
 				}
 			}
 		}

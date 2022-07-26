@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using entrega_cupones.Clases;
 using System.Drawing.Imaging;
 using Microsoft.Reporting.WebForms;
+using AutoGestion;
 
 namespace entrega_cupones.Formularios
 {

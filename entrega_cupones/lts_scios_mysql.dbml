@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="prueba" Class="lts_scios_mysqlDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DIEGO-LENOVO;Initial Catalog=prueba;Integrated Security=True" SettingsObjectName="entrega_cupones.Properties.Settings" SettingsPropertyName="pruebaConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DIEGO-LENOVO;Initial Catalog=prueba;Integrated Security=True" SettingsObjectName="AutoGestion.Properties.Settings" SettingsPropertyName="pruebaConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ddjj_1" Member="ddjj_1">
     <Type Name="ddjj_1">
       <Column Name="periodo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />

@@ -144,7 +144,7 @@
             this.txt_comentario = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel21 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuSeparator8 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.tableAdapterManager1 = new entrega_cupones.DS_cuponesTableAdapters.TableAdapterManager();
+            this.tableAdapterManager1 = new AutoGestion.DS_cuponesTableAdapters.TableAdapterManager();
             this.btn_salir = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.btn_recibir_docum = new Bunifu.Framework.UI.BunifuImageButton();
@@ -403,7 +403,7 @@
             // 
             this.btn_reasignar_mochila.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
             this.btn_reasignar_mochila.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_reasignar_mochila.Image = global::entrega_cupones.Properties.Resources.right_arrow;
+            this.btn_reasignar_mochila.Image = global::AutoGestion.Properties.Resources.right_arrow;
             this.btn_reasignar_mochila.ImageActive = null;
             this.btn_reasignar_mochila.Location = new System.Drawing.Point(472, 320);
             this.btn_reasignar_mochila.Name = "btn_reasignar_mochila";
@@ -1599,7 +1599,7 @@
             // 
             this.btn_buscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
             this.btn_buscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_buscar.Image = global::entrega_cupones.Properties.Resources.right_arrow;
+            this.btn_buscar.Image = global::AutoGestion.Properties.Resources.right_arrow;
             this.btn_buscar.ImageActive = null;
             this.btn_buscar.Location = new System.Drawing.Point(494, 45);
             this.btn_buscar.Name = "btn_buscar";
@@ -1711,7 +1711,7 @@
             this.tableAdapterManager1.Connection = null;
             this.tableAdapterManager1.impresion_comprobanteTableAdapter = null;
             this.tableAdapterManager1.socios_importadosTableAdapter = null;
-            this.tableAdapterManager1.UpdateOrder = entrega_cupones.DS_cuponesTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager1.UpdateOrder = AutoGestion.DS_cuponesTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // btn_salir
             // 
@@ -1911,7 +1911,7 @@
         }
 
         #endregion
-        private DS_cuponesTableAdapters.TableAdapterManager tableAdapterManager1;
+        private AutoGestion.DS_cuponesTableAdapters.TableAdapterManager tableAdapterManager1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuImageButton btn_buscar;
         private Bunifu.Framework.UI.BunifuMetroTextbox Txt_dni;

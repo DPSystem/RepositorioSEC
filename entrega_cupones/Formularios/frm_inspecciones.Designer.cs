@@ -2414,7 +2414,7 @@
       // 
       this.btn_cerrar.BackColor = System.Drawing.Color.Transparent;
       this.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btn_cerrar.Image = global::entrega_cupones.Properties.Resources.cross_close_or_delete_circular_interface_button_symbol;
+      this.btn_cerrar.Image = global::AutoGestion.Properties.Resources.cross_close_or_delete_circular_interface_button_symbol;
       this.btn_cerrar.ImageActive = null;
       this.btn_cerrar.Location = new System.Drawing.Point(1297, 3);
       this.btn_cerrar.Name = "btn_cerrar";
@@ -3310,7 +3310,7 @@
       // 
       this.btn_imprimir_simulacion_acta.BackColor = System.Drawing.Color.White;
       this.btn_imprimir_simulacion_acta.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btn_imprimir_simulacion_acta.Image = global::entrega_cupones.Properties.Resources.cancel_square_button__2_;
+      this.btn_imprimir_simulacion_acta.Image = global::AutoGestion.Properties.Resources.cancel_square_button__2_;
       this.btn_imprimir_simulacion_acta.ImageActive = null;
       this.btn_imprimir_simulacion_acta.Location = new System.Drawing.Point(1032, 416);
       this.btn_imprimir_simulacion_acta.Name = "btn_imprimir_simulacion_acta";
@@ -3325,7 +3325,7 @@
       // 
       this.btn_quitar_periodo_simulacion.BackColor = System.Drawing.Color.White;
       this.btn_quitar_periodo_simulacion.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btn_quitar_periodo_simulacion.Image = global::entrega_cupones.Properties.Resources.cancel_square_button__2_;
+      this.btn_quitar_periodo_simulacion.Image = global::AutoGestion.Properties.Resources.cancel_square_button__2_;
       this.btn_quitar_periodo_simulacion.ImageActive = null;
       this.btn_quitar_periodo_simulacion.Location = new System.Drawing.Point(1032, 352);
       this.btn_quitar_periodo_simulacion.Name = "btn_quitar_periodo_simulacion";
@@ -3340,7 +3340,7 @@
       // 
       this.btn_generar_periodos.BackColor = System.Drawing.Color.White;
       this.btn_generar_periodos.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btn_generar_periodos.Image = global::entrega_cupones.Properties.Resources.cancel_square_button__2_;
+      this.btn_generar_periodos.Image = global::AutoGestion.Properties.Resources.cancel_square_button__2_;
       this.btn_generar_periodos.ImageActive = null;
       this.btn_generar_periodos.Location = new System.Drawing.Point(1032, 281);
       this.btn_generar_periodos.Name = "btn_generar_periodos";

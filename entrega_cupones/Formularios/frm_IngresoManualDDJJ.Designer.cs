@@ -477,7 +477,7 @@
       // 
       // btn_Refresh
       // 
-      this.btn_Refresh.Image = global::entrega_cupones.Properties.Resources.refreshing__1_;
+      this.btn_Refresh.Image = global::AutoGestion.Properties.Resources.refreshing__1_;
       this.btn_Refresh.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
       this.btn_Refresh.Location = new System.Drawing.Point(769, 21);
       this.btn_Refresh.Name = "btn_Refresh";

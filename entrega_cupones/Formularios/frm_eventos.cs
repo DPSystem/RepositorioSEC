@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using entrega_cupones.Clases;
+using AutoGestion;
 
 namespace entrega_cupones.Formularios
 {
@@ -218,7 +219,7 @@ namespace entrega_cupones.Formularios
         dgv_titu_benef.Rows[fila].Cells["sexo"].Value = item.Sexo;
         dgv_titu_benef.Rows[fila].Cells["Edad"].Value = item.Edad;
         dgv_titu_benef.Rows[fila].Cells["Exepcion"].Value = 0;
-        dgv_titu_benef.Rows[fila].Cells["Emitir"].Value = Properties.Resources.impresora_PNG_24; //D:\Proyectos\entrega_cupones\entrega_cupones\Resources\impresora (1).png;
+        dgv_titu_benef.Rows[fila].Cells["Emitir"].Value = AutoGestion.Properties.Resources.impresora_PNG_24; //D:\Proyectos\entrega_cupones\entrega_cupones\Resources\impresora (1).png;
 
       }
       cargar_exepciones();
@@ -242,7 +243,7 @@ namespace entrega_cupones.Formularios
         dgv_titu_benef.Rows[fila].Cells["Edad"].Value = func_util.calcular_edad(item.EventFechaNac);
         dgv_titu_benef.Rows[fila].Cells["Exepcion"].Value = 1;
         dgv_titu_benef.Rows[fila].Cells["ExepcionID"].Value = item.EventExepId;
-        dgv_titu_benef.Rows[fila].Cells["Emitir"].Value = Properties.Resources.impresora_PNG_24; //D:\Proyectos\entrega_cupones\entrega_cupones\Resources\impresora (1).png;
+        dgv_titu_benef.Rows[fila].Cells["Emitir"].Value = AutoGestion.Properties.Resources.impresora_PNG_24; //D:\Proyectos\entrega_cupones\entrega_cupones\Resources\impresora (1).png;
       }
     }
 
@@ -536,7 +537,7 @@ namespace entrega_cupones.Formularios
         dgv_titu_benef.Rows[fila].Cells["Edad"].Value = txt_edad.Text;
         dgv_titu_benef.Rows[fila].Cells["Exepcion"].Value = 1;
         dgv_titu_benef.Rows[fila].Cells["exepcionID"].Value = insert.EventExepId;
-        dgv_titu_benef.Rows[fila].Cells["Emitir"].Value = Properties.Resources.impresora_PNG_24;
+        dgv_titu_benef.Rows[fila].Cells["Emitir"].Value = AutoGestion.Properties.Resources.impresora_PNG_24;
         MessageBox.Show("Verificar al final del listado y presionar imprimir.", "Carga de exepcion exitosa");
         limpiar_textbox();
         disable_textbox();

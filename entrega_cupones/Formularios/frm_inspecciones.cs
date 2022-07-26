@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AutoGestion;
 using entrega_cupones.Clases;
 
 namespace entrega_cupones

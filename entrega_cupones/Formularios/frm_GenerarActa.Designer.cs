@@ -32,6 +32,7 @@
       this.label37 = new System.Windows.Forms.Label();
       this.txt_ActasAnteriores = new System.Windows.Forms.TextBox();
       this.panel11 = new System.Windows.Forms.Panel();
+      this.cbx_Inspectores = new System.Windows.Forms.ComboBox();
       this.msk_FechaConfeccion = new System.Windows.Forms.MaskedTextBox();
       this.txt_Relacion = new System.Windows.Forms.TextBox();
       this.label34 = new System.Windows.Forms.Label();
@@ -39,8 +40,8 @@
       this.txt_Lugar = new System.Windows.Forms.TextBox();
       this.label33 = new System.Windows.Forms.Label();
       this.label35 = new System.Windows.Forms.Label();
-      this.txt_persona = new System.Windows.Forms.TextBox();
       this.label14 = new System.Windows.Forms.Label();
+      this.txt_persona = new System.Windows.Forms.TextBox();
       this.panel10 = new System.Windows.Forms.Panel();
       this.txt_Observaciones = new System.Windows.Forms.TextBox();
       this.label9 = new System.Windows.Forms.Label();
@@ -164,6 +165,7 @@
       // panel11
       // 
       this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+      this.panel11.Controls.Add(this.cbx_Inspectores);
       this.panel11.Controls.Add(this.msk_FechaConfeccion);
       this.panel11.Controls.Add(this.txt_Relacion);
       this.panel11.Controls.Add(this.label34);
@@ -171,12 +173,24 @@
       this.panel11.Controls.Add(this.txt_Lugar);
       this.panel11.Controls.Add(this.label33);
       this.panel11.Controls.Add(this.label35);
-      this.panel11.Controls.Add(this.txt_persona);
       this.panel11.Controls.Add(this.label14);
       this.panel11.Location = new System.Drawing.Point(692, 160);
       this.panel11.Name = "panel11";
       this.panel11.Size = new System.Drawing.Size(393, 136);
       this.panel11.TabIndex = 602;
+      // 
+      // cbx_Inspectores
+      // 
+      this.cbx_Inspectores.BackColor = System.Drawing.SystemColors.Window;
+      this.cbx_Inspectores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.cbx_Inspectores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.cbx_Inspectores.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.cbx_Inspectores.ForeColor = System.Drawing.Color.Black;
+      this.cbx_Inspectores.FormattingEnabled = true;
+      this.cbx_Inspectores.Location = new System.Drawing.Point(72, 79);
+      this.cbx_Inspectores.Name = "cbx_Inspectores";
+      this.cbx_Inspectores.Size = new System.Drawing.Size(315, 25);
+      this.cbx_Inspectores.TabIndex = 609;
       // 
       // msk_FechaConfeccion
       // 
@@ -191,9 +205,9 @@
       // txt_Relacion
       // 
       this.txt_Relacion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.txt_Relacion.Location = new System.Drawing.Point(70, 108);
+      this.txt_Relacion.Location = new System.Drawing.Point(72, 108);
       this.txt_Relacion.Name = "txt_Relacion";
-      this.txt_Relacion.Size = new System.Drawing.Size(318, 23);
+      this.txt_Relacion.Size = new System.Drawing.Size(316, 23);
       this.txt_Relacion.TabIndex = 579;
       this.txt_Relacion.Text = "Inspector Verificador";
       // 
@@ -222,9 +236,9 @@
       // txt_Lugar
       // 
       this.txt_Lugar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.txt_Lugar.Location = new System.Drawing.Point(70, 52);
+      this.txt_Lugar.Location = new System.Drawing.Point(72, 52);
       this.txt_Lugar.Name = "txt_Lugar";
-      this.txt_Lugar.Size = new System.Drawing.Size(318, 23);
+      this.txt_Lugar.Size = new System.Drawing.Size(316, 23);
       this.txt_Lugar.TabIndex = 578;
       this.txt_Lugar.Text = "Santiago del Estero ";
       // 
@@ -252,14 +266,6 @@
       this.label35.TabIndex = 552;
       this.label35.Text = "Lugar:";
       // 
-      // txt_persona
-      // 
-      this.txt_persona.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.txt_persona.Location = new System.Drawing.Point(70, 80);
-      this.txt_persona.Name = "txt_persona";
-      this.txt_persona.Size = new System.Drawing.Size(318, 23);
-      this.txt_persona.TabIndex = 577;
-      // 
       // label14
       // 
       this.label14.AutoSize = true;
@@ -267,9 +273,18 @@
       this.label14.ForeColor = System.Drawing.Color.Gainsboro;
       this.label14.Location = new System.Drawing.Point(3, 82);
       this.label14.Name = "label14";
-      this.label14.Size = new System.Drawing.Size(63, 17);
+      this.label14.Size = new System.Drawing.Size(71, 17);
       this.label14.TabIndex = 578;
-      this.label14.Text = "Persona:";
+      this.label14.Text = "Inspector:";
+      // 
+      // txt_persona
+      // 
+      this.txt_persona.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txt_persona.Location = new System.Drawing.Point(127, 315);
+      this.txt_persona.Name = "txt_persona";
+      this.txt_persona.Size = new System.Drawing.Size(164, 23);
+      this.txt_persona.TabIndex = 577;
+      this.txt_persona.Visible = false;
       // 
       // panel10
       // 
@@ -1086,6 +1101,7 @@
       this.Controls.Add(this.panel11);
       this.Controls.Add(this.panel10);
       this.Controls.Add(this.panel9);
+      this.Controls.Add(this.txt_persona);
       this.Controls.Add(this.panel8);
       this.Controls.Add(this.panel7);
       this.Controls.Add(this.panel6);
@@ -1128,6 +1144,7 @@
       this.panel13.ResumeLayout(false);
       this.panel13.PerformLayout();
       this.ResumeLayout(false);
+      this.PerformLayout();
 
     }
 
@@ -1219,5 +1236,6 @@
     public System.Windows.Forms.Button btn_Imprimir;
     public System.Windows.Forms.Button btn_GenerarActa;
     public System.Windows.Forms.Button btn_ImprimirVerificacion;
+    public System.Windows.Forms.ComboBox cbx_Inspectores;
   }
 }

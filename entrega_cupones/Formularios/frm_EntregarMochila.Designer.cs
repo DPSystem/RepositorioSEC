@@ -380,7 +380,7 @@
       this.btn_Refresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
       this.btn_Refresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(74)))), ((int)(((byte)(0)))));
       this.btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btn_Refresh.Image = global::entrega_cupones.Properties.Resources.refreshing__1_;
+      this.btn_Refresh.Image = global::AutoGestion.Properties.Resources.refreshing__1_;
       this.btn_Refresh.Location = new System.Drawing.Point(810, 3);
       this.btn_Refresh.Name = "btn_Refresh";
       this.btn_Refresh.Size = new System.Drawing.Size(61, 21);
@@ -505,7 +505,7 @@
       this.btn_ActualizarLocalidad.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_ActualizarLocalidad.DisabledColor = System.Drawing.Color.Gray;
       this.btn_ActualizarLocalidad.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_ActualizarLocalidad.Iconimage = global::entrega_cupones.Properties.Resources.refresh_arrow;
+      this.btn_ActualizarLocalidad.Iconimage = global::AutoGestion.Properties.Resources.refresh_arrow;
       this.btn_ActualizarLocalidad.Iconimage_right = null;
       this.btn_ActualizarLocalidad.Iconimage_right_Selected = null;
       this.btn_ActualizarLocalidad.Iconimage_Selected = null;

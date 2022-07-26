@@ -95,7 +95,7 @@
             this.btn_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_cancelar.DisabledColor = System.Drawing.Color.Gray;
             this.btn_cancelar.Iconcolor = System.Drawing.Color.Transparent;
-            this.btn_cancelar.Iconimage = global::entrega_cupones.Properties.Resources.cancel_square_button__2_;
+            this.btn_cancelar.Iconimage = global::AutoGestion.Properties.Resources.cancel_square_button__2_;
             this.btn_cancelar.Iconimage_right = null;
             this.btn_cancelar.Iconimage_right_Selected = null;
             this.btn_cancelar.Iconimage_Selected = null;
@@ -237,7 +237,7 @@
             // 
             this.btn_cerrar.BackColor = System.Drawing.Color.Transparent;
             this.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cerrar.Image = global::entrega_cupones.Properties.Resources.cross_close_or_delete_circular_interface_button_symbol;
+            this.btn_cerrar.Image = global::AutoGestion.Properties.Resources.cross_close_or_delete_circular_interface_button_symbol;
             this.btn_cerrar.ImageActive = null;
             this.btn_cerrar.Location = new System.Drawing.Point(486, 12);
             this.btn_cerrar.Name = "btn_cerrar";

@@ -4,6 +4,7 @@ using System.Data.Linq;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoGestion;
 using entrega_cupones.Clases;
 
 namespace entrega_cupones.Clases
@@ -262,16 +263,16 @@ namespace entrega_cupones.Clases
     public Soc GetUsuario(string Usr, string Pwd) // obtengo el Id del usuario para la variable de sesion
     {
       //Soc User = new Soc();
-      using (var context = new lts_sindicatoDataContext())
+      using (lts_autogestionDataContext context = new lts_autogestionDataContext())
       {
-        var usuario = from a in context.Usuarios where a.Usuario == Usr && a.Password == Pwd select a;
-        if (usuario.Count() > 0)
+        var usuario_ = from a in context.Usuarios_ where a.Usuario_ == Usr && a.Password_ == Pwd select a;
+        if (usuario_.Count() > 0)
         {
-          dat_soc.Id = usuario.Single().idUsuario;
-          dat_soc.nombre = usuario.First().Usuario;
-          dat_soc.dni = usuario.First().DNI;
-          dat_soc.empresa = get_roles(usuario.First().idRol).rol_nombre;// paso el onmbre del rol
-          dat_soc.nrosocio = usuario.First().idRol.ToString(); // Paso el ID del rol para  los peemisos 
+          dat_soc.Id = usuario_.Single().idUsuario_;
+          dat_soc.nombre = usuario_.First().Usuario_;
+          dat_soc.dni = usuario_.First().DNI_;
+          dat_soc.empresa = get_roles(usuario_.First().idRol_).rol_nombre;// paso el onmbre del rol
+          dat_soc.nrosocio = usuario_.First().idRol_.ToString(); // Paso el ID del rol para  los peemisos 
         }
       }
       return dat_soc;
@@ -279,11 +280,11 @@ namespace entrega_cupones.Clases
 
     public roles get_roles(int idrol)
     {
-      using (var context = new lts_sindicatoDataContext())
+      using (var context = new lts_autogestionDataContext())
       {
-        var r = from a in context.Roles where a.IdRol == idrol select a;
-        rol.id_rol = r.First().IdRol;
-        rol.rol_nombre = r.First().NombreRol;
+        var r = from a in context.Roles_ where a.IdRol_ == idrol select a;
+        rol.id_rol = r.First().IdRol_;
+        rol.rol_nombre = r.First().NombreRol_;
       }
       return rol;
     } // Obtengo un rol pasando un Id Rol

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29418.71
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecSantiago", "entrega_cupones\SecSantiago.csproj", "{AC445C03-2056-436A-BA9F-584D13CA8D57}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autogestion", "entrega_cupones\Autogestion.csproj", "{AC445C03-2056-436A-BA9F-584D13CA8D57}"
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "InstaladorSECx64", "InstaladorSECx64\InstaladorSECx64.vdproj", "{52A37DA4-7B72-43B1-8E1E-BA834135C0B0}"
 EndProject

@@ -12,6 +12,7 @@ using Bunifu.Framework.UI;
 using entrega_cupones.Formularios;
 using MySql.Data.MySqlClient;
 using System.Collections.Generic;
+using AutoGestion;
 
 
 
@@ -1134,7 +1135,7 @@ namespace entrega_cupones
       }
       else
       {
-        eventos evento = new eventos();
+        AutoGestion.eventos evento = new AutoGestion.eventos();
         evento.eventos_nombre = lbl_dni.Text.Trim();
         evento.eventos_estado = Convert.ToInt32(lbl_nro_socio.Text.Trim());
         db_socios.eventos.InsertOnSubmit(evento);

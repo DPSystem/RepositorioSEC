@@ -355,7 +355,7 @@
       this.btn_asignar.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_asignar.DisabledColor = System.Drawing.Color.Gray;
       this.btn_asignar.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_asignar.Iconimage = global::entrega_cupones.Properties.Resources.check30___32;
+      this.btn_asignar.Iconimage = global::AutoGestion.Properties.Resources.check30___32;
       this.btn_asignar.Iconimage_right = null;
       this.btn_asignar.Iconimage_right_Selected = null;
       this.btn_asignar.Iconimage_Selected = null;
@@ -597,7 +597,7 @@
       // 
       this.btn_cerrar.BackColor = System.Drawing.Color.Transparent;
       this.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btn_cerrar.Image = global::entrega_cupones.Properties.Resources.cross_close_or_delete_circular_interface_button_symbol;
+      this.btn_cerrar.Image = global::AutoGestion.Properties.Resources.cross_close_or_delete_circular_interface_button_symbol;
       this.btn_cerrar.ImageActive = null;
       this.btn_cerrar.Location = new System.Drawing.Point(648, 11);
       this.btn_cerrar.Name = "btn_cerrar";

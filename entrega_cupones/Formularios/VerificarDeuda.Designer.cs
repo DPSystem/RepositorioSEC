@@ -63,6 +63,12 @@
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerificarDeuda));
       this.dgv_ddjj = new System.Windows.Forms.DataGridView();
       this.Periodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -170,6 +176,13 @@
       this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.dgv_EstCont = new System.Windows.Forms.DataGridView();
+      this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.cbx_EstCont = new System.Windows.Forms.ComboBox();
+      this.label24 = new System.Windows.Forms.Label();
+      this.btn_GetIngormeGeneral = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.dgv_ddjj)).BeginInit();
       this.panel6.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dgv_PlanDePagos)).BeginInit();
@@ -178,6 +191,7 @@
       this.panel3.SuspendLayout();
       this.panel4.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dgv_Ranking)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.dgv_EstCont)).BeginInit();
       this.SuspendLayout();
       // 
       // dgv_ddjj
@@ -547,6 +561,7 @@
       this.msk_Vencimiento.Size = new System.Drawing.Size(68, 20);
       this.msk_Vencimiento.TabIndex = 566;
       this.msk_Vencimiento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+      this.msk_Vencimiento.ValidatingType = typeof(System.DateTime);
       // 
       // msk_Hasta
       // 
@@ -822,10 +837,11 @@
       this.panel6.Controls.Add(this.txt_DeudaPlan);
       this.panel6.Controls.Add(this.label20);
       this.panel6.Controls.Add(this.txt_Anticipo);
-      this.panel6.Location = new System.Drawing.Point(4, 433);
+      this.panel6.Location = new System.Drawing.Point(556, 438);
       this.panel6.Name = "panel6";
-      this.panel6.Size = new System.Drawing.Size(406, 244);
+      this.panel6.Size = new System.Drawing.Size(11, 244);
       this.panel6.TabIndex = 596;
+      this.panel6.Visible = false;
       // 
       // bunifuCustomLabel3
       // 
@@ -873,7 +889,7 @@
       this.btn_ImprimirPlanDePago2.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_ImprimirPlanDePago2.DisabledColor = System.Drawing.Color.Gray;
       this.btn_ImprimirPlanDePago2.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_ImprimirPlanDePago2.Iconimage = global::entrega_cupones.Properties.Resources.impresora_PNG_24;
+      this.btn_ImprimirPlanDePago2.Iconimage = global::AutoGestion.Properties.Resources.impresora_PNG_24;
       this.btn_ImprimirPlanDePago2.Iconimage_right = null;
       this.btn_ImprimirPlanDePago2.Iconimage_right_Selected = null;
       this.btn_ImprimirPlanDePago2.Iconimage_Selected = null;
@@ -941,7 +957,7 @@
       this.btn_ActivarPlan.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_ActivarPlan.DisabledColor = System.Drawing.Color.Gray;
       this.btn_ActivarPlan.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_ActivarPlan.Iconimage = global::entrega_cupones.Properties.Resources.check30___32;
+      this.btn_ActivarPlan.Iconimage = global::AutoGestion.Properties.Resources.check30___32;
       this.btn_ActivarPlan.Iconimage_right = null;
       this.btn_ActivarPlan.Iconimage_right_Selected = null;
       this.btn_ActivarPlan.Iconimage_Selected = null;
@@ -977,7 +993,7 @@
       this.btn_AsentarPlan.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_AsentarPlan.DisabledColor = System.Drawing.Color.Gray;
       this.btn_AsentarPlan.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_AsentarPlan.Iconimage = global::entrega_cupones.Properties.Resources.hand_shake__1_;
+      this.btn_AsentarPlan.Iconimage = global::AutoGestion.Properties.Resources.hand_shake__1_;
       this.btn_AsentarPlan.Iconimage_right = null;
       this.btn_AsentarPlan.Iconimage_right_Selected = null;
       this.btn_AsentarPlan.Iconimage_Selected = null;
@@ -1083,7 +1099,7 @@
       this.btn_VerPlanDePago.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btn_VerPlanDePago.DisabledColor = System.Drawing.Color.Gray;
       this.btn_VerPlanDePago.Iconcolor = System.Drawing.Color.Transparent;
-      this.btn_VerPlanDePago.Iconimage = global::entrega_cupones.Properties.Resources.calculator__1_;
+      this.btn_VerPlanDePago.Iconimage = global::AutoGestion.Properties.Resources.calculator__1_;
       this.btn_VerPlanDePago.Iconimage_right = null;
       this.btn_VerPlanDePago.Iconimage_right_Selected = null;
       this.btn_VerPlanDePago.Iconimage_Selected = null;
@@ -1350,6 +1366,7 @@
       this.panel2.Name = "panel2";
       this.panel2.Size = new System.Drawing.Size(770, 117);
       this.panel2.TabIndex = 598;
+      this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
       // 
       // cbx_TipoDeInteres
       // 
@@ -1503,9 +1520,9 @@
       // btn_VerRanking
       // 
       this.btn_VerRanking.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-      this.btn_VerRanking.Location = new System.Drawing.Point(1007, 435);
+      this.btn_VerRanking.Location = new System.Drawing.Point(574, 483);
       this.btn_VerRanking.Name = "btn_VerRanking";
-      this.btn_VerRanking.Size = new System.Drawing.Size(115, 37);
+      this.btn_VerRanking.Size = new System.Drawing.Size(82, 52);
       this.btn_VerRanking.TabIndex = 602;
       this.btn_VerRanking.Text = "Ver Ranking";
       this.btn_VerRanking.UseVisualStyleBackColor = true;
@@ -1533,14 +1550,14 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn9});
-      this.dgv_Ranking.Location = new System.Drawing.Point(452, 437);
+      this.dgv_Ranking.Location = new System.Drawing.Point(6, 435);
       this.dgv_Ranking.Name = "dgv_Ranking";
       this.dgv_Ranking.ReadOnly = true;
       this.dgv_Ranking.RowHeadersVisible = false;
       dataGridViewCellStyle35.BackColor = System.Drawing.Color.Silver;
       this.dgv_Ranking.RowsDefaultCellStyle = dataGridViewCellStyle35;
       this.dgv_Ranking.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-      this.dgv_Ranking.Size = new System.Drawing.Size(540, 240);
+      this.dgv_Ranking.Size = new System.Drawing.Size(525, 240);
       this.dgv_Ranking.TabIndex = 603;
       // 
       // dataGridViewTextBoxColumn1
@@ -1574,12 +1591,115 @@
       this.dataGridViewTextBoxColumn9.ReadOnly = true;
       this.dataGridViewTextBoxColumn9.Width = 120;
       // 
+      // dgv_EstCont
+      // 
+      this.dgv_EstCont.AllowUserToAddRows = false;
+      this.dgv_EstCont.AllowUserToDeleteRows = false;
+      this.dgv_EstCont.AllowUserToResizeRows = false;
+      dataGridViewCellStyle36.BackColor = System.Drawing.Color.White;
+      this.dgv_EstCont.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle36;
+      this.dgv_EstCont.BackgroundColor = System.Drawing.Color.White;
+      this.dgv_EstCont.CausesValidation = false;
+      dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      dataGridViewCellStyle37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+      dataGridViewCellStyle37.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
+      dataGridViewCellStyle37.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+      dataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.dgv_EstCont.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle37;
+      this.dgv_EstCont.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.dgv_EstCont.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5});
+      this.dgv_EstCont.Location = new System.Drawing.Point(706, 470);
+      this.dgv_EstCont.Name = "dgv_EstCont";
+      this.dgv_EstCont.ReadOnly = true;
+      this.dgv_EstCont.RowHeadersVisible = false;
+      dataGridViewCellStyle41.BackColor = System.Drawing.Color.Silver;
+      this.dgv_EstCont.RowsDefaultCellStyle = dataGridViewCellStyle41;
+      this.dgv_EstCont.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+      this.dgv_EstCont.Size = new System.Drawing.Size(572, 205);
+      this.dgv_EstCont.TabIndex = 604;
+      // 
+      // dataGridViewTextBoxColumn3
+      // 
+      this.dataGridViewTextBoxColumn3.DataPropertyName = "Cuit";
+      dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
+      this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle38;
+      this.dataGridViewTextBoxColumn3.HeaderText = "CUIT";
+      this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+      this.dataGridViewTextBoxColumn3.ReadOnly = true;
+      // 
+      // dataGridViewTextBoxColumn4
+      // 
+      this.dataGridViewTextBoxColumn4.DataPropertyName = "Empresa";
+      dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle39.Format = "N2";
+      this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle39;
+      this.dataGridViewTextBoxColumn4.HeaderText = "Empresa";
+      this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+      this.dataGridViewTextBoxColumn4.ReadOnly = true;
+      this.dataGridViewTextBoxColumn4.Width = 280;
+      // 
+      // dataGridViewTextBoxColumn5
+      // 
+      this.dataGridViewTextBoxColumn5.DataPropertyName = "Deuda";
+      dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+      dataGridViewCellStyle40.Format = "N2";
+      this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle40;
+      this.dataGridViewTextBoxColumn5.HeaderText = "Deuda";
+      this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+      this.dataGridViewTextBoxColumn5.ReadOnly = true;
+      this.dataGridViewTextBoxColumn5.Width = 120;
+      // 
+      // cbx_EstCont
+      // 
+      this.cbx_EstCont.BackColor = System.Drawing.SystemColors.Window;
+      this.cbx_EstCont.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.cbx_EstCont.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.cbx_EstCont.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.cbx_EstCont.ForeColor = System.Drawing.Color.Black;
+      this.cbx_EstCont.FormattingEnabled = true;
+      this.cbx_EstCont.Location = new System.Drawing.Point(840, 438);
+      this.cbx_EstCont.Name = "cbx_EstCont";
+      this.cbx_EstCont.Size = new System.Drawing.Size(438, 25);
+      this.cbx_EstCont.TabIndex = 606;
+      this.cbx_EstCont.SelectedIndexChanged += new System.EventHandler(this.cbx_EstCont_SelectedIndexChanged);
+      // 
+      // label24
+      // 
+      this.label24.AutoSize = true;
+      this.label24.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label24.ForeColor = System.Drawing.Color.Black;
+      this.label24.Location = new System.Drawing.Point(710, 441);
+      this.label24.Name = "label24";
+      this.label24.Size = new System.Drawing.Size(124, 17);
+      this.label24.TabIndex = 605;
+      this.label24.Text = "Estudio Contable:";
+      // 
+      // btn_GetIngormeGeneral
+      // 
+      this.btn_GetIngormeGeneral.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+      this.btn_GetIngormeGeneral.Location = new System.Drawing.Point(574, 547);
+      this.btn_GetIngormeGeneral.Name = "btn_GetIngormeGeneral";
+      this.btn_GetIngormeGeneral.Size = new System.Drawing.Size(82, 52);
+      this.btn_GetIngormeGeneral.TabIndex = 607;
+      this.btn_GetIngormeGeneral.Text = "Informe General";
+      this.btn_GetIngormeGeneral.UseVisualStyleBackColor = true;
+      this.btn_GetIngormeGeneral.Click += new System.EventHandler(this.btn_GetIngormeGeneral_Click);
+      // 
       // VerificarDeuda
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.Color.Gainsboro;
       this.ClientSize = new System.Drawing.Size(1360, 681);
+      this.Controls.Add(this.btn_GetIngormeGeneral);
+      this.Controls.Add(this.cbx_EstCont);
+      this.Controls.Add(this.label24);
+      this.Controls.Add(this.dgv_EstCont);
       this.Controls.Add(this.dgv_Ranking);
       this.Controls.Add(this.btn_VerRanking);
       this.Controls.Add(this.panel4);
@@ -1604,7 +1724,9 @@
       this.panel4.ResumeLayout(false);
       this.panel4.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dgv_Ranking)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.dgv_EstCont)).EndInit();
       this.ResumeLayout(false);
+      this.PerformLayout();
 
     }
 
@@ -1715,5 +1837,12 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn Total;
     private System.Windows.Forms.DataGridViewTextBoxColumn Acta;
     private System.Windows.Forms.DataGridViewTextBoxColumn VerificacionDeuda;
+    private System.Windows.Forms.DataGridView dgv_EstCont;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+    private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+    private System.Windows.Forms.ComboBox cbx_EstCont;
+    private System.Windows.Forms.Label label24;
+    private System.Windows.Forms.Button btn_GetIngormeGeneral;
   }
 }

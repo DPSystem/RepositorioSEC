@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AutoGestion;
 
 namespace entrega_cupones.Metodos
 {
@@ -41,6 +43,21 @@ namespace entrega_cupones.Metodos
       }
       return edad;
     }
+    public static bool ValidarFecha(string fecha)//(string dia, string mes, string año)
+    {
+      CultureInfo culture;
+      DateTimeStyles styles;
+      DateTime dateResult;
+
+      culture = CultureInfo.CreateSpecificCulture("es-ES");
+      styles = DateTimeStyles.None;
+
+      return DateTime.TryParse(fecha, culture, styles, out dateResult);
+    }
+    public static bool ValidarFechaMayorQue(string fecha)//(string dia, string mes, string año)
+    {
+      return Convert.ToDateTime(fecha) > DateTime.Now.Date;
+    }
     public static void limpiar_dgv(DataGridView dgv)
     {
       while (dgv.Rows.Count > 0)
@@ -69,8 +86,8 @@ namespace entrega_cupones.Metodos
     {
       DateTime FechaVencimientoPeriodo = Desde.AddMonths(1).AddDays(14);
       int dias_ = Convert.ToInt32((Hasta - FechaVencimientoPeriodo).TotalDays);
-      int dias = (int)(Hasta -  Desde ).TotalDays;
-      
+      int dias = (int)(Hasta - Desde).TotalDays;
+
       return dias > 0 ? dias : 0;
     }
     public static string GetLocalidad(int codloc)
@@ -93,6 +110,7 @@ namespace entrega_cupones.Metodos
       }
       return localidad;
     }
+
   }
 }
 
